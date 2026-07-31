@@ -6,8 +6,11 @@ name: Build and release pack
 # using the Modrinth App / ATLauncher / CurseForge.
 on:
   push:
+    branches:
+      - main
     tags:
       - "v*"
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -38,8 +41,36 @@ jobs:
             exit 1
           fi
 
+      - name: Verify pack integrity
+        # Catches mods silently re-sourced to CurseForge, per-player files
+        # leaking into the pack, and missing side labels. See scripts/verify_pack.py
+        run: python3 scripts/verify_pack.py
+
       - name: Export Modrinth pack
-        run: packwiz modrinth export -o "terra-aeterna-${GITHUB_REF_NAME}.mrpack"
+        run: packwiz modrinth export -o "terra-aeterna-${GITHUB_REF_NAME:-dev}.mrpack"
+
+      - name: Verify export contains no unexpected overrides
+        run: |
+          python3 - <<'PY'
+          import glob, sys, zipfile
+          pack = glob.glob("*.mrpack")[0]
+          allowed_cfg = {
+              "overrides/config/defaultoptions/options.txt",
+              "overrides/config/defaultoptions/keybindings.txt",
+          }
+          bad = []
+          with zipfile.ZipFile(pack) as z:
+              for n in z.namelist():
+                  if not n.startswith("overrides/") or n.endswith("/"):
+                      continue
+                  if n in allowed_cfg or n.startswith("overrides/mods/"):
+                      continue
+                  bad.append(n)
+          if bad:
+              print("::error::unexpected files in mrpack overrides: " + ", ".join(bad))
+              sys.exit(1)
+          print(f"{pack}: overrides clean")
+          PY
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

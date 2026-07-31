@@ -9,6 +9,9 @@ editable by more than one person, with history and rollback.
 **Players: see [docs/PLAYER-INSTALL.md](docs/PLAYER-INSTALL.md).** Nothing below
 is needed to just play.
 
+**Updating the pack: see [docs/ASHTON-GUIDE.md](docs/ASHTON-GUIDE.md)** — the
+step-by-step version of everything on this page.
+
 ---
 
 ## Layout
