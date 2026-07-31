@@ -57,6 +57,18 @@ SKIP_RELATIVE = {
     "voicechat/username-cache.json",
     "voicechat/voicechat-client.properties",
     "resourceful-config-web.json",
+    # Machine-specific: records this player's window dimensions and a timestamp.
+    "drippyloadingscreen/early_window_reference.properties",
+    # These layouts reference /config/fancymenu/assets/reimaginedintro/*.fma,
+    # which the reimagined-intro MOD extracts at runtime -- the raw assets are
+    # ~456 MB and are not shipped. Drippy's early-loading module runs BEFORE that
+    # extraction, so shipping these layouts makes the game die at startup with
+    # exit code 2. The mod jar already contains its own copies of both the assets
+    # and the title-screen layout, so letting it supply them is both correct and
+    # what the pack author wants.
+    "fancymenu/customization/reimaginedintro_drippy_loading_overlay_layout.txt",
+    "fancymenu/customization/reimaginedintro_title_screen_layout.txt",
+    "fancymenu/options.txt",  # also points at intro.fma / main.fma
 }
 
 

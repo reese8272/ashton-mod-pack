@@ -104,7 +104,27 @@ def main() -> int:
                 fail(f"unexpected file in pack: {path}\n"
                      f"    add it to .packwizignore, or to ALLOWED_PACK_PREFIXES if intended")
 
-    # --- check 3: defaults exist and look sane --------------------------------
+    # --- check 3: no shipped config points at files we deliberately exclude ---
+    # config/fancymenu/assets is ~456 MB of intro video that the reimagined-intro
+    # MOD extracts at runtime, so the pack does not ship it. Any config
+    # referencing that path is read before extraction happens and crashes the
+    # game at startup (exit code 2, drippy early-loading). This is how that
+    # shipped the first time.
+    EXCLUDED_PATH_REFS = ("config/fancymenu/assets/reimaginedintro",)
+    for cfg in sorted((PACK / "config").rglob("*")):
+        if not cfg.is_file() or cfg.stat().st_size > 2_000_000:
+            continue
+        try:
+            body = cfg.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        for ref in EXCLUDED_PATH_REFS:
+            if ref in body:
+                fail(f"{cfg.relative_to(PACK)} references {ref}, which the pack "
+                     f"does not ship\n    the game reads this before the mod "
+                     f"extracts those assets and crashes at startup")
+
+    # --- check 4: defaults exist and look sane --------------------------------
     kb = PACK / "config/defaultoptions/keybindings.txt"
     if not kb.is_file():
         fail("config/defaultoptions/keybindings.txt missing -- pack ships no default binds")

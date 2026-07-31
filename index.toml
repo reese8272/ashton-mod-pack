@@ -913,10 +913,6 @@ file = "config/draggable_lists.json5"
 hash = "b9f4428f21aaacf95acf58e97de4b990c3e9b0bcf48c0b54c318b2b50e347b92"
 
 [[files]]
-file = "config/drippyloadingscreen/early_window_reference.properties"
-hash = "3266d98da6d4b2e10210a6077c5e7002760ab9c572c92230012af3b1b8e94df0"
-
-[[files]]
 file = "config/drippyloadingscreen/options.txt"
 hash = "8d0edcad69219e217683bde3437b11318db348c7cce676c7c67de99b58f0ccd5"
 
@@ -981,24 +977,12 @@ file = "config/fancymenu/customizablemenus.txt"
 hash = "a14c6a7d8d525be760c512bf7f267318f69634893e6ddcfa1aca7a92a57e820c"
 
 [[files]]
-file = "config/fancymenu/customization/reimaginedintro_drippy_loading_overlay_layout.txt"
-hash = "38e141780f04ac87abab9932f5e6433c6ba1f8d487d2b07fe9e677584d54da38"
-
-[[files]]
-file = "config/fancymenu/customization/reimaginedintro_title_screen_layout.txt"
-hash = "f72e379cedb31c30352536893d8c1f1458483ef5fa362e3f868ff05442ef7aa6"
-
-[[files]]
 file = "config/fancymenu/layout_editor/widgets/element_layer_control.lewidget"
 hash = "051d700ea7ff1bd626063d60f9a9cd65a0af1fed5903706d1e70fce20bcb2495"
 
 [[files]]
 file = "config/fancymenu/legacy_checklist.txt"
 hash = "9a25d3dc708e43eabafce5479a13c02dae15bc7f673afb2745b8b2ba48a97dc0"
-
-[[files]]
-file = "config/fancymenu/options.txt"
-hash = "c681ef42d8dfbcfbe5c05a34f689a2cab07188be5fd3a64a3420806ac65e7589"
 
 [[files]]
 file = "config/fancymenu/ui_themes/cherry_blossom.json"

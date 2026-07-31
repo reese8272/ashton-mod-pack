@@ -1,12 +1,12 @@
 name = "Terra Aeterna"
 author = "Terra Aeterna Team"
-version = "1.5.0"
+version = "1.5.1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "00c1a71604530a3e275bd05b79bec04f9cd2c2876b612822545bfe3366974043"
+hash = "041e899989f566efba2355a6d20b4a90ebadbc0a92e7f4cf7bdbcc4ef4bf2c00"
 
 [versions]
 minecraft = "1.21.1"
