@@ -1,0 +1,12 @@
+name = "Aquatic Creepers"
+filename = "aquatic_creepers-neoforge-1.0.0+1.21.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/v4lB1xDz/versions/2Smosh3T/aquatic_creepers-neoforge-1.0.0%2B1.21.jar"
+hash-format = "sha512"
+hash = "02d13f8216da8bdb5f01f82fa20cf6d6ba79099c662a6fbfb71070099c7d1f910a67f35164233b6767ca954c5b764d07961f4e271d181b82dc9cc56e13e96dce"
+
+[update]
+[update.modrinth]
+mod-id = "v4lB1xDz"
+version = "2Smosh3T"

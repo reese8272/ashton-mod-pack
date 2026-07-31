@@ -1,0 +1,12 @@
+name = "Multi Mine"
+filename = "MultiMine-neoforge-1.2.0.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/fJ90SEuf/versions/GHqvfasB/MultiMine-neoforge-1.2.0.jar"
+hash-format = "sha512"
+hash = "7263d769224d37f23209293265b8a8d9bcfe1a90ed2746926487aa87b4b06fe537ea424defcefcd62cf4db05c37ccade48c99d6504c4bf679ee4a3f6647ff5ab"
+
+[update]
+[update.modrinth]
+mod-id = "fJ90SEuf"
+version = "GHqvfasB"

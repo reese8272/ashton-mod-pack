@@ -1,0 +1,11 @@
+# Exported pack artifacts — built by CI, never committed
+*.zip
+*.mrpack
+
+# packwiz local cache
+.packwizcache/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,12 @@
+name = "Ore Tuner"
+filename = "oretuner-0.1.0.jar"
+side = "client"
+[download]
+url = "https://cdn.modrinth.com/data/jeqZ9IJp/versions/f3N5nh3o/oretuner-0.1.0.jar"
+hash-format = "sha512"
+hash = "0ce4e75f949deb8753adeb3612389df79661db7240e304af2691d356b5d289765822e3c23e3480b7dbde179e07925c72b53c8b01d0011d15dd7e44913c103a09"
+
+[update]
+[update.modrinth]
+mod-id = "jeqZ9IJp"
+version = "f3N5nh3o"

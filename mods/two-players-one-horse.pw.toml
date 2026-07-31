@@ -1,0 +1,12 @@
+name = "Two Players One Horse"
+filename = "twoplayersonehorse-neoforge-1.21.1-1.0.2.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/c89BhsB1/versions/cTpecyBB/twoplayersonehorse-neoforge-1.21.1-1.0.2.jar"
+hash-format = "sha512"
+hash = "5d8edd34316cf5326eb852abc3e279376a3ab8cc93d756af469e4f03fde0f1e685f54d9df30fc38f0462386cce4f5219dfcf55eaff7916fa0e0c7e1dab31b573"
+
+[update]
+[update.modrinth]
+mod-id = "c89BhsB1"
+version = "cTpecyBB"

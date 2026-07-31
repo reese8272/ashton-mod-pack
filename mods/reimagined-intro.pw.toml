@@ -1,0 +1,20 @@
+name = "Reimagined Intro"
+filename = "reimagined-intro-1.0.0.jar"
+side = "client"
+
+# 456 MB - 40% of the entire client download, for a startup animation.
+# Offered as opt-in so first install is ~690 MB instead of ~1.15 GB.
+[option]
+optional = true
+default = false
+description = "Custom animated intro video (456 MB). Purely cosmetic - skip it for a much faster first install."
+
+[download]
+url = "https://cdn.modrinth.com/data/BsnF5g7E/versions/pBwAXYJm/reimagined-intro-1.0.0.jar"
+hash-format = "sha512"
+hash = "1b698e73f3ec6b84751feb0404f7fb88fab49a685b2dcee19dc02b9f2da0105d88c4cc1bb1dc9a968bd36b0595b87bbe708b3abaae2763ef1e781af3f251ab48"
+
+[update]
+[update.modrinth]
+mod-id = "BsnF5g7E"
+version = "pBwAXYJm"

@@ -1,0 +1,12 @@
+name = "Macaw's Regions Unexplored"
+filename = "mcwregionsunexplored-neoforge-1.21.1-1.6.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/4d7eGKIA/versions/wPxadWot/mcwregionsunexplored-neoforge-1.21.1-1.6.jar"
+hash-format = "sha512"
+hash = "00f6d989f064a60fcb595fa55cae9b9003c856eae96b8a9cd42556a5d7713008b714383fc8578839acb70aaef39ea28537516923d5756912231f0d1e8029abe1"
+
+[update]
+[update.modrinth]
+mod-id = "4d7eGKIA"
+version = "wPxadWot"

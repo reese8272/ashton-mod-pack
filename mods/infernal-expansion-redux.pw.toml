@@ -1,0 +1,12 @@
+name = "Infernal Expansion Redux"
+filename = "infernalexp-neoforge-1.21.1-0.3.12.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/wiPmcmNp/versions/BJlfYZWQ/infernalexp-neoforge-1.21.1-0.3.12.jar"
+hash-format = "sha512"
+hash = "bffc5c1c65de299c25f991abb9910a526204d7a76acc3d5181c50dc8cd75aa4e9621b0be4367976411df12fe71c590702bccdc41779ed976aa78d046e2c9c068"
+
+[update]
+[update.modrinth]
+mod-id = "wiPmcmNp"
+version = "BJlfYZWQ"

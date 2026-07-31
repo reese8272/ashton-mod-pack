@@ -1,0 +1,12 @@
+name = "Simple Blood"
+filename = "simpleblood-neoforge-0.1.8+1.21.1.jar"
+side = "client"
+[download]
+url = "https://cdn.modrinth.com/data/lAKYDTAr/versions/gaLJYGKc/simpleblood-neoforge-0.1.8%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "b71d6a02d5a8099db318c52d96b4989ff7cce87ad184c04f963f6ddc903ac84638a9da16d2168dde519371398316fb3e3af315c7bb826f6214096c25c4a7db2b"
+
+[update]
+[update.modrinth]
+mod-id = "lAKYDTAr"
+version = "gaLJYGKc"

@@ -1,0 +1,12 @@
+name = "Horse Statistics"
+filename = "horsestatsmod-neoforge-2.0.0-MC1.21.1.jar"
+side = "client"
+[download]
+url = "https://cdn.modrinth.com/data/RnxjxXAI/versions/gF1yJMUZ/horsestatsmod-neoforge-2.0.0-MC1.21.1.jar"
+hash-format = "sha512"
+hash = "fc43175b30dd3712c23bcbf1a6d76e67d77c08fcae510a5b4054d036f6a4e77f38e83cef90304b35eb7b095812118456352f1ad47ea8fa01a1024bbcf9ec8153"
+
+[update]
+[update.modrinth]
+mod-id = "RnxjxXAI"
+version = "gF1yJMUZ"

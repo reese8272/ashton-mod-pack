@@ -1,0 +1,12 @@
+name = "IV - Official Automobile Pack [OAmP] - Cars & Sport Cars"
+filename = "OAmP-1.21.1-V3.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/OP76SB7W/versions/F2B1z5an/OAmP-1.21.1-V3.jar"
+hash-format = "sha512"
+hash = "0ef9ad748c8c01abc4c72f3874c4741e9d87c1140931092fa693a3b915fd5e241929f3918d4568b5ef4a4841fa1b2e1cc04874c9d4bc4479e59dda221b40c644"
+
+[update]
+[update.modrinth]
+mod-id = "OP76SB7W"
+version = "F2B1z5an"

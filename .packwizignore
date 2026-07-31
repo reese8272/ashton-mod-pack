@@ -1,0 +1,64 @@
+# .packwizignore uses .gitignore syntax: https://git-scm.com/docs/gitignore
+# Anything matched here is excluded from the pack index, so it is never shipped
+# to players and never overwritten on their machines.
+
+# --- Repo files that are not part of the pack ---------------------------------
+/README.md
+/LICENSE
+/docs/
+/.github/
+/scripts/
+
+# --- PER-PLAYER SETTINGS: THE KEYBIND FIX -------------------------------------
+# Shipping any of these overwrites each player's own settings on every update.
+# Pack-wide defaults are delivered by the Default Options mod (/defaultoptions)
+# instead, which applies them on FIRST LAUNCH ONLY and never again.
+/options.txt
+/optionsof.txt
+/optionsshaders.txt
+/servers.dat
+/servers.dat_old
+/servers.essential.dat
+/usercache.json
+/usernamecache.json
+/command_history.txt
+/ponders_watched.json
+/realms_persistence.json
+/hotbar.nbt
+
+# Per-player map data and waypoints
+/xaero/
+/XaeroWaypoints*/
+/XaeroWorldMap*/
+
+# Essential account/session data — per player, and contains credentials
+/essential/
+
+# --- PLAYER WORLDS AND LOCAL OUTPUT -------------------------------------------
+/saves/
+/backups/
+/screenshots/
+/logs/
+/crash-reports/
+/debug/
+/.mixin.out/
+
+# --- REGENERABLE CACHES -------------------------------------------------------
+# These are rebuilt at runtime. fancymenu_temp alone is ~455 MB of decoded
+# intro video; shipping it would triple the download for zero benefit.
+/fancymenu_data/fancymenu_temp/
+/config/fancymenu/assets/
+/cache/
+/immersive_paintings_cache/
+/dynamic-resource-pack-cache/
+/dynamic-data-pack-cache/
+/particular_cache/
+/patched_shaders/
+/mods/.connector/
+/mods/.index/
+/.sable/
+/bivrik/
+
+# --- Distant Horizons LOD databases (per-world, can reach many GB) ------------
+**/data/DistantHorizons.sqlite*
+/data/

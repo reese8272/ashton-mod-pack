@@ -1,0 +1,12 @@
+name = "Hologram API"
+filename = "hologram_api-2.0.2+1.21.1-neoforge.jar"
+side = "client"
+[download]
+url = "https://cdn.modrinth.com/data/gM6gWVgx/versions/npbt3kIV/hologram_api-2.0.2%2B1.21.1-neoforge.jar"
+hash-format = "sha512"
+hash = "1fadec2cc9f545a4ef6a06c31711a40209e12a237563e6d7d1c6b99329f879389bbfcbfd1d1f124e7ba5914256bdd116aa3095b68114b8116ab8b9d774eeece2"
+
+[update]
+[update.modrinth]
+mod-id = "gM6gWVgx"
+version = "npbt3kIV"

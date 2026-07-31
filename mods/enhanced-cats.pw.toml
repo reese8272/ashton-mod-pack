@@ -1,0 +1,12 @@
+name = "Enhanced Cats"
+filename = "EnhancedCats-NeoForge-1.21.1-1.0.1.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/e2R0wxyL/versions/vke3pxSW/EnhancedCats-NeoForge-1.21.1-1.0.1.jar"
+hash-format = "sha512"
+hash = "35fe406cfb662e43ee2b798728cbdaac940c62b57080c9a08ccdd34fb955697b6b482fe98e3c617ca8305e54f868d2ba2deb0d7060b4191817f9d1cb0e9881ff"
+
+[update]
+[update.modrinth]
+mod-id = "e2R0wxyL"
+version = "vke3pxSW"

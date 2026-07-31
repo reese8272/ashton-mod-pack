@@ -1,0 +1,13 @@
+name = "Terra Aeterna"
+author = "Terra Aeterna Team"
+version = "1.5.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "d5909dae9db18a4c3b259f44330a3da2de393a342e39a85972546aaf16376e5b"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.234"

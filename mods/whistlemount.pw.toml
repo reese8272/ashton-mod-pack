@@ -1,0 +1,12 @@
+name = "Whistle Mount"
+filename = "whistlemount-2.1.2-neoforge-1.21.1.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/Il2vOlf3/versions/wjsyZdmw/whistlemount-2.1.2-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "6f8f95eee2ab15af0408bcb2b182d28f87f06881a66ef4d8e845a1d39bf45784c6452dda4c97bf11515da55b0d1193a3aa45ae2637650f4786dcb83c1efd91a8"
+
+[update]
+[update.modrinth]
+mod-id = "Il2vOlf3"
+version = "wjsyZdmw"

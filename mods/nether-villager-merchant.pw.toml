@@ -1,0 +1,12 @@
+name = "Nether Villager Merchant"
+filename = "nether_merchant-1.0.3-neoforge-1.21.1.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/MmWjgmtL/versions/RvEZWAfZ/nether_merchant-1.0.3-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "1dc641342efcbf0914bbaf9d0ef305b15427e48110eb83ac7c01d472e28060404c7579bcf63be2bfe2d061dea3bd78aa8dafa388ceebf91917f0d1ecd9a68282"
+
+[update]
+[update.modrinth]
+mod-id = "MmWjgmtL"
+version = "RvEZWAfZ"

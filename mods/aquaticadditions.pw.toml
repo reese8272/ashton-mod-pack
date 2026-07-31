@@ -1,0 +1,12 @@
+name = "Aquatic Additions"
+filename = "aq-4.3.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/kvmNKS5S/versions/BFQtGYVi/aq-4.3.jar"
+hash-format = "sha512"
+hash = "8b40c823eeab493d6e03f7e1583d3ee5368f31d1f6738df010b3becbe5d6baa40a904513e65565127fc719b51d2097c05488abd1f33900b0384b62d072f313a1"
+
+[update]
+[update.modrinth]
+mod-id = "kvmNKS5S"
+version = "BFQtGYVi"

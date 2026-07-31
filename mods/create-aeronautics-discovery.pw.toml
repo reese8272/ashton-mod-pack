@@ -1,0 +1,12 @@
+name = "Create Aeronautics Discovery"
+filename = "aeronauticsdiscovery-1.4.5.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/MtpVp9HL/versions/IqrKnCrh/aeronauticsdiscovery-1.4.5.jar"
+hash-format = "sha512"
+hash = "d648d7b30b9d4d14e7b25d7212bfe059e41bac23c9dc16d58052cd5a419c025e5f5340c41cdceb3a180130a6f23da37d113697dfd38cbaf5221fc99043be5a38"
+
+[update]
+[update.modrinth]
+mod-id = "MtpVp9HL"
+version = "IqrKnCrh"

@@ -1,0 +1,12 @@
+name = "More Babies"
+filename = "more_babies-neoforge-1.21.1-2.0.0.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/ZK4bBM3B/versions/e8wmZM1b/more_babies-neoforge-1.21.1-2.0.0.jar"
+hash-format = "sha512"
+hash = "dbfaa82a020455210654e5fccd7b045437f4ab1c984379974320c0f065175fe0d610e10d6c84cada1d75ee3a6e5daaeb30e90f67759c2345ffd776e702f01342"
+
+[update]
+[update.modrinth]
+mod-id = "ZK4bBM3B"
+version = "e8wmZM1b"

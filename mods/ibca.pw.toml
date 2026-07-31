@@ -1,0 +1,12 @@
+name = "Incendium Better Combat Addon"
+filename = "ibca-1.0.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/yGZJfKGI/versions/MejrIYAD/ibca-1.0.jar"
+hash-format = "sha512"
+hash = "1e7814cc9d7862b8d06d050d13016bc714162b16f7cd5eb885e1ae0059d9cabe430362b18a9c5ab8fa749d9e6d84c9a8c51406972dbd7e6c5b7771005d3913d3"
+
+[update]
+[update.modrinth]
+mod-id = "yGZJfKGI"
+version = "MejrIYAD"

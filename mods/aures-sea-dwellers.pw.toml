@@ -1,0 +1,12 @@
+name = "Aures - Sea Dwellers"
+filename = "seadwellers-1.0.0-neoforge-1.21.1.jar"
+side = "both"
+[download]
+url = "https://cdn.modrinth.com/data/g2dqKlDd/versions/fHmrQr8A/seadwellers-1.0.0-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "e720f33aa4fa47e65afd588f2fd7cba157725d055e7fe606c34c74e68c1c40fc712daaa1809c2c818fb2eef7a65bf2e7edffc8a73b2e15f0c9d18d799e031f2a"
+
+[update]
+[update.modrinth]
+mod-id = "g2dqKlDd"
+version = "fHmrQr8A"
