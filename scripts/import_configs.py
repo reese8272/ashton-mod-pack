@@ -45,6 +45,18 @@ SKIP_EXACT = {
     "dynamic-fps.toml",
     "MouseTweaks.cfg",            # input feel
     "betterf3.json",
+    "sodium-fingerprint.json",    # identifies the author's GPU
+    "sodium-extra.properties",
+    "xaeropatreon.txt",           # the author's personal Patreon key
+}
+
+# Per-player state that happens to live under config/. Shipping these pushes one
+# person's account data and preferences onto everyone.
+SKIP_RELATIVE = {
+    "voicechat/player-volumes.properties",  # per-person volume sliders
+    "voicechat/username-cache.json",
+    "voicechat/voicechat-client.properties",
+    "resourceful-config-web.json",
 }
 
 
@@ -80,7 +92,7 @@ def main() -> int:
         if any(p in rel_s for p in SKIP_PATTERNS):
             skipped_big.append(rel_s)
             continue
-        if src.name in SKIP_EXACT:
+        if src.name in SKIP_EXACT or rel_s in SKIP_RELATIVE:
             skipped_hw.append(rel_s)
             continue
         # never clobber the defaultoptions we generate separately

@@ -52,22 +52,39 @@ jobs:
       - name: Verify export contains no unexpected overrides
         run: |
           python3 - <<'PY'
-          import glob, sys, zipfile
+          import glob, posixpath, sys, zipfile
           pack = glob.glob("*.mrpack")[0]
-          allowed_cfg = {
-              "overrides/config/defaultoptions/options.txt",
-              "overrides/config/defaultoptions/keybindings.txt",
+          # Directories the pack may legitimately write into a player's instance.
+          allowed = ("overrides/mods/", "overrides/config/", "overrides/resourcepacks/",
+                     "overrides/shaderpacks/", "overrides/kubejs/")
+          # Vanilla per-player files. Only banned at the INSTANCE ROOT -- several
+          # mods ship their own config named options.txt (fancymenu,
+          # drippyloadingscreen) and those are legitimate pack config.
+          banned_at_root = {
+              "options.txt", "optionsof.txt", "optionsshaders.txt", "servers.dat",
+              "usercache.json", "usernamecache.json", ".sync-instance-path",
           }
-          bad = []
+          # Per-player or machine-identifying files, banned wherever they appear.
+          banned_anywhere = {
+              "sodium-fingerprint.json", "xaeropatreon.txt",
+              "player-volumes.properties", "username-cache.json",
+          }
+          bad, leaked = [], []
           with zipfile.ZipFile(pack) as z:
               for n in z.namelist():
                   if not n.startswith("overrides/") or n.endswith("/"):
                       continue
-                  if n in allowed_cfg or n.startswith("overrides/mods/"):
-                      continue
-                  bad.append(n)
+                  if not n.startswith(allowed):
+                      bad.append(n)
+                  rel = n[len("overrides/"):]
+                  base = posixpath.basename(n)
+                  if (rel in banned_at_root) or (base in banned_anywhere):
+                      leaked.append(n)
           if bad:
-              print("::error::unexpected files in mrpack overrides: " + ", ".join(bad))
+              print("::error::unexpected paths in mrpack overrides: " + ", ".join(sorted(bad)[:20]))
+          if leaked:
+              print("::error::per-player files would ship to everyone: " + ", ".join(sorted(leaked)))
+          if bad or leaked:
               sys.exit(1)
           print(f"{pack}: overrides clean")
           PY

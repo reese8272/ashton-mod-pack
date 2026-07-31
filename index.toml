@@ -1477,10 +1477,6 @@ file = "config/regions_unexplored/common.json"
 hash = "300dda462e31f6f1bcce0d67308e4939d1b461a03c8cc92ba805f7ac9d1cb66c"
 
 [[files]]
-file = "config/resourceful-config-web.json"
-hash = "191dc5c9b3f25baeb443087be0188f8d8f9f6bd8b1cb01757ac493430a5e08fb"
-
-[[files]]
 file = "config/revervox_mod-server.toml"
 hash = "5a1570785fe3ad7f6b3ee42a1fdfbd05f224f09d72826ab7feee98cf9504049f"
 
@@ -1603,14 +1599,6 @@ hash = "b18f93c65101649e02295f29f5278ec6dab58db4941cc5d328a92d070a553783"
 [[files]]
 file = "config/smoothswapping.json"
 hash = "caa5c1ff66d571e2dc8affea8ef90efe7acac4725ab0ec61584224438da755de"
-
-[[files]]
-file = "config/sodium-extra.properties"
-hash = "a2f1b47c1eaa119ab34727f1d43c2506cb3d7f17ba8fb4efb49e20c8e0b58e70"
-
-[[files]]
-file = "config/sodium-fingerprint.json"
-hash = "b23593bb0bf67a8650eabb26605b3dbcb77e25ccae10c1b79aefe252083fd332"
 
 [[files]]
 file = "config/sodium-mixins.properties"
@@ -1833,20 +1821,8 @@ file = "config/voicechat/category-volumes.properties"
 hash = "d5c0bb3ec5952debd3a5253a49d0d26fff5466eb34ac44f86e17e0de15a3281b"
 
 [[files]]
-file = "config/voicechat/player-volumes.properties"
-hash = "0332261861a5ace96f503e85b0d48a8df74ea6c2f3545cd229543a6afb55ad96"
-
-[[files]]
 file = "config/voicechat/translations.properties"
 hash = "693643b1d393cbb3ea7f062afc4474fcd66e4036c4f8d7c056434979cbf512d1"
-
-[[files]]
-file = "config/voicechat/username-cache.json"
-hash = "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
-
-[[files]]
-file = "config/voicechat/voicechat-client.properties"
-hash = "4fc1cc28ee9c7b1942ff355e0b9615662c1fefd4b74440d321cb677223d65dec"
 
 [[files]]
 file = "config/voicechat/voicechat-server.properties"
@@ -1963,10 +1939,6 @@ hash = "d438aea41ca41e93697e059f523686935c0add482f6abe96b532bbf10c6ed80a"
 [[files]]
 file = "config/xaerohud.txt"
 hash = "58c9270f258d0b224bb7d0f7c927544d5fbe5f1b8027c820e1e14ecbf48fb88c"
-
-[[files]]
-file = "config/xaeropatreon.txt"
-hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
 file = "config/yacl.json5"
