@@ -14,14 +14,20 @@ the whole gigabyte.
 2. Download `terra-aeterna-<version>.mrpack` from
    [Releases](../../releases/latest) and drag it onto the Prism window.
 3. Download `packwiz-installer-bootstrap.jar` from
-   [here](https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest)
-   and put it in the instance folder (right-click instance → **Folder**).
+   [here](https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest).
+   Right-click the instance → **Folder**, then go **into the `minecraft`
+   subfolder** and put the jar there — next to `mods/`, not beside
+   `instance.cfg`. Prism runs the pre-launch command from `minecraft/`, so a jar
+   in the instance root gives `Unable to access jarfile`.
 4. Right-click the instance → **Edit** → **Settings** → **Custom commands**,
    tick **Custom commands**, and paste into **Pre-launch command**:
 
    ```
-   "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://raw.githubusercontent.com/reese8272/ashton-mod-pack/main/pack.toml
+   "$INST_JAVA" -jar "$INST_MC_DIR/packwiz-installer-bootstrap.jar" https://raw.githubusercontent.com/reese8272/ashton-mod-pack/main/pack.toml
    ```
+
+   `$INST_MC_DIR` points at the instance's `minecraft/` folder, so this works
+   regardless of what Prism sets the working directory to.
 
 That's it. Launch normally; updates arrive on their own.
 
