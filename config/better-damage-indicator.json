@@ -1,0 +1,13 @@
+{
+  "enableIndicator": true,
+  "renderDistance": 30,
+  "displayConditions": {},
+  "indicatorFormat": "\u0026b{name}\u0026r: {HP}\u00267/\u0026r{maxHP}",
+  "healthColor": {},
+  "decimal": 1,
+  "indicatorScale": 1.0,
+  "offset": 0.5,
+  "shadow": true,
+  "renderInfront": false,
+  "disableNametag": true
+}

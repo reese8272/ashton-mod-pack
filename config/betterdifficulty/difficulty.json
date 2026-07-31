@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "game_stages": {
+    "per_player_enabled": false,
+    "crd_penalty_expert": 0.15,
+    "crd_penalty_master": 0.3
+  },
+  "difficulty_features": {
+    "spawn_rate_increaser_enabled": true,
+    "spawn_rate_expert_multiplier": 1.1,
+    "spawn_rate_master_multiplier": 1.2,
+    "feature_toggles": {
+      "mob_groups": true,
+      "creeper_chain_reaction": true,
+      "experience_bonus": true,
+      "creeper_spawn_debuffed": true,
+      "deadlier_explosions": true,
+      "pillager_with_fireworks": true,
+      "block_illusioner_from_joining_raids": true,
+      "enderman_teleport_attack": true,
+      "mobs_spawn_stronger": true,
+      "spawn_rate_increaser": true,
+      "spawn_killer_bunny": true,
+      "spawn_player_zombie": true,
+      "evoker_with_totem": true,
+      "creeper_explode_behind_wall": true,
+      "double_loot": true,
+      "spawn_blocker": true,
+      "jockey_spawn": true,
+      "drowned_lightning_bolt": true,
+      "creeper_explosion_immunity": true,
+      "creeper_spawn_charged": true,
+      "mobs_apply_effects": true
+    }
+  },
+  "blood_moon": {
+    "enabled": true,
+    "start_time": 12000,
+    "end_time": 23600,
+    "night_trigger_chance": 0.0666,
+    "_schedule_mode_comment": "chance | nth_night | full_moon",
+    "schedule_mode": "chance",
+    "nth_night": 7,
+    "spawn_rate_multiplier": 2.0,
+    "surface_spawn_only": false,
+    "spawn_whitelist": [],
+    "spawn_blacklist": [],
+    "mobs_drop_loot": false,
+    "prevent_sleep": true,
+    "client_visual_intensity": 1.0,
+    "crd_penalty": 0.5,
+    "special_spawns": [
+      {
+        "entity_type": "minecraft:zombie",
+        "chance": 0.12,
+        "nbt_tag": "{ArmorItems:[{id:\"minecraft:diamond_boots\",count:1,components:{\"minecraft:enchantments\":{levels:{\"minecraft:protection\":3}}}},{id:\"minecraft:diamond_leggings\",count:1,components:{\"minecraft:enchantments\":{levels:{\"minecraft:protection\":3}}}},{id:\"minecraft:diamond_chestplate\",count:1,components:{\"minecraft:enchantments\":{levels:{\"minecraft:protection\":3}}}},{id:\"minecraft:diamond_helmet\",count:1,components:{\"minecraft:enchantments\":{levels:{\"minecraft:protection\":3}}}}],ArmorDropChances:[0.25f,0.25f,0.25f,0.25f]}"
+      },
+      {
+        "entity_type": "minecraft:skeleton",
+        "chance": 0.1,
+        "nbt_tag": "{HandItems:[{id:\"minecraft:bow\",count:1,components:{\"minecraft:enchantments\":{levels:{\"minecraft:power\":5}}}}],HandDropChances:[0.35f]}"
+      }
+    ]
+  },
+  "treasure_bags": {
+    "fishing_requirement": 16,
+    "show_progress_tooltip": true
+  }
+}

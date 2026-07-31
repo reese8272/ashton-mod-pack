@@ -1,0 +1,15 @@
+{
+  "enableAnimation": true,
+  "animationTime": 355,
+  "animationScale": 1.0,
+  "animationStyle": "EXPO",
+  "animationDirection": "UP",
+  "modifyBackground": true,
+  "backgroundOpacity": 0.65,
+  "backgroundFadeTime": 150,
+  "alwaysBlurBackground": false,
+  "repeatSameScreen": false,
+  "configMode": false,
+  "screensForceEnabled": [],
+  "screensForceDisabled": []
+}

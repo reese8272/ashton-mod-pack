@@ -1,0 +1,109 @@
+{
+    "io.wispforest.accessories.client.gui.AccessoriesScreen": {
+        "buttonHints": {
+            "MOVE_TO_CONTAINER": {
+                "bottom": 21
+            },
+            "MOVE_TO_PLAYER": {
+                "top": -15
+            },
+            "SORT": {
+                "top": -15
+            },
+            "SORT_COLUMNS": {
+                "top": -15
+            },
+            "SORT_ROWS": {
+                "top": -15
+            },
+            "SETTINGS": {
+                "top": -3
+            }
+        }
+    },
+    "top.theillusivec4.curios.client.gui.CuriosScreen": {
+        "buttonHints": {
+            "MOVE_TO_CONTAINER": {
+                "bottom": -1
+            },
+            "MOVE_TO_PLAYER": {
+                "top": -15
+            },
+            "SORT": {
+                "top": -15
+            },
+            "SORT_COLUMNS": {
+                "top": -15
+            },
+            "SORT_ROWS": {
+                "top": -15
+            }
+        }
+    },
+    "com.aetherteam.aether.client.gui.screen.inventory.AetherAccessoriesScreen": {
+        "buttonHints": {
+            "MOVE_TO_CONTAINER": {
+                "bottom": 69
+            },
+            "SORT": {
+                "horizontalOffset": 9,
+                "bottom": 81
+            },
+            "SORT_COLUMNS": {
+                "horizontalOffset": 10,
+                "bottom": 81
+            },
+            "SORT_ROWS": {
+                "horizontalOffset": 11,
+                "bottom": 81
+            },
+            "CONTINUOUS_CRAFTING": {
+                "bottom": -3
+            }
+        }
+    },
+    "dev.simulated_team.simulated.content.blocks.redstone.linked_typewriter.screen.LinkedTypewriterScreen": {
+        "buttonHints": {
+            "MOVE_TO_CONTAINER": {
+                "horizontalOffset": 29,
+                "bottom": 61
+            },
+            "MOVE_TO_PLAYER": {
+                "horizontalOffset": 18,
+                "top": -34
+            },
+            "SORT": {
+                "horizontalOffset": 26,
+                "top": -34
+            },
+            "SORT_COLUMNS": {
+                "horizontalOffset": 27,
+                "top": -34
+            },
+            "SORT_ROWS": {
+                "horizontalOffset": 28,
+                "top": -34
+            }
+        }
+    },
+    "net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen": {
+        "buttonHints": {
+            "SORT": {
+                "horizontalOffset": -3
+            },
+            "SORT_COLUMNS": {
+                "horizontalOffset": -2
+            },
+            "SORT_ROWS": {
+                "horizontalOffset": -1
+            }
+        }
+    },
+    "net.minecraft.client.gui.screens.inventory.InventoryScreen": {
+        "buttonHints": {
+            "PROFILE_SELECTOR": {
+                "bottom": 11
+            }
+        }
+    }
+}

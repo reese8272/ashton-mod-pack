@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rolls": 2,
+  "entries": [
+    {
+      "item": "minecraft:cod",
+      "weight": 6,
+      "chance": 100.0,
+      "min_count": 2,
+      "max_count": 6
+    },
+    {
+      "item": "minecraft:salmon",
+      "weight": 4,
+      "chance": 100.0,
+      "min_count": 1,
+      "max_count": 4
+    },
+    {
+      "item": "minecraft:prismarine_shard",
+      "weight": 3,
+      "chance": 65.0,
+      "min_count": 1,
+      "max_count": 3
+    }
+  ]
+}

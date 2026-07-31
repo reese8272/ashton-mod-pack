@@ -1,0 +1,62 @@
+general = {disable_mod = false, hide_bossbar = true, shadow_text = true, auto_start = false, animationSpeed = 1.0, always_show_ping = false, hide_debug_crosshair = false, background_color = 1867534416, space_modules = false, always_show_profiler = false, animations = true, fontScale = 1.0, hide_sidebar = true, always_show_tps = false}
+[[modules_right]]
+	color_x = 16733525
+	color_y = 5635925
+	color_z = 5636095
+	name = "coords"
+	name_color = 16733525
+	lines = {chunk_coords = false, player_coords = true, block_coords = false, absolute_velocity = true, velocity = false, chunk_relative_coords = false, horizontal_velocity = true}
+	enabled = true
+[[modules_right]]
+	name = "location"
+	name_color = 43520
+	value_color = 5636095
+	lines = {light = true, biome = true, rotation = false, facing = false, slime_chunk = true, local_difficulty = false, day_ticks = true, days_played = false, dimension = true, highest_block = false, highest_block_server = false, light_server = false}
+	enabled = true
+[[modules_right]]
+	name = "entity"
+	name_color = 16733525
+	value_color = 16777045
+	total_entities_color = 16755200
+	lines = {hybrid_aquatic_critter = false, hybrid_aquatic_miniboss = false, hybrid_aquatic_jelly = false, hybrid_aquatic_crustacean = false, underground_water_creature = false, aether_aether_sky_monster = false, ambient = false, hybrid_aquatic_mammal = false, axolotls = false, aether_aether_aerwhale = false, monster = true, hybrid_aquatic_river_fish = false, hybrid_aquatic_fish = false, hybrid_aquatic_minion = false, entities = true, water_creature = false, hybrid_aquatic_shark = false, aether_aether_surface_monster = false, hybrid_aquatic_cephalopod = false, particles = false, creature = true, water_ambient = false, aether_aether_darkness_monster = false, misc = false}
+	enabled = true
+[[modules_right]]
+	name = "target"
+	name_color = 43775
+	value_color = 16777045
+	lines = {id_fluid = false, fluid_tags = false, block_states = false, targeted_block = true, block_tags = false, id_block = true, nothing = true, nothing2 = false, targeted_fluid = false, targeted_entity = true, fluid_states = false}
+	enabled = true
+
+[[modules_left]]
+	name = "minecraft"
+	name_color = 10506797
+	value_color = 43520
+	lines = {minecraft = true}
+	enabled = true
+[[modules_left]]
+	name = "system"
+	name_color = 16755200
+	value_color = 5636095
+	lines = {opengl_version = false, allocation_rate = false, display = false, java_version = true, gpu_driver = false, memory_usage = true, allocated_memory = true, cpu = true, gpu_utilization = true, time = false, gpu = true}
+	enabled = true
+[[modules_left]]
+	color_high = 5635925
+	color_med = 16777045
+	name = "fps"
+	lines = {fps = true}
+	enabled = true
+	color_low = 16733525
+[[modules_left]]
+	name = "server"
+	name_color = 11184810
+	value_color = 16777045
+	lines = {server_tick = true, packets_sent = false, packets_received = false, tick_manager_status = false}
+	enabled = true
+[[modules_left]]
+	enabled_color = 5635925
+	name = "help"
+	name_color = 16645526
+	value_color = 5636095
+	disabled_color = 16733525
+	lines = {help = true, fps_tps_new = false, ping = false, pie_graph_new = true}
+	enabled = true

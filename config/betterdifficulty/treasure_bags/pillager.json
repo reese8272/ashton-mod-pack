@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rolls": 2,
+  "entries": [
+    {
+      "item": "minecraft:emerald",
+      "weight": 6,
+      "chance": 100.0,
+      "min_count": 2,
+      "max_count": 7
+    },
+    {
+      "item": "minecraft:crossbow",
+      "weight": 2,
+      "chance": 40.0,
+      "min_count": 1,
+      "max_count": 1
+    },
+    {
+      "item": "minecraft:arrow",
+      "weight": 4,
+      "chance": 90.0,
+      "min_count": 4,
+      "max_count": 16
+    }
+  ]
+}

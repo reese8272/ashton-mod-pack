@@ -12,6 +12,8 @@
 # cover this, packwiz has its own ignore file and would otherwise ship it
 /.sync-instance-path
 /.git/
+# locally-assembled server pack; ~500 MB and NOT for players
+/build/
 
 # --- PER-PLAYER SETTINGS: THE KEYBIND FIX -------------------------------------
 # Shipping any of these overwrites each player's own settings on every update.

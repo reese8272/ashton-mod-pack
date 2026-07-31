@@ -45,12 +45,9 @@ CURSEFORGE_ALLOWED = {
     "sophisticatedcore-1.21.1-1.4.80.2194.jar",
 }
 
-# Non-mod files the pack is allowed to write into a player's instance.
-# options.txt must NEVER appear here -- shipping it resets everyone's keybinds.
-ALLOWED_PACK_FILES = {
-    "config/defaultoptions/options.txt",
-    "config/defaultoptions/keybindings.txt",
-}
+# Directory prefixes the pack is allowed to write into a player's instance.
+# Mod configs belong to the pack; per-player files at the instance ROOT do not.
+ALLOWED_PACK_PREFIXES = ("mods/", "config/", "resourcepacks/", "shaderpacks/", "kubejs/")
 
 BANNED_AT_ROOT = {
     "options.txt", "optionsof.txt", "optionsshaders.txt", "servers.dat",
@@ -103,9 +100,9 @@ def main() -> int:
         for path in sorted(indexed):
             if path in BANNED_AT_ROOT:
                 fail(f"{path} is in the index and would overwrite every player's settings")
-            if not path.startswith("mods/") and path not in ALLOWED_PACK_FILES:
-                fail(f"unexpected non-mod file in pack: {path}\n"
-                     f"    add it to .packwizignore, or to ALLOWED_PACK_FILES if intended")
+            if not path.startswith(ALLOWED_PACK_PREFIXES):
+                fail(f"unexpected file in pack: {path}\n"
+                     f"    add it to .packwizignore, or to ALLOWED_PACK_PREFIXES if intended")
 
     # --- check 3: defaults exist and look sane --------------------------------
     kb = PACK / "config/defaultoptions/keybindings.txt"
@@ -124,8 +121,9 @@ def main() -> int:
         for f in failures:
             print(f"  - {f}")
         return 1
+    n_cfg = sum(1 for x in indexed if x.startswith("config/"))
     print(f"pack OK: {len(metas)} mods, {len(cf_found)} CurseForge-sourced, "
-          f"{len(ALLOWED_PACK_FILES)} config files")
+          f"{n_cfg} config files")
     return 0
 
 

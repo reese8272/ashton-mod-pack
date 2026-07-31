@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rolls": 2,
+  "entries": [
+    {
+      "item": "minecraft:echo_shard",
+      "weight": 6,
+      "chance": 100.0,
+      "min_count": 1,
+      "max_count": 3
+    },
+    {
+      "item": "minecraft:sculk_catalyst",
+      "weight": 2,
+      "chance": 55.0,
+      "min_count": 1,
+      "max_count": 1
+    },
+    {
+      "item": "minecraft:diamond",
+      "weight": 2,
+      "chance": 30.0,
+      "min_count": 1,
+      "max_count": 3
+    }
+  ]
+}

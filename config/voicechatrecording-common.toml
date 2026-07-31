@@ -1,0 +1,6 @@
+silenceThreshold = 700
+readingThreadCount = 4
+saveThreadCount = 4
+audioSavingCooldown = 6000
+cacheRemovalTime = 300000
+cacheCheckInterval = 60

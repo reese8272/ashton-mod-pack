@@ -1,0 +1,14 @@
+{
+  "highlightColor": 16766720,
+  "highlightDurationTicks": 100,
+  "nearbyRadius": 16,
+  "highlightOpacityPercent": 35,
+  "nearbyPanelOpacityPercent": 40,
+  "showHighlighter": true,
+  "showDistanceLabel": true,
+  "snapAimToChest": false,
+  "showLocateTrail": true,
+  "locateTrailParticle": "WATER_EVAPORATION",
+  "nearbyPanelOpenByDefault": true,
+  "autoRefreshTicks": 20
+}

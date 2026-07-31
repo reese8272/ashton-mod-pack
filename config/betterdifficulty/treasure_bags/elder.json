@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "rolls": 2,
+  "entries": [
+    {
+      "item": "minecraft:netherite_scrap",
+      "weight": 1,
+      "chance": 35.0,
+      "min_count": 1,
+      "max_count": 2
+    },
+    {
+      "item": "minecraft:enchanted_golden_apple",
+      "weight": 1,
+      "chance": 15.0,
+      "min_count": 1,
+      "max_count": 1
+    },
+    {
+      "item": "minecraft:diamond",
+      "weight": 4,
+      "chance": 100.0,
+      "min_count": 2,
+      "max_count": 6
+    },
+    {
+      "item": "minecraft:experience_bottle",
+      "weight": 5,
+      "chance": 85.0,
+      "min_count": 2,
+      "max_count": 8
+    }
+  ]
+}

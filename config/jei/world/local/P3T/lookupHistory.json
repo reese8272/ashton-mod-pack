@@ -1,0 +1,10 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"smallships:oak_cog"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"upgrade_aquatic:luminous_prismarine"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"upgrade_aquatic:scute_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"fishermens_trap:fishtrap"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"starcatcher:starcatcher_rod"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"starcatcher:bobber"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"starcatcher:starcatcher_twine"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

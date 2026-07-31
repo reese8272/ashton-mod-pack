@@ -1,0 +1,27 @@
+{
+  "rain": {
+    "density": 0.504,
+    "size": 1.0,
+    "renderType": "BLENDED"
+  },
+  "heavy_dust": {},
+  "splatter": {},
+  "smoke": {},
+  "streak": {},
+  "mist": {
+    "enabled": false
+  },
+  "shrub": {},
+  "snow_haze": {},
+  "mist_after_rain": {
+    "enabled": false
+  },
+  "ripple": {},
+  "rain_haze": {},
+  "snow": {
+    "opacity": 0.75,
+    "size": 1.0
+  },
+  "dust": {},
+  "dust_haze": {}
+}

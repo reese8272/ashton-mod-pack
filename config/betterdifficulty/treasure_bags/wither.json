@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rolls": 2,
+  "entries": [
+    {
+      "item": "minecraft:nether_star",
+      "weight": 1,
+      "chance": 75.0,
+      "min_count": 1,
+      "max_count": 1
+    },
+    {
+      "item": "minecraft:blaze_rod",
+      "weight": 5,
+      "chance": 100.0,
+      "min_count": 2,
+      "max_count": 6
+    },
+    {
+      "item": "minecraft:coal",
+      "weight": 4,
+      "chance": 90.0,
+      "min_count": 4,
+      "max_count": 16
+    }
+  ]
+}

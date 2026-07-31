@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rolls": 2,
+  "entries": [
+    {
+      "item": "minecraft:prismarine_crystals",
+      "weight": 6,
+      "chance": 100.0,
+      "min_count": 2,
+      "max_count": 5
+    },
+    {
+      "item": "minecraft:sponge",
+      "weight": 2,
+      "chance": 50.0,
+      "min_count": 1,
+      "max_count": 2
+    },
+    {
+      "item": "minecraft:nautilus_shell",
+      "weight": 3,
+      "chance": 70.0,
+      "min_count": 1,
+      "max_count": 2
+    }
+  ]
+}

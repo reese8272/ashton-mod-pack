@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rolls": 2,
+  "entries": [
+    {
+      "item": "minecraft:dragon_breath",
+      "weight": 5,
+      "chance": 100.0,
+      "min_count": 1,
+      "max_count": 3
+    },
+    {
+      "item": "minecraft:ender_pearl",
+      "weight": 5,
+      "chance": 100.0,
+      "min_count": 3,
+      "max_count": 8
+    },
+    {
+      "item": "minecraft:obsidian",
+      "weight": 2,
+      "chance": 55.0,
+      "min_count": 4,
+      "max_count": 12
+    }
+  ]
+}
