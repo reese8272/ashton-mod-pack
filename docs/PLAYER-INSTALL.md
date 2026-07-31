@@ -85,6 +85,27 @@ The pack includes a 456 MB animated intro video, **off by default** because it's
 
 ## Troubleshooting
 
+**Am I actually up to date?** Check whether
+`minecraft/mods/lithostitched-1.7.13-neoforge-21.1.jar` exists in your instance
+folder. If it does, the auto-update is working. If it doesn't, updates are not
+reaching you — see the next entry, and fix that before anything else.
+
+**Prism shows an error before Minecraft opens** — e.g. `Unable to access
+jarfile`, or "pre-launch command failed". The auto-updater never ran, so you are
+still on whatever version you first installed and **relaunching will keep
+reproducing the same crash forever**. Two causes, both in step 3–4 above:
+
+- `packwiz-installer-bootstrap.jar` is in the instance root instead of the
+  `minecraft/` subfolder. It belongs next to `mods/`, not next to `instance.cfg`.
+- The pre-launch command omits `$INST_MC_DIR`. Re-copy it exactly as written in
+  step 4 — an earlier version of these instructions was missing it.
+
+**Crash mentioning `[DRIPPY LOADING SCREEN] Custom loading overlay class
+missing!`** — this is almost never Drippy. It's what the game dies on whenever
+mod loading aborts for any reason. Send `minecraft/logs/latest.log` **as a text
+file** (not a screenshot) and the real error will be roughly 100 lines above
+that line.
+
 **"Hash invalid" on launch** — a pack file didn't match its checksum. Usually
 transient; relaunch. If it persists, report it: someone likely committed a stale
 index.

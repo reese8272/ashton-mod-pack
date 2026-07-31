@@ -1,7 +1,7 @@
 # LEFT OFF
 
-**Last updated:** 2026-07-31 · **Branch:** `claude/left-off-next-steps-100u03` · **Working tree:** clean
-**Latest release:** `v1.5.1` · **Fix pending release:** `v1.5.2` · **CI:** green
+**Last updated:** 2026-07-31 · **Branch:** `claude/prism-loading-error-ywy86x` · **Working tree:** clean
+**Latest release:** `v1.5.2` (published 20:40 UTC, `.mrpack` attached) · **CI:** green
 
 > Entry point only. The canonical docs are in `docs/` — see POINTERS. Don't duplicate them here.
 
@@ -13,18 +13,50 @@
 
 That last part is the whole reason this project exists. Everything else is built and working.
 
-**Status:** v1.5.1 still crashed. A **text** log was captured this time and the real cause was a second, unrelated bug hiding under the same loud Drippy error — exactly what step 2 below warned about. Fixed on branch `claude/left-off-next-steps-100u03`, **not yet merged or released**.
+**Status:** v1.5.2 is **merged to `main` and released** — both known crash causes are fixed and shipped. **No launch has been confirmed successful yet**, and a fresh "error loading on Prism" report came in after the release with no log attached. The pack itself was re-assessed and is clean (see AUDIT below), so the next move is identifying *which* failure he is seeing, not changing the pack.
 
 **The v1.5.1 bug.** Lithostitched was labelled `side = "server"`, so it never reached the client — but Terralith and Regions Unexplored both require it, and NeoForge aborts mod loading when a mandatory dependency is missing. Mod loading aborting is *why* Drippy's overlay class was missing; the Drippy exception was a symptom both times, from two different causes. Full write-up in `docs/DECISIONS.md`.
 
 ### → NEXT ACTION
 
-1. **Merge the branch and tag `v1.5.2`.** `pack.toml` is already bumped; CI publishes the `.mrpack` on the tag. Clients on the pre-launch command pick up `main` on next launch and do not need the release.
-2. **Ashton relaunches Prism.** No reinstall needed if his pre-launch command runs — it worked correctly in the v1.5.1 log, pulling all 741 files.
-3. **If it still crashes** — get `minecraft/logs/latest.log` as **text** again, and read past the exception. Both crashes so far ended in the same `[DRIPPY LOADING SCREEN] Custom loading overlay class missing!`, and neither was caused by Drippy. The real error was ~100 lines above it, in a `ModSorter/LOADING` or config-parse line.
+1. **Find out which of three failures he has.** They look similar from the outside and have different fixes. Ask for the error text, then match:
+
+   | What he sees | What it is | Fix |
+   |---|---|---|
+   | Prism error dialog *before* MC opens, e.g. `Unable to access jarfile` / pre-launch command failed | packwiz-installer never ran — so he has **never received any fix**, and every relaunch reproduces the same old crash | `docs/PLAYER-INSTALL.md` §Troubleshooting — jar goes in `minecraft/`, command uses `$INST_MC_DIR` |
+   | MC starts, dies at `[DRIPPY LOADING SCREEN] Custom loading overlay class missing!` | mod loading aborted for *some* reason — **Drippy is never the cause** | read ~100 lines above it for the first `ERROR` |
+   | Launches fine, kicked on join with "mod mismatch" | a bad `side` label | `docs/side-review.md` §14 server-labelled mods |
+
+   **Fastest single question:** does `minecraft/mods/lithostitched-1.7.13-neoforge-21.1.jar` exist in his instance? Present ⇒ he is on v1.5.2 and the pre-launch command works. Absent ⇒ row 1, and nothing else matters until that is fixed.
+2. **Ashton relaunches Prism.** No reinstall needed *if* his pre-launch command runs — it worked in the v1.5.1 log, pulling all 741 files. Note the v1.5.2 `.mrpack` has **0 downloads**, so he is on the `main` auto-update path, not the release.
+3. **If it still crashes** — get `minecraft/logs/latest.log` as **text** again, and read past the exception. Both crashes so far ended in the same Drippy error and neither was caused by Drippy. The real error was ~100 lines above it, in a `ModSorter/LOADING` or config-parse line.
 4. **Once it launches** — join `169.155.120.28:9155`. A "mod mismatch" kick means a bad `side` label; send the full kick message. `docs/side-review.md` now lists the 14 `server`-labelled mods and which are most likely to cause exactly that.
 5. **Then the real test:** have him change one keybind, then push any trivial change to `main`, then have him relaunch. **His keybind must survive.** That is the acceptance criterion for the whole project.
 6. **Then finish the loose ends** in OPEN ITEMS below.
+
+---
+
+## AUDIT — 2026-07-31, post-v1.5.2
+
+Run against `main` after a fresh "error loading on Prism" report. **Everything
+checkable from the repo passed**, so the pack is not currently broken in any way
+that can be seen without a log.
+
+| Check | Result |
+|---|---|
+| `pack.toml` index hash vs `index.toml` | match |
+| All 741 indexed files vs their recorded hashes | 741/741 match, 0 missing |
+| `verify_pack.py` (all 5 checks) | pass — 257 mods, 14 CurseForge, 484 config |
+| CI on `main` and on tag `v1.5.2` | both green |
+| `v1.5.2` release + `.mrpack` asset | published 20:40 UTC, 22 MB, attached |
+| Shipped config referencing unshipped files | only Drippy's own placeholders (below) |
+
+**Not checkable here:** whether any of the 14 `server`-labelled mods is a
+mandatory dependency of a client mod — the same shape as the v1.5.1 bug. That
+needs the mods' `neoforge.mods.toml`, and Modrinth/CurseForge CDNs are blocked
+from the CI-style sandbox this ran in. The v1.5.1 log partially settles it:
+NeoForge enumerates *all* missing mandatory dependencies before aborting and
+named only Lithostitched. See `docs/side-review.md`.
 
 ---
 
@@ -32,7 +64,7 @@ That last part is the whole reason this project exists. Everything else is built
 
 Verified, don't re-investigate:
 
-- **Pack builds and releases.** 257 mods, 484 config files. CI runs `verify_pack.py` + an mrpack override check on every push; tags publish a `.mrpack` to a GitHub Release. Green on v1.5.1.
+- **Pack builds and releases.** 257 mods, 484 config files. CI runs `verify_pack.py` + an mrpack override check on every push; tags publish a `.mrpack` to a GitHub Release. Green on v1.5.2.
 - **All 256 original mods resolved.** 241 via Modrinth SHA1, 15 via CurseForge (no API key needed). Zero unintended version drift — verified by diffing pack metadata against the source instance.
 - **Side split works** *for startup* — a client now loads with every mandatory dependency present. client=66, server=14, both=177. Client download ~1.15 GB, server ~459 MB. Join-time registry parity is still unproven; see `docs/side-review.md`.
 - **Server is live and running.** BisectHosting, MC 1.21.1 + NeoForge 21.1.234, Java 21, 191 mods uploaded and extracted, `server.properties` configured.
@@ -97,6 +129,18 @@ Verified, don't re-investigate:
 
 ## OPEN ITEMS
 
+- **`config/drippyloadingscreen/options.txt` points its early-loading textures at
+  `/config/fancymenu/assets/some_*.png`, which the pack does not ship.** These are
+  Drippy's own factory-default placeholder values, present in every Drippy install,
+  so they are almost certainly handled gracefully — *but* the same file class,
+  reading a missing path in the same early-loading module, is exactly what killed
+  the JVM in v1.5.0. Unverified either way; `verify_pack.py` only guards the
+  specific `reimaginedintro` path. **Do not remove the file on a guess** — check it
+  only if a Drippy early-loading crash recurs on v1.5.2 or later.
+- **`config/fancymenu/user_variables.db` and `video_element_controller_metas.json`
+  are runtime state, not settings** (a counter and a generated element UUID).
+  Harmless, but they are the kind of file that should probably be in
+  `.packwizignore`. Low priority.
 - **`servers.dat` not shipped yet.** Once confirmed working, capture it via `/defaultoptions saveAll` and commit so the server auto-appears in players' multiplayer lists (`docs/SERVER-SETUP.md` §8).
 - **Ashton not yet added as a panel sub-user** (`docs/SERVER-SETUP.md` §7).
 - **`sync_from_instance.py` commit-and-push path is untested.** The plan, the safety guard, and `--additions-only` are verified; there was never a real change to sync. First live run should use `--dry-run`.
