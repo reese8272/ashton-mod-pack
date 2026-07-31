@@ -69,3 +69,9 @@
 # --- Distant Horizons LOD databases (per-world, can reach many GB) ------------
 **/data/DistantHorizons.sqlite*
 /data/
+
+# --- Python bytecode -----------------------------------------------------------
+# packwiz reads THIS file, not .gitignore. verify_pack.py imports apply_sides, so
+# running it leaves scripts/__pycache__ behind; it must never reach a player.
+**/__pycache__/
+*.pyc

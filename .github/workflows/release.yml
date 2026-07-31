@@ -47,7 +47,12 @@ jobs:
         run: python3 scripts/verify_pack.py
 
       - name: Export Modrinth pack
-        run: packwiz modrinth export -o "terra-aeterna-${GITHUB_REF_NAME:-dev}.mrpack"
+        # GITHUB_REF_NAME is "1/merge" on pull_request events, and the slash makes
+        # packwiz try to write into a directory that does not exist. Tag and
+        # branch runs never hit this, so it sat unnoticed until the first PR.
+        run: |
+          ref="${GITHUB_REF_NAME:-dev}"
+          packwiz modrinth export -o "terra-aeterna-${ref//\//-}.mrpack"
 
       - name: Verify export contains no unexpected overrides
         run: |

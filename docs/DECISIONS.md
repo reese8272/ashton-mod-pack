@@ -83,6 +83,10 @@ and only recently re-verified, so it is a starting point, not an authority.
 download 459 MB; the server skips 691 MB of client-only mods. The 40 mods whose
 metadata did not settle the question are listed in `docs/side-review.md`.
 
+**Superseded in part** — "Modrinth says the opposite side is unsupported" turned
+out not to be sufficient on its own. See *A mod's own environment metadata does
+not cover who depends on it* below.
+
 ---
 
 ## 2026-07-31 — The 456 MB intro video is opt-in, not bundled
@@ -193,6 +197,43 @@ reliable signal that the instance really is this pack.
 
 Caught by dry-running against the source instance, where it proposed reverting
 three intentional upgrades and deleting Default Options.
+
+---
+
+## 2026-07-31 — A mod's own environment metadata does not cover who depends on it
+
+**Decision.** A mod may not be labelled `server` if any client-shipped mod
+declares it a *mandatory* dependency, whatever its Modrinth environment metadata
+says. The exceptions are listed in `CLIENT_REQUIRED_DEPS` in
+`scripts/apply_sides.py` and enforced by `verify_pack.py`.
+
+**Why.** Modrinth's `client_side`/`server_side` fields describe what *that mod*
+does. They say nothing about who needs it present. Lithostitched is a worldgen
+library with genuinely no client behaviour, so its author correctly declares
+`client: unsupported` — and the rule above dutifully labelled it `server`. But
+Terralith and Regions Unexplored both list it as a required dependency in their
+`neoforge.mods.toml`, and NeoForge refuses to load a mod whose mandatory
+dependency is absent. Every v1.5.1 client died at startup.
+
+**Why it was hard to see.** The fatal error names the *dependency*, not the mod
+that broke, and it is not the crash the launcher reports:
+
+```
+ModSorter/LOADING: Missing or unsupported mandatory dependencies:
+    Mod ID: 'lithostitched', Requested by: 'terralith' ...
+ConnectorEarlyLoader: Skipping early mod setup due to previous error
+...
+Caused by: java.lang.IllegalStateException:
+    [DRIPPY LOADING SCREEN] Custom loading overlay class missing!
+```
+
+Mod loading aborts, so Drippy's overlay class is never registered, and the
+process dies on a `ClassNotFoundException` naming Drippy. Both v1.5.0 and v1.5.1
+therefore crashed with a loud Drippy error at the bottom of the log, from two
+completely unrelated causes. Reading only the exception reproduces the v1.5.0
+diagnosis and misses this entirely — the real error is ~100 lines above it.
+
+**Fixed in v1.5.2** by relabelling Lithostitched `both`.
 
 ---
 
