@@ -12,6 +12,9 @@ is needed to just play.
 **Updating the pack: see [docs/ASHTON-GUIDE.md](docs/ASHTON-GUIDE.md)** — the
 step-by-step version of everything on this page.
 
+**Picking up where work stopped: see [LEFT_OFF.md](LEFT_OFF.md)** — current
+state, next actions, and open items.
+
 ---
 
 ## Layout

@@ -4,6 +4,7 @@
 
 # --- Repo files that are not part of the pack ---------------------------------
 /README.md
+/LEFT_OFF.md
 /LICENSE
 /docs/
 /.github/
