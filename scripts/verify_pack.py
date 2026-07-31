@@ -3,7 +3,7 @@
 
     python3 scripts/verify_pack.py
 
-Exists because two real bugs shipped past a filename-level check on 2026-07-31:
+Exists because three real bugs shipped past a filename-level check:
 
   1. `packwiz curseforge add X` also adds X's dependencies FROM CURSEFORGE,
      silently re-pointing mods that already came from Modrinth. Filenames were
@@ -13,13 +13,20 @@ Exists because two real bugs shipped past a filename-level check on 2026-07-31:
   2. A local machine-path file was shipping to players, because it was listed in
      .gitignore and packwiz reads .packwizignore.
 
-Neither could break gameplay, but neither was visible without opening the export.
+  3. A worldgen library was labelled server-only on the mod author's own
+     Modrinth metadata, but two client mods declared it a required dependency.
+     Every client failed to load, and the visible error named an unrelated mod.
+
+The first two could not break gameplay, but neither was visible without opening
+the export. The third crashed every client on startup.
 """
 from __future__ import annotations
 
 import pathlib
 import re
 import sys
+
+from apply_sides import CLIENT_REQUIRED_DEPS
 
 PACK = pathlib.Path(__file__).resolve().parent.parent
 FILENAME_RE = re.compile(r'^filename\s*=\s*"(.*)"\s*$', re.M)
@@ -133,6 +140,25 @@ def main() -> int:
 
     if (PACK / "options.txt").exists():
         fail("options.txt exists at the pack root -- it must never be committed")
+
+    # --- check 5: client-required dependencies are not labelled server-only ---
+    # NeoForge refuses to load a mod whose mandatory dependency is missing, and
+    # the error it prints names the dependency, not the mod that broke -- the
+    # crash surfaces later as something unrelated. See CLIENT_REQUIRED_DEPS in
+    # apply_sides.py for why Modrinth's own metadata does not settle this.
+    seen_deps = set()
+    for meta in metas:
+        if meta.name not in CLIENT_REQUIRED_DEPS:
+            continue
+        seen_deps.add(meta.name)
+        sm = SIDE_RE.search(meta.read_text(encoding="utf-8"))
+        if sm and sm.group(1) == "server":
+            fail(f'{meta.name}: labelled side="server" but it is '
+                 f"{CLIENT_REQUIRED_DEPS[meta.name]}\n"
+                 f'    the client will not load without it -- set side = "both"')
+    for stale in sorted(set(CLIENT_REQUIRED_DEPS) - seen_deps):
+        notes.append(f"CLIENT_REQUIRED_DEPS lists {stale}, which is no longer in "
+                     f"the pack -- drop the entry if the mod was removed on purpose")
 
     for n in notes:
         print(f"note: {n}")

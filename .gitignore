@@ -5,6 +5,10 @@
 # packwiz local cache
 .packwizcache/
 
+# Python bytecode — verify_pack.py imports apply_sides, so running it writes this
+__pycache__/
+*.pyc
+
 # OS noise
 .DS_Store
 Thumbs.db
