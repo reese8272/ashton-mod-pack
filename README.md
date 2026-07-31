@@ -32,6 +32,42 @@ the commit that caused it.
 
 ---
 
+## The easy way to publish changes
+
+Edit your Prism instance the way you normally do — drop jars in `mods/`, tweak
+configs — then run one command:
+
+```bash
+python3 scripts/sync_from_instance.py
+```
+
+It works out what changed, shows you the plan, asks for confirmation, then
+commits and pushes. Players get it on their next launch.
+
+First run only, tell it where your instance is (it remembers after that):
+
+```bash
+python3 scripts/sync_from_instance.py "C:/Users/you/AppData/Roaming/PrismLauncher/instances/Terra Aeterna/minecraft"
+```
+
+| flag | effect |
+|---|---|
+| `--dry-run` | show the plan, change nothing |
+| `--yes` | skip the confirmation prompt |
+| `--no-push` | commit locally, don't push |
+| `--additions-only` | never remove mods, only add |
+
+**Your instance must be an installed copy of the pack**, i.e. set up per
+[docs/PLAYER-INSTALL.md](docs/PLAYER-INSTALL.md). The script refuses to run
+otherwise, because on an unrelated instance its "removals" would be every pack
+mod that instance simply never had.
+
+Keybinds, settings, saves, and screenshots are never synced — see
+`.packwizignore`. To change the pack's *default* keybinds, edit them in-game,
+then run `scripts/build_default_options.py`.
+
+---
+
 ## Editing the pack
 
 Install [packwiz](https://github.com/packwiz/packwiz):
@@ -101,7 +137,7 @@ Modrinth App, ATLauncher, or CurseForge.
 ## Server
 
 ```bash
-packwiz-installer -s server https://raw.githubusercontent.com/<org>/<repo>/main/pack.toml
+packwiz-installer -s server https://raw.githubusercontent.com/reese8272/ashton-mod-pack/main/pack.toml
 ```
 
 Installs only the 176 server-relevant mods, skipping ~691 MB of client-only

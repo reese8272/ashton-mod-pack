@@ -1,6 +1,7 @@
 name = "Sable"
 filename = "sable-neoforge-1.21.1-2.0.3.jar"
 side = "both"
+
 [download]
 url = "https://cdn.modrinth.com/data/T9PomCSv/versions/1L6XJqnY/sable-neoforge-1.21.1-2.0.3.jar"
 hash-format = "sha512"

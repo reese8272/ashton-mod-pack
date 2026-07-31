@@ -20,7 +20,7 @@ the whole gigabyte.
    tick **Custom commands**, and paste into **Pre-launch command**:
 
    ```
-   "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://raw.githubusercontent.com/<org>/<repo>/main/pack.toml
+   "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://raw.githubusercontent.com/reese8272/ashton-mod-pack/main/pack.toml
    ```
 
 That's it. Launch normally; updates arrive on their own.

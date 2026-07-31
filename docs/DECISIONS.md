@@ -122,6 +122,80 @@ taken verbatim from the upstream example pack.
 
 ---
 
+## 2026-07-31 — No CurseForge API key needed
+
+**Decision.** Resolve the non-Modrinth mods with `packwiz curseforge add`, no key.
+
+**Why.** Tested directly: it resolves projects and their dependencies with no
+credentials. Getting a key is not self-serve anyway — it is an application form
+reviewed and approved by Overwolf, then emailed, so it would have blocked work
+for days.
+<https://support.curseforge.com/support/solutions/articles/9000208346-about-the-curseforge-api-and-how-to-apply-for-a-key>
+
+**Caveat that cost real time.** CurseForge has no hash lookup, so mods are found
+by *search*, and `-y` silently accepts the first hit. Two searches matched the
+wrong project entirely — `"immersive thunder"` returned an AmbientSounds resource
+pack (a `.zip`, filed under `resourcepacks/`), and `"copycat aeronautics sails"`
+returned `aerocopycats`. Both were caught only because every add is verified
+against the instance's actual jar filename. **Never add from CurseForge without
+checking the resulting filename.** Searching the mod's `modId` from its
+`neoforge.mods.toml` proved far more reliable than guessing a slug.
+
+**Result.** All 15 resolved; 13 to the exact version the instance ships. No
+GitHub Release hosting was needed after all.
+
+---
+
+## 2026-07-31 — Three mods deliberately taken at latest
+
+**Decision.** Accept newer versions than the instance for:
+
+| mod | instance | pack |
+|---|---|---|
+| cupboard | 3.8 | 3.9 |
+| sophisticatedbackpacks | 3.25.71.1997 | 3.25.73.2020 |
+| sophisticatedcore | 1.4.77.2173 | 1.4.80.2194 |
+
+**Why.** CurseForge cannot be queried by file hash, so pinning exact versions
+would mean hand-collecting file IDs. All three are patch bumps within the same
+major version of actively-maintained mods, and the pack is being play-tested
+anyway. Approved by the pack owner.
+
+**Risk.** Sophisticated Backpacks and Core must move together — they are a
+matched pair, and packwiz pulled Core as a dependency of Backpacks, so they are
+consistent. Verify in-game that existing backpack inventories load before
+shipping to players.
+
+---
+
+## 2026-07-31 — Intro video ships enabled by default
+
+**Decision.** `reimagined-intro` is `optional = true, default = true` (reversed
+from the initial call).
+
+**Why.** The pack author considers it a signature part of the pack. Keeping it
+optional-but-on also behaves better across launchers: default-on installs
+reliably everywhere, whereas opt-*in* only has a clean selection UI on the
+packwiz-installer path. Players who care about the 456 MB can untick it.
+
+---
+
+## 2026-07-31 — sync_from_instance refuses to run on an unmanaged instance
+
+**Decision.** The sync script hard-refuses unless the instance contains
+`packwiz.json`, unless `--additions-only` or `--dry-run` is passed.
+
+**Why.** The script treats the instance as truth. Pointed at an instance that is
+*not* an installed copy of the pack, its "removed" set is every pack mod that
+instance happens to lack — so a routine sync would silently delete most of the
+pack. `packwiz.json` is written by packwiz-installer, so its presence is a
+reliable signal that the instance really is this pack.
+
+Caught by dry-running against the source instance, where it proposed reverting
+three intentional upgrades and deleting Default Options.
+
+---
+
 ## OPEN — Hosting provider not yet chosen
 
 Oracle Cloud Always Free is **ruled out**, but the replacement is not picked; it

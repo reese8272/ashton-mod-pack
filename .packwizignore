@@ -8,6 +8,10 @@
 /docs/
 /.github/
 /scripts/
+# local machine path remembered by sync_from_instance.py -- .gitignore does not
+# cover this, packwiz has its own ignore file and would otherwise ship it
+/.sync-instance-path
+/.git/
 
 # --- PER-PLAYER SETTINGS: THE KEYBIND FIX -------------------------------------
 # Shipping any of these overwrites each player's own settings on every update.

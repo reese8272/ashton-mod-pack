@@ -2,12 +2,13 @@ name = "Reimagined Intro"
 filename = "reimagined-intro-1.0.0.jar"
 side = "client"
 
-# 456 MB - 40% of the entire client download, for a startup animation.
-# Offered as opt-in so first install is ~690 MB instead of ~1.15 GB.
+# 456 MB - 40% of the client download, for a startup animation. Kept ON by
+# default at the pack author's request; players who care more about install
+# size than the intro can untick it. Opting out saves ~456 MB.
 [option]
 optional = true
-default = false
-description = "Custom animated intro video (456 MB). Purely cosmetic - skip it for a much faster first install."
+default = true
+description = "Custom animated intro video. Adds ~456 MB to the download - untick it if you want a much faster install."
 
 [download]
 url = "https://cdn.modrinth.com/data/BsnF5g7E/versions/pBwAXYJm/reimagined-intro-1.0.0.jar"

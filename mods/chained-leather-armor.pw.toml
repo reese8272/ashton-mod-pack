@@ -1,0 +1,13 @@
+name = "S&C Leather Armors"
+filename = "SC_Leather_Armors-4.4.2-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "eb77d69a04690c0122c53193531bbe56bc998531"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8219401
+project-id = 1456887
