@@ -18,6 +18,18 @@ That last part is the whole reason this project exists. Everything else is built
 
 **Status:** v1.5.2 is **merged to `main` and released** — both known crash causes are fixed and shipped. **No launch has been confirmed successful yet**, and a fresh "error loading on Prism" report came in after the release with no log attached. The pack itself was re-assessed and is clean (see AUDIT below), so the next move is identifying *which* failure he is seeing, not changing the pack.
 
+**2026-08-02 update:** a full production assessment ran (`docs/assessment/REPORT.md`)
+and its top findings are fixed on this branch: 15 runtime-state files purged from
+`config/` (incl. spark's file carrying Ashton's name/UUID) with the class now
+banned by `verify_pack.py`; the 8 content-registering `server` mods relabelled
+`both` (join-kick prevention; server set unchanged); `sync_from_instance.py`'s
+two silent-deletion bugs fixed with regression tests in `tests/`; CI release
+deps pinned; whitelist documented as mandatory. See `docs/DECISIONS.md`
+2026-08-02 entries. **Also verified today: a fresh headless client install from
+the live GitHub URL succeeded end-to-end (741/741 files)** — the distribution
+chain works; Ashton's failure is local to his instance setup until a log proves
+otherwise.
+
 **The v1.5.1 bug.** Lithostitched was labelled `side = "server"`, so it never reached the client — but Terralith and Regions Unexplored both require it, and NeoForge aborts mod loading when a mandatory dependency is missing. Mod loading aborting is *why* Drippy's overlay class was missing; the Drippy exception was a symptom both times, from two different causes. Full write-up in `docs/DECISIONS.md`.
 
 ### → NEXT ACTION
@@ -67,9 +79,9 @@ named only Lithostitched. See `docs/side-review.md`.
 
 Verified, don't re-investigate:
 
-- **Pack builds and releases.** 257 mods, 484 config files. CI runs `verify_pack.py` + an mrpack override check on every push; tags publish a `.mrpack` to a GitHub Release. Green on v1.5.2.
+- **Pack builds and releases.** 257 mods, 465 config files (484 until the 2026-08-02 runtime-state purge). CI runs `verify_pack.py` + an mrpack override check on every push; tags publish a `.mrpack` to a GitHub Release. Green on v1.5.2.
 - **All 256 original mods resolved.** 241 via Modrinth SHA1, 15 via CurseForge (no API key needed). Zero unintended version drift — verified by diffing pack metadata against the source instance.
-- **Side split works** *for startup* — a client now loads with every mandatory dependency present. client=66, server=14, both=177. Client download ~1.15 GB, server ~459 MB. Join-time registry parity is still unproven; see `docs/side-review.md`.
+- **Side split works** *for startup* — a client now loads with every mandatory dependency present. client=66, server=6, both=185 (the 8 content-registering server mods moved to `both` on 2026-08-02 to de-risk the first join; server set unchanged at 191). See `docs/side-review.md`.
 - **Server is live and running.** BisectHosting, MC 1.21.1 + NeoForge 21.1.234, Java 21, 191 mods uploaded and extracted, `server.properties` configured.
 - **`options.txt` is structurally impossible to ship.** Excluded in `.packwizignore`, and `verify_pack.py` fails the build if it appears. Defaults ride in `config/defaultoptions/` (233 keybinds) and apply first-launch-only.
 - **The source instance was never modified.** All work happened in this repo. `~/Terra Aeterna 1.5 Complete (7-22-2026)/` is untouched and remains a fallback.
@@ -96,8 +108,7 @@ Verified, don't re-investigate:
 | Minecraft / loader | `1.21.1` / NeoForge `21.1.234` / Java 21 Adoptium |
 | Server address | `169.155.120.28:9155` |
 | Host | BisectHosting BisectOne 8 GB, Starbase panel |
-| SFTP host / user | `gamesnj1104.bisecthosting.com:2022` / `reesel1206356.830e77c3` |
-| SFTP password | the BisectHosting panel password — **not stored in this repo, never commit it** |
+| SFTP | host, user, and password all live in the BisectHosting panel — **none of them belong in this public repo** (host/user were redacted from here 2026-08-02) |
 | Source instance | `~/Terra Aeterna 1.5 Complete (7-22-2026)/minecraft` |
 | Server pack artifact | `build/server-pack.zip` (~478 MB, gitignored — rebuild, don't commit) |
 | Issue log entry | `ISSUE-2026-07-31-01` in `~/.claude/ISSUES_LOG.md` |
@@ -140,16 +151,24 @@ Verified, don't re-investigate:
   the JVM in v1.5.0. Unverified either way; `verify_pack.py` only guards the
   specific `reimaginedintro` path. **Do not remove the file on a guess** — check it
   only if a Drippy early-loading crash recurs on v1.5.2 or later.
-- **`config/fancymenu/user_variables.db` and `video_element_controller_metas.json`
-  are runtime state, not settings** (a counter and a generated element UUID).
-  Harmless, but they are the kind of file that should probably be in
-  `.packwizignore`. Low priority.
+- ~~`config/fancymenu/user_variables.db` and `video_element_controller_metas.json`~~
+  **DONE 2026-08-02** — both removed, along with 13 more files of the same
+  runtime-state class the assessment found; `verify_pack.py` now bans the class.
 - **`servers.dat` not shipped yet.** Once confirmed working, capture it via `/defaultoptions saveAll` and commit so the server auto-appears in players' multiplayer lists (`docs/SERVER-SETUP.md` §8).
-- **Ashton not yet added as a panel sub-user** (`docs/SERVER-SETUP.md` §7).
-- **`sync_from_instance.py` commit-and-push path is untested.** The plan, the safety guard, and `--additions-only` are verified; there was never a real change to sync. First live run should use `--dry-run`.
+- ~~Ashton not yet added as a panel sub-user~~ **DONE 2026-08-02** — added with
+  all permissions; he can upload server updates and use the console himself.
+- **`sync_from_instance.py` commit-and-push path has never run live** (there was
+  never a real change to sync). Its two silent-deletion bugs (server-side mods
+  diffed against a client instance; version bumps unlinking the updated meta)
+  were fixed 2026-08-02 with regression tests in `tests/`. First live run should
+  still use `--dry-run`.
 - **3 mods deliberately taken at latest** — cupboard 3.9, sophisticatedbackpacks 3.25.73, sophisticatedcore 1.4.80. **Confirm existing backpack inventories load in-game.**
 - **55 mods in `docs/side-review.md`** are labelled `both` pending review. Safe as-is; relabelling only trims the server download. Explicitly deprioritised.
-- **The 14 `server`-labelled mods have only been checked one way.** Their own metadata says the client does not need them; nobody has checked whether the client needs them to *join*. Proven not to block startup (NeoForge lists every missing mandatory dependency and named only Lithostitched). Now tabulated at the bottom of `docs/side-review.md`. Resolve if a mismatch kick appears.
+- ~~The 14 `server`-labelled mods have only been checked one way.~~ **RESOLVED
+  2026-08-02** — the 8 content-registering candidates were relabelled `both`
+  (join-kick prevention; costs a few MB of client download, server set
+  unchanged). Only 6 pure-behaviour mods remain `server`; see
+  `docs/side-review.md`.
 - **~910 MB of regenerable intro cache still on Ashton's disk** (`config/fancymenu/assets`, `fancymenu_data/fancymenu_temp`). Safe to delete, his call — nothing has been deleted from his machine.
 
 ---

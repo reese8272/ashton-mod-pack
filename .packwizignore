@@ -9,6 +9,13 @@
 /docs/
 /.github/
 /scripts/
+/tests/
+# Claude Code project tooling and linter caches — packwiz does NOT default-ignore
+# dotdirs (verified against packwiz core/index.go ignoreDefaults, 2026-08-02)
+/.claude/
+/.mypy_cache/
+/.ruff_cache/
+/.pytest_cache/
 # local machine path remembered by sync_from_instance.py -- .gitignore does not
 # cover this, packwiz has its own ignore file and would otherwise ship it
 /.sync-instance-path
@@ -49,6 +56,23 @@
 /crash-reports/
 /debug/
 /.mixin.out/
+
+# --- RUNTIME STATE UNDER config/ ----------------------------------------------
+# Mods rewrite these while the game runs; shipping them pushes one player's
+# state onto everyone and permanently diverges from the indexed hash.
+# verify_pack.py bans this whole class (BANNED_CONFIG_*).
+/config/spark/activity.json
+/config/spark/tmp/
+/config/spark/tmp-client/
+/config/bountiful/errors.log
+/config/fancymenu/user_variables.db
+/config/fancymenu/video_element_controller_metas.json
+/config/fancymenu/layout_editor/
+/config/jei/world/
+/config/inventoryprofilesnext/New World/
+/config/inventoryprofilesnext/P3T/
+/config/voicechat/category-volumes.properties
+*.bak
 
 # --- REGENERABLE CACHES -------------------------------------------------------
 # These are rebuilt at runtime. fancymenu_temp alone is ~455 MB of decoded

@@ -1,0 +1,8 @@
+{
+  "ruff_issues": 0,
+  "mypy_errors": 0,
+  "coverage_line_rate": 0.0,
+  "bandit_high": 1,
+  "bandit_medium": 2,
+  "pip_audit_vulns": 104
+}

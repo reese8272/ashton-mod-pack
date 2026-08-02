@@ -1,9 +1,9 @@
 # Terra Aeterna
 
-Minecraft **1.21.1** · NeoForge **21.1.234** · 242 mods
+Minecraft **1.21.1** · NeoForge **21.1.234** · 257 mods (251 client / 191 server)
 
 This repo *is* the modpack. Mods are referenced by URL rather than stored, so the
-whole pack is about 1 MB and lives comfortably in Git — which is what makes it
+whole pack is a few MB and lives comfortably in Git — which is what makes it
 editable by more than one person, with history and rollback.
 
 **Players: see [docs/PLAYER-INSTALL.md](docs/PLAYER-INSTALL.md).** Nothing below
@@ -146,8 +146,9 @@ Modrinth App, ATLauncher, or CurseForge.
 packwiz-installer -s server https://raw.githubusercontent.com/reese8272/ashton-mod-pack/main/pack.toml
 ```
 
-Installs only the 176 server-relevant mods, skipping ~691 MB of client-only
-rendering, UI, and audio mods.
+Installs only the ~191 server-relevant mods (everything marked `server` or
+`both` — the exact number lives in `scripts/sides.json`), skipping the
+client-only rendering, UI, and audio mods.
 
 ---
 

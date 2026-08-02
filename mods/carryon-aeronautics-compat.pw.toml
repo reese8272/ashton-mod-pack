@@ -1,6 +1,6 @@
 name = "Carry On + Create Aeronautics Compat"
 filename = "CarryOnAeroCompat-1.21.1-1.1.1.jar"
-side = "server"
+side = "both"
 [download]
 url = "https://cdn.modrinth.com/data/MpnDZ1Lx/versions/z7xbAdje/CarryOnAeroCompat-1.21.1-1.1.1.jar"
 hash-format = "sha512"

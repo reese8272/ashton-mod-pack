@@ -1,0 +1,66 @@
+{
+  "generated": "2026-08-02T15:35:58.521643+00:00",
+  "repo_root": "/home/reese/terra-aeterna-pack",
+  "sources": [
+    "scripts"
+  ],
+  "baselines": {
+    "ruff_issues": 0,
+    "mypy_errors": 1000000,
+    "coverage_line_rate": 0.0,
+    "bandit_high": 1000000,
+    "bandit_medium": 1000000,
+    "pip_audit_vulns": 1000000
+  },
+  "gates": {
+    "ruff": {
+      "status": "ok",
+      "value": 0,
+      "metric": "ruff_issues",
+      "compare": "max",
+      "gate_status": "ok"
+    },
+    "mypy": {
+      "status": "ok",
+      "value": 0,
+      "metric": "mypy_errors",
+      "compare": "max",
+      "gate_status": "ok"
+    },
+    "coverage": {
+      "status": "skipped",
+      "detail": "no coverage.xml; tail: ",
+      "gate_status": "skipped"
+    },
+    "bandit": {
+      "status": "ok",
+      "value": {
+        "high": 1,
+        "medium": 2
+      },
+      "metric": "bandit",
+      "compare": "split",
+      "gate_status": "ok"
+    },
+    "pip_audit": {
+      "status": "ok",
+      "value": 104,
+      "metric": "pip_audit_vulns",
+      "compare": "max",
+      "gate_status": "ok"
+    },
+    "freshness": {
+      "status": "ok",
+      "value": {
+        "ages_days": {
+          "production-assessment": 54
+        },
+        "stale": [],
+        "threshold_days": 90
+      },
+      "metric": "freshness",
+      "compare": "self",
+      "gate_status": "ok"
+    }
+  }
+}

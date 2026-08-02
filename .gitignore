@@ -9,6 +9,11 @@
 __pycache__/
 *.pyc
 
+# Linter/type-checker caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
 # OS noise
 .DS_Store
 Thumbs.db

@@ -76,10 +76,16 @@ See <https://modrinth.com/news/article/new-environments>.
 
 ---
 
-## The 14 `server`-labelled mods — a different, riskier question
+## The `server`-labelled mods — a different, riskier question
+
+> **2026-08-02:** the 8 mods below marked "worth checking" were relabelled to
+> `both` before the first join test — a wrong `both` costs a few MB of
+> download; a wrong `server` is a registry-sync kick at join, and nobody has
+> joined yet. Only the 6 pure-behaviour mods remain `server`. See
+> `docs/DECISIONS.md`.
 
 The mods above are labelled `both`, so reviewing them can only *save bandwidth*.
-The 14 below are labelled `server`, which means **they are absent from every
+The ones below were labelled `server`, which means **they are absent from every
 client**. Getting one of those wrong breaks the game, and v1.5.1 proved it:
 Lithostitched was labelled `server` on its author's own `client: unsupported`
 declaration, but Terralith and Regions Unexplored require it, so no client would
@@ -99,26 +105,34 @@ entities that the client needs to know about to *join the server*. That failure
 looks like a mod-mismatch kick or a missing-registry-entry disconnect, not a
 crash, and it cannot be tested until someone actually connects.
 
+Still `server` (pure behaviour, registers nothing the client must know about):
+
 | Mod | Server-only rationale | Registers content? |
 |---|---|---|
-| `biolith-neoforge-3.0.14.jar` | worldgen API | worth checking — biome API |
-| `CarryOnAeroCompat-1.21.1-1.1.1.jar` | compat glue | worth checking — may need client render |
-| `create-aeronautics-rechiseled-compat-1.21.1-1.2.2.jar` | compat glue | worth checking — likely adds blocks |
 | `horse-breeding-fix-neoforge-1.21.x-1.1.1.jar` | server-side breeding logic | no |
 | `noisium-neoforge-2.7.0+mc1.21-1.21.1.jar` | worldgen performance | no |
 | `skeletonhorsespawn-1.21.1-4.1.jar` | spawn rules | no |
 | `smarterfarmers-1.21-2.2.4-neoforge.jar` | villager AI | no |
 | `treeharvester-1.21.1-9.1.jar` | block-break behaviour | no |
-| `YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar` | structure generation | worth checking — YUNG's mods add blocks |
-| `YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar` | structure generation | worth checking |
-| `YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar` | structure generation | worth checking |
-| `YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar` | structure generation | worth checking |
-| `YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar` | structure generation | worth checking |
 | `zombiehorsespawn-1.21.1-5.2.jar` | spawn rules | no |
 
-The "worth checking" column is a judgement from what each mod does, not a
-verified finding — it has not been confirmed against the jars. If joining the
-server produces a mismatch kick, start here, and **send the full kick message**:
-it names the registry or mod at fault.
+Relabelled to `both` on 2026-08-02 (were `server`; "worth checking" was never
+verified against the jars, and a mismatch kick at the first join would have
+landed on the project's acceptance test):
+
+| Mod | Why it was suspect |
+|---|---|
+| `biolith-neoforge-3.0.14.jar` | biome-placement API — the Lithostitched shape |
+| `CarryOnAeroCompat-1.21.1-1.1.1.jar` | compat glue, may need client render |
+| `create-aeronautics-rechiseled-compat-1.21.1-1.2.2.jar` | compat glue, likely adds block variants |
+| `YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar` | structure gen — YUNG's mods add blocks |
+| `YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar` | structure gen |
+| `YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar` | structure gen |
+| `YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar` | structure gen |
+| `YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar` | structure gen |
+
+If joining the server still produces a mismatch kick, suspect the 6 remaining
+`server` mods last — and **send the full kick message**: it names the registry
+or mod at fault.
 
 Relabelling any of these to `both` is always safe and costs only download size.

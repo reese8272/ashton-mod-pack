@@ -32,7 +32,9 @@ SERVER_SIDES = {"server", "both"}
 
 
 def hash_file(path: pathlib.Path, fmt: str) -> str:
-    h = hashlib.new({"sha1": "sha1", "sha256": "sha256", "sha512": "sha512"}.get(fmt, fmt))
+    # Content addressing against packwiz's recorded hashes, not security.
+    h = hashlib.new({"sha1": "sha1", "sha256": "sha256", "sha512": "sha512"}.get(fmt, fmt),
+                    usedforsecurity=False)
     with path.open("rb") as f:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
@@ -56,6 +58,8 @@ def curseforge_url(meta: dict) -> str:
 
 def download(url: str, dest: pathlib.Path, expect: str | None, fmt: str) -> str:
     """Return 'cached', 'downloaded', or raises."""
+    if urllib.parse.urlsplit(url).scheme != "https":
+        raise ValueError(f"refusing non-https download url: {url}")
     if dest.is_file() and expect and fmt in ("sha1", "sha256", "sha512"):
         try:
             if hash_file(dest, fmt) == expect:
@@ -128,6 +132,26 @@ def main() -> int:
             dst = BUILD / rel
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)
+
+    # Prune anything a previous build left behind: a version-bumped or removed
+    # mod's old jar would otherwise ride along forever -- the server ends up
+    # with BOTH versions and NeoForge crashes on duplicate mods. Also clears
+    # de-indexed configs and orphaned .part files.
+    expected = {f"mods/{pathlib.Path(m['filename']).name}" for m in mods} | {
+        rel for rel in configs if (PACK / rel).is_file()
+    }
+    pruned = 0
+    for p in sorted(BUILD.rglob("*"), reverse=True):
+        if p.is_file() and p.relative_to(BUILD).as_posix() not in expected:
+            p.unlink()
+            pruned += 1
+        elif p.is_dir():
+            try:
+                p.rmdir()  # only succeeds once emptied
+            except OSError:
+                pass
+    if pruned:
+        print(f"\npruned {pruned} stale file(s) from previous builds")
 
     print(f"\ndownloaded {done}, reused {cached}, failed {failed}")
     print(f"server pack: {BUILD}  ({total_bytes / 1024 / 1024:.0f} MB)")

@@ -237,7 +237,11 @@ diagnosis and misses this entirely — the real error is ~100 lines above it.
 
 ---
 
-## OPEN — Hosting provider not yet chosen
+## RESOLVED 2026-07 — Hosting provider (was: not yet chosen)
+
+**Resolution.** BisectHosting BisectOne 8 GB was purchased and provisioned; the
+server is live at `169.155.120.28:9155` (see LEFT_OFF.md and SERVER-SETUP.md).
+The analysis below is kept for the record.
 
 Oracle Cloud Always Free is **ruled out**, but the replacement is not picked; it
 needs the pack author's budget call.
@@ -263,3 +267,87 @@ trips the memory condition.
 **Recommendation.** A managed Ryzen host with Pterodactyl sub-users (~$15–24/mo),
 because it also satisfies "let others edit configs without touching my machine"
 via panel sub-accounts.
+
+---
+
+## 2026-08-02 — Runtime state under `config/` is banned as a class
+
+**Decision.** 15 per-player/runtime-state files that were shipping inside
+`config/` were removed from the pack (spark activity/tmp, bountiful `errors.log`,
+FancyMenu `user_variables.db` + generated metas + `layout_editor/`, per-world
+JEI and InventoryProfilesNext state, voicechat `category-volumes.properties`),
+plus 4 `.bak` editor backups. The class — not just these files — is now banned
+three ways: `.packwizignore` entries, `import_configs.py` skip rules, and a
+`BANNED_CONFIG_*` check in `verify_pack.py` that fails CI if any of it is ever
+indexed again.
+
+**Why.** The 2026-08-02 production assessment found the pack shipping the exact
+file class this project exists to eliminate — including `spark/activity.json`,
+which distributed the pack author's player name, UUID, and public profiler URLs
+to every install. The previous guard (`BANNED_AT_ROOT`) only checked the
+instance root, so anything under `config/` sailed through.
+
+**Evidence.** `docs/assessment/modules/config.md` (full sweep log: 484 files,
+5 sweeps) and `docs/assessment/REPORT.md`. Also edited in place:
+`mtsconfig.json` `joinedPlayers` and `sounds/chat.json` `mentionKeywords` no
+longer pre-seed one player's UUID/mention trigger into every install.
+
+**Result.** 465 shipped config files (was 484). packwiz-installer deletes
+de-indexed files on players' next launch; all removed files are regenerable
+runtime state, so this is a one-time, harmless cleanup on their machines.
+
+---
+
+## 2026-08-02 — The 8 content-registering `server` mods are now `both`
+
+**Decision.** biolith, CarryOnAeroCompat, create-aeronautics-rechiseled-compat,
+and the five YUNG's Better* structure mods moved `server` → `both`. Only the 6
+pure-behaviour mods (horse-breeding-fix, noisium, skeletonhorsespawn,
+smarterfarmers, treeharvester, zombiehorsespawn) remain `server`.
+
+**Why.** A `server`-labelled mod that registers blocks/biomes/structures the
+client lacks causes a registry-sync kick **at join** — invisible to every check
+that has passed so far, and sitting directly on the project's acceptance test
+(Ashton joining the live server). The v1.5.1 Lithostitched bug was the startup
+half of this class; join parity was never verified. Relabelling to `both` is
+always safe by the project's own rule and costs only a few MB of client
+download. The server mod set is unchanged (server installs `server`+`both`
+either way: 191 mods before and after).
+
+**Evidence.** `docs/assessment/modules/pack-definition.md`;
+`docs/side-review.md` (updated tables).
+
+---
+
+## 2026-08-02 — sync_from_instance: client-visible diff only; a bump is not a removal
+
+**Decision.** `sync_from_instance.py` now (1) excludes `side = "server"` mods
+from the instance diff, (2) re-reads the pack after the add step and skips
+"removals" whose jar name no longer maps to a metadata file (that is a version
+bump, not a removal), (3) aborts before removals/commit/push if any
+`packwiz add` failed, and (4) writes commit messages that list only what
+actually happened. Regression tests in `tests/`.
+
+**Why.** Two latent bugs in the never-run-live publish path: a client instance
+never contains server-only mods, so every sync would have proposed deleting all
+of them; and a version bump (add+remove of the same slug-named meta file) would
+have silently deleted the freshly updated mod and pushed that to every player.
+
+**Evidence.** `docs/assessment/modules/scripts.md` (BLOCKER finding, verified
+against the slug-named meta layout); `tests/test_sync_removals.py`.
+
+---
+
+## 2026-08-02 — CI release dependencies are pinned
+
+**Decision.** `go install github.com/packwiz/packwiz@<commit>` (was `@latest`)
+and `softprops/action-gh-release@<full SHA>` (was the mutable `v2` tag).
+
+**Why.** Unpinned packwiz made releases non-reproducible and could trip the
+stale-index gate on upstream drift; a mutable third-party action tag in a
+workflow with `contents: write` is a supply-chain path into the exact asset
+players download. GitHub's hardening guidance is to pin third-party actions to
+a full commit SHA.
+
+**Evidence.** `docs/assessment/modules/root-infra.md`;
+<https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions#using-third-party-actions>.

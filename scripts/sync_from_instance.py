@@ -45,7 +45,8 @@ def run(cmd, **kw):
 
 
 def sha1(p: pathlib.Path) -> str:
-    h = hashlib.sha1()
+    # Content addressing for the Modrinth version_files API, not security.
+    h = hashlib.sha1(usedforsecurity=False)
     with p.open("rb") as f:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
@@ -72,17 +73,62 @@ def modrinth_lookup(hashes: list[str]) -> dict:
                     time.sleep(5 * (attempt + 1))
                     continue
                 raise
+        else:
+            # Exhausting the retries must not fall through silently: the jars in
+            # this chunk would be misreported as "not on Modrinth" and funneled
+            # toward `packwiz curseforge add` (see ISSUE-2026-07-31-01).
+            raise RuntimeError("Modrinth API still rate-limiting after 4 attempts; "
+                               "wait a few minutes and re-run")
         time.sleep(0.5)
     return found
 
 
-def pack_jars() -> dict[str, pathlib.Path]:
+SIDE_RE = re.compile(r'^side\s*=\s*"(both|client|server)"\s*$', re.M)
+
+
+def pack_mods() -> dict[str, tuple[pathlib.Path, str]]:
+    """Map jar filename -> (metadata file, side) for every mod in the pack."""
     out = {}
     for meta in PACK.glob("mods/*.pw.toml"):
-        m = FILENAME_RE.search(meta.read_text(encoding="utf-8"))
+        text = meta.read_text(encoding="utf-8")
+        m = FILENAME_RE.search(text)
         if m:
-            out[m.group(1)] = meta
+            s = SIDE_RE.search(text)
+            out[m.group(1)] = (meta, s.group(1) if s else "both")
     return out
+
+
+def client_facing(mods: dict[str, tuple[pathlib.Path, str]]) -> dict[str, pathlib.Path]:
+    """Drop side="server" mods before diffing against a client instance.
+
+    packwiz-installer never puts server-only mods into a client instance
+    ("wrong side"), so including them in the diff would list every server-only
+    mod as "removed" on every single sync. Server-side mods are managed in the
+    repo directly (`packwiz modrinth add` + scripts/sides.json), never from an
+    instance.
+    """
+    return {n: meta for n, (meta, side) in mods.items() if side != "server"}
+
+
+def plan_removals(
+    candidates: list[str], current: dict[str, tuple[pathlib.Path, str]]
+) -> tuple[list[tuple[str, pathlib.Path]], list[str]]:
+    """Split removal candidates into (real removals, version bumps).
+
+    A version bump arrives as add(new jar) + remove(old jar), but both names
+    map to the SAME slug-named metadata file. After the add step rewrites that
+    file, the old jar name no longer appears anywhere in the pack -- unlinking
+    via a stale pre-add mapping would delete the freshly updated mod. Only
+    names that still resolve to a metadata file are real removals.
+    """
+    real, bumped = [], []
+    for name in candidates:
+        entry = current.get(name)
+        if entry:
+            real.append((name, entry[0]))
+        else:
+            bumped.append(name)
+    return real, bumped
 
 
 def main() -> int:
@@ -134,7 +180,9 @@ def main() -> int:
 
     print(f"instance: {inst}\npack:     {PACK}\n")
 
-    have = pack_jars()
+    all_mods = pack_mods()
+    have = client_facing(all_mods)
+    n_server = len(all_mods) - len(have)
     on_disk = {p.name: p for p in (inst / "mods").glob("*.jar")}
 
     added = sorted(set(on_disk) - set(have))
@@ -144,6 +192,9 @@ def main() -> int:
         print("mods: no changes")
     else:
         print(f"mods: +{len(added)} -{len(removed)}")
+    if n_server:
+        print(f"      ({n_server} server-only mods are repo-managed; not compared "
+              f"against this instance)")
 
     # Resolve new jars against Modrinth so we can pin them properly.
     resolved: dict[str, dict] = {}
@@ -192,18 +243,36 @@ def main() -> int:
             return err("not a terminal; re-run with --yes")
 
     print()
+    failed_adds = []
     for n in added:
         v = resolved.get(n)
         if not v:
             continue
         r = run([PACKWIZ, "modrinth", "add", "--project-id", v["project_id"],
                  "--version-id", v["id"], "-y"])
-        print(("  added   " if r.returncode == 0 else "  FAILED  ") + n)
+        if r.returncode == 0:
+            print("  added   " + n)
+        else:
+            failed_adds.append(n)
+            print("  FAILED  " + n)
         time.sleep(0.4)
 
-    for n in removed:
-        have[n].unlink()
+    if failed_adds:
+        return err(
+            f"{len(failed_adds)} add(s) failed -- stopping before removals; "
+            "nothing was committed or pushed.\n  "
+            + "\n  ".join(failed_adds)
+            + "\nInspect with `git status`; discard the partial changes with "
+            "`git checkout -- mods/`, or fix the cause and re-run.")
+
+    # Re-read the pack AFTER the adds: a version-bumped mod's old jar name no
+    # longer maps to a metadata file, and must not be unlinked (see plan_removals).
+    real_removals, bumped = plan_removals(removed, pack_mods())
+    for n, meta in real_removals:
+        meta.unlink()
         print(f"  removed {n}")
+    for n in bumped:
+        print(f"  updated {n} (version bump -- old jar retired, mod kept)")
 
     for src, dst in changed_cfg:
         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -219,11 +288,13 @@ def main() -> int:
         print("\nnothing actually changed")
         return 0
 
-    summary = f"Sync from instance: +{len(added)} -{len(removed)} mods"
+    summary = f"Sync from instance: +{len(added) - len(manual)} -{len(real_removals)} mods"
     body = "\n".join(
-        [f"Added:   {n}" for n in added]
-        + [f"Removed: {n}" for n in removed]
+        [f"Added:   {n}" for n in added if n in resolved]
+        + [f"Removed: {n}" for n, _ in real_removals]
+        + [f"Updated: {n}" for n in bumped]
         + [f"Config:  {d.relative_to(PACK)}" for _, d in changed_cfg]
+        + [f"Skipped (needs manual CurseForge add): {n}" for n in manual]
     )
     run(["git", "add", "-A"])
     r = run(["git", "commit", "-m", f"{summary}\n\n{body}"])

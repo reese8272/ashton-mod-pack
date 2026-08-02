@@ -29,7 +29,14 @@ PACK = pathlib.Path(__file__).resolve().parent.parent
 SKIP_PATTERNS = (
     "fancymenu/assets",       # ~456 MB of decoded video
     "fancymenu_temp",
+    "fancymenu/layout_editor",       # editor session state
+    "spark/tmp",                     # profiler scratch (tmp/ and tmp-client/)
+    "jei/world",                     # per-world lookup history
+    "villager-trading-config",       # inventoryprofilesnext per-world state
 )
+
+# Editor backups and logs are never config.
+SKIP_SUFFIXES = (".bak", ".log")
 
 # Hardware-tuned by the player. Shipping these forces the pack author's CPU/GPU
 # settings onto everyone and resets them on every pack update.
@@ -69,6 +76,12 @@ SKIP_RELATIVE = {
     "fancymenu/customization/reimaginedintro_drippy_loading_overlay_layout.txt",
     "fancymenu/customization/reimaginedintro_title_screen_layout.txt",
     "fancymenu/options.txt",  # also points at intro.fma / main.fma
+    # Runtime state mods rewrite on every run -- found shipping in the
+    # 2026-08-02 assessment; verify_pack.py now bans the whole class.
+    "spark/activity.json",           # player name, UUID, profiler URLs
+    "fancymenu/user_variables.db",
+    "fancymenu/video_element_controller_metas.json",
+    "voicechat/category-volumes.properties",
 }
 
 
@@ -104,7 +117,8 @@ def main() -> int:
         if any(p in rel_s for p in SKIP_PATTERNS):
             skipped_big.append(rel_s)
             continue
-        if src.name in SKIP_EXACT or rel_s in SKIP_RELATIVE:
+        if (src.name in SKIP_EXACT or rel_s in SKIP_RELATIVE
+                or src.suffix in SKIP_SUFFIXES):
             skipped_hw.append(rel_s)
             continue
         # never clobber the defaultoptions we generate separately

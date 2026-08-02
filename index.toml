@@ -641,10 +641,6 @@ file = "config/bountiful/bountiful.json"
 hash = "eeead79d2c51bca73a1174aeadd2cef9c12feea8ae8083121c15e47b0563ebc0"
 
 [[files]]
-file = "config/bountiful/errors.log"
-hash = "7dfc4d01be2ceaa94861aa32951c7e8c1b92d22ea7a2adb6cfe1303b8e422278"
-
-[[files]]
 file = "config/bridgingmod.json"
 hash = "2f3b312ba9110f5af338d362b35f09c442c01cc4cb9187da9626de7cc10e2d01"
 
@@ -977,10 +973,6 @@ file = "config/fancymenu/customizablemenus.txt"
 hash = "a14c6a7d8d525be760c512bf7f267318f69634893e6ddcfa1aca7a92a57e820c"
 
 [[files]]
-file = "config/fancymenu/layout_editor/widgets/element_layer_control.lewidget"
-hash = "051d700ea7ff1bd626063d60f9a9cd65a0af1fed5903706d1e70fce20bcb2495"
-
-[[files]]
 file = "config/fancymenu/legacy_checklist.txt"
 hash = "9a25d3dc708e43eabafce5479a13c02dae15bc7f673afb2745b8b2ba48a97dc0"
 
@@ -1019,14 +1011,6 @@ hash = "fa63577441fd576ebac90ecf06b7ded376cbf80ca5103d398bc9a73a25c6c2c0"
 [[files]]
 file = "config/fancymenu/ui_themes/spooky_season.json"
 hash = "cfa46554bbb027efe3c2184a073ee652000acac2500cd5136764f901355ec0cd"
-
-[[files]]
-file = "config/fancymenu/user_variables.db"
-hash = "40e0378ecbf1bed7b44380b50d57535f26845a41d1e1e72da4579203efef06ea"
-
-[[files]]
-file = "config/fancymenu/video_element_controller_metas.json"
-hash = "9869b1013fdba8115f51bbeb97630557c22cc59c150b1d8d54d209bfed6a11b2"
 
 [[files]]
 file = "config/fancytoasts/general.json"
@@ -1165,22 +1149,6 @@ file = "config/infernalexp.json"
 hash = "6c7b18bcfce74dd24b9308eed2fb97b9183710c421e6af24b469a10fff5d3e35"
 
 [[files]]
-file = "config/inventoryprofilesnext/New World/prev-villager-trading-config-v2.json"
-hash = "d8159a94fc4562651a5c47dc83e46a7fd71dd70e143fca53d7b288393a87b4ef"
-
-[[files]]
-file = "config/inventoryprofilesnext/New World/villager-trading-config-v2.json"
-hash = "cb25496216894ff366576a0714860971f714de59e84ec70203a586a437455fce"
-
-[[files]]
-file = "config/inventoryprofilesnext/P3T/prev-villager-trading-config-v2.json"
-hash = "d8159a94fc4562651a5c47dc83e46a7fd71dd70e143fca53d7b288393a87b4ef"
-
-[[files]]
-file = "config/inventoryprofilesnext/P3T/villager-trading-config-v2.json"
-hash = "d8159a94fc4562651a5c47dc83e46a7fd71dd70e143fca53d7b288393a87b4ef"
-
-[[files]]
 file = "config/inventoryprofilesnext/integrationHints/exampleIntegrationHints.json"
 hash = "ca413dea02cce69c69dccdc525fb0ec013236876eff2d142772c68db3d772d3a"
 
@@ -1257,18 +1225,6 @@ file = "config/jei/recipe-category-sort-order.ini"
 hash = "03495f0c4f7a52215126035ef1ed02e013e09720e7a01398a6c25c428e8bcf16"
 
 [[files]]
-file = "config/jei/world/local/New World (1)/lookupHistory.json"
-hash = "9e09882f79835e856a0c5fff77f5bdc4555a3505c945c9ec1d03ab2abb7b41e9"
-
-[[files]]
-file = "config/jei/world/local/New World (2)/lookupHistory.json"
-hash = "3ae193fdd981c4961b4a3fd9994ac9cba1d2bcc3bb7218cbf4d2a7f224b20320"
-
-[[files]]
-file = "config/jei/world/local/P3T/lookupHistory.json"
-hash = "6fd6e442823840620fdeac6457c43cef089bdf7c11f431fb3c3ac39dd12710a9"
-
-[[files]]
 file = "config/konkrete/locals/de_de.local"
 hash = "79a34cfd15c2d9c06498dc221be79279507d9b57666cd44f8d2c2cf95d3582ef"
 
@@ -1341,10 +1297,6 @@ file = "config/modernfix-mixins.properties"
 hash = "cda1de84880f439d9c8a025861a483d51972e76b8a5a6a253dd0196aec821ac5"
 
 [[files]]
-file = "config/moonlight-client-1.toml.bak"
-hash = "3f252fefef0345f9aa8a8d3b7eff02f045b8bf565329eeba9ec50c7989a63457"
-
-[[files]]
 file = "config/moonlight-client.toml"
 hash = "b2417f8d65bc3de5a5f0bf4b8799e71e5e667890e56b5ce5b2fe6fea5170c5c6"
 
@@ -1358,7 +1310,7 @@ hash = "2d846cc80f86b0b0aaefd1bb9e766c1f4702652b6097969af6739f9a071550f7"
 
 [[files]]
 file = "config/mtsconfig.json"
-hash = "bce29193f324a2ab3a04a537ad9a975023e744da0a060eb3548a73a1aed1c9dd"
+hash = "13792057f7076969201de95107270c69304a703470930f1edf09621f1e86b0f5"
 
 [[files]]
 file = "config/mtsconfigclient.json"
@@ -1630,7 +1582,7 @@ hash = "6aeb5abd60442ffbdfa140ea1a9f9d836198e69a3f95d50993db3885ed1d1796"
 
 [[files]]
 file = "config/sounds/chat.json"
-hash = "30e9916b3e5163b07741102ac29259e34a3d641d356f445d6ff061a2e92d94b9"
+hash = "454f13269916727064203aae4eb989f33cc6d126d9cfa73605b5cc117ee13be4"
 
 [[files]]
 file = "config/sounds/event.json"
@@ -1649,20 +1601,8 @@ file = "config/sounds/world.json"
 hash = "f8f1818ba5c8887bd01973839f9a413c1232cc1a1c4be7e5c72250ff2af042e7"
 
 [[files]]
-file = "config/spark/activity.json"
-hash = "6f0ceb345d65b6e9c3dedbabf49dc3656b43d934d3c11db10750e414de54c3c0"
-
-[[files]]
 file = "config/spark/config.json"
 hash = "992ba9f3a4a7ce3de112eb95575328956fdc3ce6781c455ebce7b23db7e7da42"
-
-[[files]]
-file = "config/spark/tmp-client/about.txt"
-hash = "d7514c0ddb6ae8611a281527bf04ca6cbcea1fa21758534fdcd08ed0f51c19c0"
-
-[[files]]
-file = "config/spark/tmp/about.txt"
-hash = "d7514c0ddb6ae8611a281527bf04ca6cbcea1fa21758534fdcd08ed0f51c19c0"
 
 [[files]]
 file = "config/starcatcher-client.toml"
@@ -1689,20 +1629,8 @@ file = "config/subwild-common.toml"
 hash = "9dd13c4bf063ce0ab8b61ac2b8fa048a08f6636e80290f1d1cb34afe7ba522f7"
 
 [[files]]
-file = "config/supplementaries-client-1.toml.bak"
-hash = "90e41edd2aae19145138323f64d051990b8079f1dacca0582e0062f24783612f"
-
-[[files]]
 file = "config/supplementaries-client.toml"
 hash = "53f430224cea0f18f17a8e3f515a96aba748428cbc919fc5754d87ef2580f7f0"
-
-[[files]]
-file = "config/supplementaries-common-1.toml.bak"
-hash = "43f18408bcefa3362f0a6edb33b82d7bfafdb37f445cda16cc807c2bd61a164d"
-
-[[files]]
-file = "config/supplementaries-common-2.toml.bak"
-hash = "8466808fdc39ff49467ca61ac57592d71f63b04248bf17a9475756a4d064b779"
 
 [[files]]
 file = "config/supplementaries-common.toml"
@@ -1799,10 +1727,6 @@ hash = "d4618e607b629668b7f10e8641667c2104799627546173a142f45317f773b7d3"
 [[files]]
 file = "config/visualworkbench-common.toml"
 hash = "118dee28250b68612c3e4b4913a11f39a55ddf56be30b4eee6306bcf4d27713c"
-
-[[files]]
-file = "config/voicechat/category-volumes.properties"
-hash = "d5c0bb3ec5952debd3a5253a49d0d26fff5466eb34ac44f86e17e0de15a3281b"
 
 [[files]]
 file = "config/voicechat/translations.properties"
@@ -2048,7 +1972,7 @@ metafile = true
 
 [[files]]
 file = "mods/biolith.pw.toml"
-hash = "4c0895b65e1d61ab64d10e248f040af3aca3a434a8dd726f7cb67f677d7c7847"
+hash = "8a8872ba43e2a7a532a1768c30e422f8e6bfee123c624f6bdc2031ea86942657"
 metafile = true
 
 [[files]]
@@ -2078,7 +2002,7 @@ metafile = true
 
 [[files]]
 file = "mods/carryon-aeronautics-compat.pw.toml"
-hash = "50b7709db16337114fc68c2ba7ebe585eb6968520669edf4f24da9af30349dac"
+hash = "8efc47b4ed93e6e7a215c2cb4d97b9b654256c30a5d5c75732a855a500321878"
 metafile = true
 
 [[files]]
@@ -2183,7 +2107,7 @@ metafile = true
 
 [[files]]
 file = "mods/create-aeronautics-rechiseled-compatibility.pw.toml"
-hash = "183c7275e021611319d1dbe161566fbd49042af9cb8ead2343f9f69bb60ad92a"
+hash = "d04c5cab770f292858b16d290c230350c87aa386408d3f3ccc87a71988146f39"
 metafile = true
 
 [[files]]
@@ -3193,27 +3117,27 @@ metafile = true
 
 [[files]]
 file = "mods/yungs-better-dungeons.pw.toml"
-hash = "fd4cfd9bd480f720a58bf03879366705b23485bc60612a3ea7bdcffe762119bf"
+hash = "7c1b91e6bc4e862369a5cb7a7f21fb502d186557d9a1cbe6d2c4ac1653b3681e"
 metafile = true
 
 [[files]]
 file = "mods/yungs-better-mineshafts.pw.toml"
-hash = "3dc83237c3c965ea2482a93a5b122f6677d051b377cfb850e57310f927868ce5"
+hash = "82da2432e71e1f1a8cd5460956ea4dc2c0804a38063a57032718a92bb8ac5bad"
 metafile = true
 
 [[files]]
 file = "mods/yungs-better-nether-fortresses.pw.toml"
-hash = "a44e4d75b1260905d7900e2c85fcd0947e66f78134e09ac6aacf78783d48e35e"
+hash = "e9ca618e63672d90ce4f62783949efaa417b7fc259229cc107e1b19e4f9bbd74"
 metafile = true
 
 [[files]]
 file = "mods/yungs-better-ocean-monuments.pw.toml"
-hash = "95723f073197e5b85171547cde97f774bcdce171e2b881001f7aac81d8eb8f72"
+hash = "aabf45caa1d0e55fd7d8bb048c52c3eb4727ea791214d6db31ea6cb4dc9af0f0"
 metafile = true
 
 [[files]]
 file = "mods/yungs-better-strongholds.pw.toml"
-hash = "8c74b74a79f4d8429bdaf57197076afd92b022d26d79f84789a5241271ada709"
+hash = "cac4215adc53a2c0f20469bcd2af0b55f116538764a38ad1c099fb885764878b"
 metafile = true
 
 [[files]]

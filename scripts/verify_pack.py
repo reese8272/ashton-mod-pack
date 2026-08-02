@@ -61,16 +61,38 @@ BANNED_AT_ROOT = {
     "usercache.json", "usernamecache.json", ".sync-instance-path",
 }
 
-failures: list[str] = []
-notes: list[str] = []
+# Per-player/runtime state that lives UNDER config/ and therefore slips past the
+# root ban above. Mods rewrite these at runtime, so shipping them both leaks the
+# pack author's data and permanently diverges from the indexed hash. Found the
+# hard way (2026-08-02 assessment): 15 such files were shipping.
+BANNED_CONFIG_PREFIXES = (
+    "config/spark/tmp/",            # profiler scratch
+    "config/spark/tmp-client/",
+    "config/jei/world/",            # per-world lookup history
+    "config/fancymenu/layout_editor/",  # editor session state
+)
+BANNED_CONFIG_FILES = {
+    "config/spark/activity.json",   # player name, UUID, profiler URLs
+    "config/fancymenu/user_variables.db",
+    "config/voicechat/category-volumes.properties",
+}
+BANNED_CONFIG_RE = re.compile(
+    r"config/fancymenu/[^/]*_metas\.json$"              # generated element metadata
+    # any per-world subdir (world names vary); integrationHints is real config
+    r"|config/inventoryprofilesnext/(?!integrationHints/)[^/]+/"
+    r"|\.bak$"                                          # editor backups
+    r"|errors?\.log$"                                   # logs are never config
+)
 
 
-def fail(msg):
-    failures.append(msg)
+def main(pack: pathlib.Path = PACK) -> int:
+    failures: list[str] = []
+    notes: list[str] = []
 
+    def fail(msg):
+        failures.append(msg)
 
-def main() -> int:
-    metas = sorted(PACK.glob("mods/*.pw.toml"))
+    metas = sorted(pack.glob("mods/*.pw.toml"))
     if len(metas) < 200:
         fail(f"only {len(metas)} mod metadata files -- expected ~256")
 
@@ -99,7 +121,8 @@ def main() -> int:
                      "(fine if they moved to Modrinth): " + ", ".join(sorted(missing_cf)))
 
     # --- check 2: no per-player file ships ------------------------------------
-    index = PACK / "index.toml"
+    indexed: set[str] = set()
+    index = pack / "index.toml"
     if not index.is_file():
         fail("index.toml missing -- run `packwiz refresh`")
     else:
@@ -110,6 +133,10 @@ def main() -> int:
             if not path.startswith(ALLOWED_PACK_PREFIXES):
                 fail(f"unexpected file in pack: {path}\n"
                      f"    add it to .packwizignore, or to ALLOWED_PACK_PREFIXES if intended")
+            if (path.startswith(BANNED_CONFIG_PREFIXES) or path in BANNED_CONFIG_FILES
+                    or BANNED_CONFIG_RE.search(path)):
+                fail(f"{path} is per-player/runtime state under config/ and must not "
+                     f"ship -- add it to .packwizignore and remove it from the repo")
 
     # --- check 3: no shipped config points at files we deliberately exclude ---
     # config/fancymenu/assets is ~456 MB of intro video that the reimagined-intro
@@ -118,7 +145,7 @@ def main() -> int:
     # game at startup (exit code 2, drippy early-loading). This is how that
     # shipped the first time.
     EXCLUDED_PATH_REFS = ("config/fancymenu/assets/reimaginedintro",)
-    for cfg in sorted((PACK / "config").rglob("*")):
+    for cfg in sorted((pack / "config").rglob("*")):
         if not cfg.is_file() or cfg.stat().st_size > 2_000_000:
             continue
         try:
@@ -127,18 +154,18 @@ def main() -> int:
             continue
         for ref in EXCLUDED_PATH_REFS:
             if ref in body:
-                fail(f"{cfg.relative_to(PACK)} references {ref}, which the pack "
+                fail(f"{cfg.relative_to(pack)} references {ref}, which the pack "
                      f"does not ship\n    the game reads this before the mod "
                      f"extracts those assets and crashes at startup")
 
     # --- check 4: defaults exist and look sane --------------------------------
-    kb = PACK / "config/defaultoptions/keybindings.txt"
+    kb = pack / "config/defaultoptions/keybindings.txt"
     if not kb.is_file():
         fail("config/defaultoptions/keybindings.txt missing -- pack ships no default binds")
     elif sum(1 for line in kb.read_text().splitlines() if line.startswith("key_")) < 50:
         fail("keybindings.txt has suspiciously few key_ lines")
 
-    if (PACK / "options.txt").exists():
+    if (pack / "options.txt").exists():
         fail("options.txt exists at the pack root -- it must never be committed")
 
     # --- check 5: client-required dependencies are not labelled server-only ---

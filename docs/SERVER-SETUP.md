@@ -58,6 +58,11 @@ max-players=10
 online-mode=true
 difficulty=normal
 
+# The server address is public (it lives in this public repo), so the whitelist
+# is mandatory -- without it, anyone with a Java account can join and grief.
+white-list=true
+enforce-whitelist=true
+
 # Server-side view distance. Keep this modest -- Distant Horizons renders long
 # sightlines on the CLIENT, so a big server view-distance costs TPS for nothing.
 view-distance=8
@@ -69,6 +74,15 @@ spawn-protection=0
 
 Bump `view-distance` later if TPS is comfortable. It is the first thing to lower
 if it isn't.
+
+Add each player from the server console (panel → Console):
+
+```
+whitelist add <MinecraftUsername>
+```
+
+`enforce-whitelist=true` also kicks anyone already online the moment they are
+removed from the list.
 
 ---
 
