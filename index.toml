@@ -1734,7 +1734,7 @@ hash = "693643b1d393cbb3ea7f062afc4474fcd66e4036c4f8d7c056434979cbf512d1"
 
 [[files]]
 file = "config/voicechat/voicechat-server.properties"
-hash = "7ab0846749dc8bf19a37a4df70afa4303cdca6a4aa256a033166dc58816b8428"
+hash = "7aabf248ae0dcac757b14fd59fa99fe2bc152b21fe603b3b695a9f8cbd29c5a9"
 
 [[files]]
 file = "config/voicechatrecording-client.toml"

@@ -19,14 +19,18 @@ files (including the 8 relabelled mods and both scrubbed configs), all 257 mods
 loaded, title screen reached, singleplayer world ran. Two issues found, neither
 a pack-content bug:
 
-1. **Server: NeoForge now boots** (panel switched off the vanilla jar
-   2026-08-02) **but the first modded boot crashed** on two client-only mods
-   that were labelled `both` and therefore shipped to the server: Wakes
-   Reforged and MapDistanceFix, both throwing `invalid dist DEDICATED_SERVER`
-   (`docs/logs/2026-08-02-server-first-neoforge-boot.log`). Both are
-   relabelled `client` in the repo; the server still has the two jars in its
-   `mods/` folder until someone deletes them — see NEXT ACTION 1. More mods
-   of this class may surface on later boots; iterate the same way.
+1. **Server: reached `Done` on the second NeoForge boot** (2026-08-02, after
+   deleting the wakes + mapdistancefix jars) **then exited 1 second later**:
+   Simple Voice Chat hit `BindException: Address already in use` on its
+   default UDP port 24454 — a shared-node collision with another customer —
+   and the JVM shut down
+   (`docs/logs/2026-08-02-server-second-boot-voicechat.log`). Fix shipped in
+   the pack: `config/voicechat/voicechat-server.properties` now uses
+   `port=9155` (the game port; safe — MC is TCP, voice is UDP, and
+   `enable-query` stays false) with `bind_address=*`. The SERVER's copy of
+   that file must be updated by hand (or re-uploaded) — see NEXT ACTION 1.
+   The earlier `invalid dist` mixin ERROR lines during boot are NON-fatal
+   probe noise; don't chase them.
 2. **Client crashed after ~10 min** (exit `-805306369`) right after Distant
    Horizons warned "Insufficient memory". The gaming desktop has **16 GB
    RAM** but Prism was set to `-Xmx4096m` with no GC args — the 8 GB-row
@@ -39,20 +43,19 @@ with him). Ashton is a **panel sub-user with all permissions**.
 ### → NEXT ACTION
 
 1. **Get the server through its first clean NeoForge boot:**
-   1. Panel file manager → `mods/`: **delete
-      `wakes-1.21.1-NeoForge-1.3.6.jar` and
-      `mapdistancefix-neoforge-1.1.1+mc1.21-1.21.11.jar`** (relabelled
-      `client` in the repo; the server copies must go manually).
-   2. Confirm the vanilla-generated `world/` folder was deleted before the
-      modded world generates (otherwise spawn terrain stays vanilla).
-   3. Start and watch the console. Success = several minutes of FML/mod
-      loading, then "Done". **If it crashes again with `invalid dist
-      DEDICATED_SERVER` naming a new mod**, capture the log to
-      `docs/logs/`, relabel that mod `client` in `scripts/sides.json`
-      (apply_sides → refresh → push), delete its jar on the server, repeat.
-   4. Once up: re-check `server.properties` (`allow-flight=true`,
-      `white-list=true`, `enforce-whitelist=true`) and `whitelist add`
-      **both** usernames from the Console tab.
+   1. Panel file manager → `config/voicechat/voicechat-server.properties`:
+      set `port=9155` and `bind_address=*` (matches the pack copy now).
+   2. In `server.properties`: confirm `enable-query=false` (must stay false —
+      voice now shares UDP on the game port), plus `allow-flight=true`,
+      `white-list=true`, `enforce-whitelist=true`.
+   3. Start and watch the console. Success = mod loading then "Done" —
+      and it STAYS up past the one-second mark where voicechat previously
+      killed it.
+   4. `whitelist add` **both** usernames from the Console tab.
+   5. When joining, if spawn terrain looks plain vanilla, the old
+      vanilla-generated `world/` folder survived — stop, delete `world/`,
+      restart. (Second boot prepared a world in 1.357 s, which is plausible
+      for ModernFix but worth an eyeball.)
 2. **Fix the client allocation (16 GB machine):** Prism → instance → Settings
    → Memory: **6–8 GB**, plus the 16 GB-row ZGC args from
    `docs/PLAYER-INSTALL.md`. (It ran 4 GB with no GC args — the crash cause.)

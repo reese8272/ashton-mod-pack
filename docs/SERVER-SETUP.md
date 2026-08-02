@@ -63,6 +63,11 @@ difficulty=normal
 white-list=true
 enforce-whitelist=true
 
+# Voice chat shares the game port over UDP (Minecraft itself only uses TCP).
+# Query also uses UDP on the game port, so it MUST stay off or the two collide
+# and the server dies at startup. false is the vanilla default -- keep it.
+enable-query=false
+
 # Server-side view distance. Keep this modest -- Distant Horizons renders long
 # sightlines on the CLIENT, so a big server view-distance costs TPS for nothing.
 view-distance=8
@@ -184,6 +189,13 @@ so **update the server first**, or players will briefly fail to join.
 
 **Players kicked "flying is not enabled"** — `allow-flight=true` in
 `server.properties`.
+
+**Server exits right after "Done" with `[voicechat] BindException: Address
+already in use` on UDP 24454** — shared-node port collision: another customer
+owns voicechat's default port. The pack config now sets `port=9155` (the game
+port — safe because Minecraft is TCP and voice is UDP) with `bind_address=*`.
+If this recurs, verify `config/voicechat/voicechat-server.properties` on the
+server wasn't reverted to 24454, and that `enable-query=false`.
 
 **"Mod mismatch" / connection refused on join** — client and server are on
 different pack versions. Update the server.
