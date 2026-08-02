@@ -19,18 +19,18 @@ files (including the 8 relabelled mods and both scrubbed configs), all 257 mods
 loaded, title screen reached, singleplayer world ran. Two issues found, neither
 a pack-content bug:
 
-1. **Server: reached `Done` on the second NeoForge boot** (2026-08-02, after
-   deleting the wakes + mapdistancefix jars) **then exited 1 second later**:
-   Simple Voice Chat hit `BindException: Address already in use` on its
-   default UDP port 24454 — a shared-node collision with another customer —
-   and the JVM shut down
-   (`docs/logs/2026-08-02-server-second-boot-voicechat.log`). Fix shipped in
-   the pack: `config/voicechat/voicechat-server.properties` now uses
-   `port=9155` (the game port; safe — MC is TCP, voice is UDP, and
-   `enable-query` stays false) with `bind_address=*`. The SERVER's copy of
-   that file must be updated by hand (or re-uploaded) — see NEXT ACTION 1.
-   The earlier `invalid dist` mixin ERROR lines during boot are NON-fatal
-   probe noise; don't chase them.
+1. **Server: mods load fully, then voicechat kills the JVM at the 1-second
+   mark after `Done`.** Two boots, two ports, same `BindException: Address
+   already in use`: UDP **24454** (another customer on the shared node) and
+   UDP **9155** (held inside our own container — prime suspect is Sable's
+   physics networking, which opens its own UDP channel on the game port).
+   Logs: `docs/logs/2026-08-02-server-second-boot-voicechat.log` and
+   `…-third-boot-voicechat-9155.log`. Conclusion: **voice needs its own
+   host-allocated UDP port**, and `voicechat-server.properties` is now
+   deliberately NOT shipped by the pack (host-specific; the server's live
+   copy is authoritative and survives updates). See NEXT ACTION 1 — including
+   the "play today without voice" bypass. The `invalid dist` mixin ERROR
+   lines during boot are NON-fatal probe noise; don't chase them.
 2. **Client crashed after ~10 min** (exit `-805306369`) right after Distant
    Horizons warned "Insufficient memory". The gaming desktop has **16 GB
    RAM** but Prism was set to `-Xmx4096m` with no GC args — the 8 GB-row
@@ -42,20 +42,25 @@ with him). Ashton is a **panel sub-user with all permissions**.
 
 ### → NEXT ACTION
 
-1. **Get the server through its first clean NeoForge boot:**
-   1. Panel file manager → `config/voicechat/voicechat-server.properties`:
-      set `port=9155` and `bind_address=*` (matches the pack copy now).
-   2. In `server.properties`: confirm `enable-query=false` (must stay false —
-      voice now shares UDP on the game port), plus `allow-flight=true`,
-      `white-list=true`, `enforce-whitelist=true`.
-   3. Start and watch the console. Success = mod loading then "Done" —
-      and it STAYS up past the one-second mark where voicechat previously
-      killed it.
-   4. `whitelist add` **both** usernames from the Console tab.
+1. **Get the server up — voice needs its own UDP port:**
+   1. Look for a **Network / Ports / Allocations** section in the Starbase
+      panel. If you can add a port yourself: allocate one, set it as `port=`
+      (with `bind_address=*`) in the server's
+      `config/voicechat/voicechat-server.properties`, restart. Do NOT use
+      24454 (another customer's) or 9155 (taken in-container).
+   2. If there's no self-serve allocation: **play today without voice** —
+      delete `voicechat-neoforge-1.21.1-2.6.21.jar` and
+      `voicechatrecording-1.21.1-2.0.jar` from the server's `mods/` and
+      restart (clients join fine without server-side voice). Meanwhile,
+      ticket BisectHosting: "please allocate an additional UDP port for
+      Simple Voice Chat" — routine request. Restore both jars + set the
+      granted port when it lands.
+   3. Full logs live in the panel file manager at `logs/latest.log` (and
+      `crash-reports/`) — download that instead of copying console scrollback.
+   4. Once it stays up past `Done`: `whitelist add` **both** usernames.
    5. When joining, if spawn terrain looks plain vanilla, the old
       vanilla-generated `world/` folder survived — stop, delete `world/`,
-      restart. (Second boot prepared a world in 1.357 s, which is plausible
-      for ModernFix but worth an eyeball.)
+      restart.
 2. **Fix the client allocation (16 GB machine):** Prism → instance → Settings
    → Memory: **6–8 GB**, plus the 16 GB-row ZGC args from
    `docs/PLAYER-INSTALL.md`. (It ran 4 GB with no GC args — the crash cause.)

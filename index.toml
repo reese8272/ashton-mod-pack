@@ -1733,10 +1733,6 @@ file = "config/voicechat/translations.properties"
 hash = "693643b1d393cbb3ea7f062afc4474fcd66e4036c4f8d7c056434979cbf512d1"
 
 [[files]]
-file = "config/voicechat/voicechat-server.properties"
-hash = "7aabf248ae0dcac757b14fd59fa99fe2bc152b21fe603b3b695a9f8cbd29c5a9"
-
-[[files]]
 file = "config/voicechatrecording-client.toml"
 hash = "6276de36fbb4824ec6baced239dc3bdbe986ffbce81c9eccadc6230857922105"
 

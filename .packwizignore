@@ -72,6 +72,12 @@
 /config/inventoryprofilesnext/New World/
 /config/inventoryprofilesnext/P3T/
 /config/voicechat/category-volumes.properties
+# Host-specific: the voice UDP port depends on the hosting provider's port
+# allocation (24454 taken by another customer on the shared node; 9155 held
+# in-container, likely Sable's physics channel). The SERVER's live copy is
+# authoritative -- shipping this file would overwrite the port on every update
+# and kill the server again.
+/config/voicechat/voicechat-server.properties
 *.bak
 
 # --- REGENERABLE CACHES -------------------------------------------------------

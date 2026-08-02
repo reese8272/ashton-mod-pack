@@ -63,6 +63,9 @@ SKIP_RELATIVE = {
     "voicechat/player-volumes.properties",  # per-person volume sliders
     "voicechat/username-cache.json",
     "voicechat/voicechat-client.properties",
+    # Host-specific voice UDP port -- the live server's copy is authoritative
+    # (see .packwizignore); shipping it re-breaks the server on every update.
+    "voicechat/voicechat-server.properties",
     "resourceful-config-web.json",
     # Machine-specific: records this player's window dimensions and a timestamp.
     "drippyloadingscreen/early_window_reference.properties",

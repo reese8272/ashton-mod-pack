@@ -191,11 +191,18 @@ so **update the server first**, or players will briefly fail to join.
 `server.properties`.
 
 **Server exits right after "Done" with `[voicechat] BindException: Address
-already in use` on UDP 24454** — shared-node port collision: another customer
-owns voicechat's default port. The pack config now sets `port=9155` (the game
-port — safe because Minecraft is TCP and voice is UDP) with `bind_address=*`.
-If this recurs, verify `config/voicechat/voicechat-server.properties` on the
-server wasn't reverted to 24454, and that `enable-query=false`.
+already in use`** — voice chat has no usable UDP port. Both obvious ports are
+taken on this host: 24454 belongs to another customer on the shared node, and
+the game port (9155) is already held inside the container (Sable's physics
+networking opens its own UDP channel on it). Fix: allocate an **additional
+UDP port** via the panel (Network/Ports section, or a BisectHosting support
+ticket — they do this routinely for Simple Voice Chat) and set it as `port=`
+in the server's `config/voicechat/voicechat-server.properties`, with
+`bind_address=*`. That file is deliberately NOT shipped by the pack — the
+server's copy is authoritative and survives pack updates. To get the server
+up *without* voice in the meantime, remove `voicechat-neoforge-*.jar` and
+`voicechatrecording-*.jar` from `mods/` (clients join fine without server
+voice; restore both jars once a port is allocated).
 
 **"Mod mismatch" / connection refused on join** — client and server are on
 different pack versions. Update the server.
