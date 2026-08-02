@@ -1,7 +1,10 @@
 # LEFT OFF
 
-**Last updated:** 2026-07-31 · **Branch:** `claude/prism-loading-error-ywy86x` · **Working tree:** clean
-**Latest release:** `v1.5.2` (published 20:40 UTC, `.mrpack` attached) · **CI:** green
+**Last updated:** 2026-08-02 · **Branch:** `main` · **Working tree:** clean, in sync with `origin/main`
+**Latest release:** `v1.5.2` (published 2026-07-31 20:40 UTC, `.mrpack` attached) · **CI:** green
+
+Everything below is merged to `main`. The post-v1.5.2 audit branch has been folded in;
+no pack content has changed since the `v1.5.2` tag, so `v1.5.2` remains the current release.
 
 > Entry point only. The canonical docs are in `docs/` — see POINTERS. Don't duplicate them here.
 
