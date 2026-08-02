@@ -131,7 +131,7 @@ Verified, don't re-investigate:
 | Players | `Reese8272`, `AshtonHylton` (both whitelisted) |
 | Source instance | `~/Terra Aeterna 1.5 Complete (7-22-2026)/minecraft` (256 jars) |
 | Server pack artifact | `build/server-pack.zip` (gitignored — rebuild via `scripts/build_server_pack.py`) |
-| Issue log entries | `ISSUE-2026-07-31-01`, `ISSUE-2026-08-02-01/02/03` in `~/.claude/ISSUES_LOG.md` |
+| Issue log entries | `ISSUE-2026-07-31-01`, `ISSUE-2026-08-02-01/02/03/04` in `~/.claude/ISSUES_LOG.md` (`-04` is the tick crash, `-03` is the lockout its fix caused) |
 | Test command | `python3.12 -m pytest tests/ -q` (not bare `python3`) |
 
 ---
