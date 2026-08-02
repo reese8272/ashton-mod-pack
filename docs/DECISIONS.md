@@ -376,3 +376,129 @@ Same evidence bar as CLIENT_REQUIRED_DEPS: relabel only on a real crash log,
 never on a guess. More `both`-labelled client-only mods may surface on
 subsequent boots — handle each the same way (relabel in `scripts/sides.json`,
 delete the jar from the server's `mods/`, restart).
+
+---
+
+## 2026-08-02 — Mob Amputation is `client`: a `both` mod can also crash the server *long after* boot
+
+**Decision.** Mob Amputation (Reborn) (`mobamputationforge-1.21.1-1.0.0.jar`)
+relabelled `both` → `client` in `scripts/sides.json`. This is the third such
+relabel, but the first triggered by a **runtime** crash rather than a boot
+crash, so the rule in `side-review.md` is widened: a wrong `both` is not only a
+boot-time risk, it can sit dormant for an entire session and take the server
+down on a player join.
+
+**Why.** The server booted clean, ran 5 minutes idle, and died in the same
+second the first player connected:
+
+```
+14:29:09  Reese8272 joined the game
+14:29:09  net.minecraft.ReportedException: Ticking entity
+Caused by: java.lang.IllegalStateException: Cannot get config value before config is loaded.
+  at neoforge@21.1.248/…ModConfigSpec$ConfigValue.get(ModConfigSpec.java:1222)
+  at mobamputation@1.21.1-1.0.0/…entity.GibEntity.tick(GibEntity.java:131)
+```
+
+`GibEntity.tick()` reads a `ModConfigSpec` value that is never loaded on
+`DEDICATED_SERVER`. The two gib-lifetime settings it would want — `gibTime` and
+`gibGroundTime` — exist only in `config/mobamputation-client.toml`; the common
+spec (`config/mobamputation-common.toml`) contains no lifetime values at all. A
+`CLIENT`-type spec is not loaded on a dedicated server, so `.get()` throws.
+
+The 5-minute delay is not randomness: with no players online no chunk is
+entity-ticking, so a gib persisted in the world never ticked. The join put its
+chunk in ticking range, it ticked once, and the tick loop died. **Deterministic
+and self-repeating** — the crash saved the chunk, so every subsequent join near
+that gib would have crashed the server again.
+
+**Evidence.** Crash report `crash-2026-08-02_14.29.09-server.txt` on the host
+(`/home/container/crash-reports/`); console capture in `random_crash.log`.
+Config specs read from the repo, not assumed. Note the file archived in the repo
+was truncated at 14:26:13 — *before* the crash — and showed only a healthy boot;
+the diagnosis came from the full console tail. **Always confirm the log actually
+contains the failure before reasoning about a crash's absence.** The first read
+of the truncated file pointed at container OOM (`LEFT_OFF.md`'s known 6.5 GB heap
+issue), which was wrong.
+
+**Tradeoff accepted.** `config/mobamputation-common.toml` holds real gameplay
+options (`headlessDeath`, `allowProjectileGibbing`, `gibChance`). Client-only
+means those no longer apply server-side and dismemberment becomes a local visual
+effect. Accepted: the alternative is a server that dies on join. Shipping
+`mobamputation-client.toml` to the server is **not** an alternative — the spec is
+not registered for that dist, so the file's presence is irrelevant.
+
+**Also fixed here.** `packwiz refresh` had indexed two debug artifacts sitting in
+the repo root (`ports.png`, `random_crash.log`), which would have shipped them to
+every player. `.packwizignore` now excludes root-level `/*.log` and `/*.png`
+(with `!/pack.png` exempt for the standard modpack icon). `verify_pack.py` is
+what caught this.
+
+---
+
+## 2026-08-02 — Voice chat runs on its own UDP allocation (9156); the game port is NOT reusable
+
+**Decision.** Simple Voice Chat binds **UDP 9156**, a dedicated allocation from
+the Starbase panel, set as `port=9156` + `bind_address=*` in the *server's live*
+`config/voicechat/voicechat-server.properties`. This **reverses commit
+`fe58af9`** ("Voicechat: use the game port (UDP 9155)"), which was wrong.
+
+**Why.** Two boots died ~1 second after `Done` with
+`BindException: Address already in use` — first on 24454 (SVC's default, held by
+another customer on the shared node), then on 9155 after we deliberately pointed
+voice at the game port. The second failure was self-inflicted: **UDP on the
+Minecraft port is used by the server query**, so voice can never share it.
+The earlier hypothesis that Sable's physics networking was holding 9155 is
+**disproven** — Sable's UDP channel rides the game port alongside the query, and
+neither has anything to do with voice.
+
+**Evidence.** Simple Voice Chat's own server-config reference
+(<https://modrepo.de/minecraft/voicechat/wiki/server_config>), on `port`:
+*"Set this to -1 to use the same port number that is used by the Minecraft
+server. However, it is strongly recommended NOT to use the same port number
+because UDP on it is also used by default for the server query. Doing so may
+crash the server!"* — the failure mode was documented before we hit it twice.
+Resolution confirmed in
+`docs/logs/2026-08-02-server-sixth-boot-voicechat-9156-SUCCESS.log`:
+`[voicechat] Voice chat server started at 169.155.120.28:9156` alongside
+`Done (13.759s)!`, then a real client voice handshake at 14:17:33
+(`Player Reese8272 … successfully connected to voice chat`). Also settles an
+open question: these panel allocations **do** forward UDP, not just TCP.
+
+**Also decided.** No support ticket was needed — the panel's Network / IP
+Address section already listed four unused allocations (`…:9156`–`…:9159`)
+beyond the game port. **Check the panel's own allocation list before ticketing
+the host.**
+
+**Consequence.** `config/voicechat/voicechat-server.properties` stays out of the
+pack (`.packwizignore` + `import_configs.py` `SKIP_RELATIVE`). The port is
+host-specific; shipping the file would overwrite it on every update and re-break
+the server. Cross-referenced as `ISSUE-2026-08-02-01` in `~/.claude/ISSUES_LOG.md`.
+
+---
+
+## 2026-08-02 — Never strip a mod's dependencies as a workaround without stripping its dependents
+
+**Decision.** The "play today without voice" bypass — delete
+`voicechat-*.jar` + `voicechatrecording-*.jar` from the server's `mods/` — is
+**retired**. It cannot be used while `revervox_mod` is in the pack.
+
+**Why.** Revervox declares both as *required* dependencies, so removing them
+converted a tolerable runtime degradation (no voice) into a fatal load-time
+abort: `ModLoadingException … Mod revervox_mod requires voicechat … Currently,
+voicechat is not installed`, thrown from `ModLoader.gatherAndInitializeMods`.
+The server then failed in the pre-load dependency check, thousands of lines
+before voice would ever have initialized — which also meant the port fix
+appeared not to work when in fact it was never reached.
+
+**Evidence.** `docs/logs/2026-08-02-server-fourth-boot-revervox-missing-voicechat.log`
+and `…-fifth-boot-…` (byte-identical failures, 258 scanned mod files both times).
+Revervox is `client: required / server: required` on Modrinth
+(<https://api.modrinth.com/v2/project/4FxDHlKg>).
+
+**Diagnostic that settled it.** Don't trust "the jars were restored" —
+reconstruct what the server actually had from its own log: extract
+`/home/container/mods/*.jar` occurrences and diff against every `mods/*.pw.toml`
+with `side = "both"` or `"server"`. That gave an exact 187-of-189 verdict naming
+the two absent jars. Match candidates with `grep -F`; a naive
+`[A-Za-z0-9._+-]*` character class falsely flags the five pack mods whose
+filenames contain spaces or brackets. Recorded as `ISSUE-2026-08-02-02`.

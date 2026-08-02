@@ -48,6 +48,16 @@
 # Essential account/session data — per player, and contains credentials
 /essential/
 
+# --- DEBUG ARTIFACTS DROPPED AT THE REPO ROOT ---------------------------------
+# Server/client logs and screenshots pulled off the panel for diagnosis land
+# here. `packwiz refresh` indexes any unignored file, so without this rule they
+# ship to every player (verify_pack.py caught ports.png + random_crash.log on
+# 2026-08-02). Archive logs under docs/logs/ instead -- /docs/ is ignored above.
+# pack.png is exempt: it is the conventional modpack icon, not a debug artifact.
+/*.log
+/*.png
+!/pack.png
+
 # --- PLAYER WORLDS AND LOCAL OUTPUT -------------------------------------------
 /saves/
 /backups/
@@ -73,10 +83,13 @@
 /config/inventoryprofilesnext/P3T/
 /config/voicechat/category-volumes.properties
 # Host-specific: the voice UDP port depends on the hosting provider's port
-# allocation (24454 taken by another customer on the shared node; 9155 held
-# in-container, likely Sable's physics channel). The SERVER's live copy is
-# authoritative -- shipping this file would overwrite the port on every update
-# and kill the server again.
+# allocation. 24454 (SVC's default) is held by another customer on the shared
+# node; 9155 CANNOT be used because UDP on the Minecraft port belongs to the
+# server query -- SVC's own docs warn that sharing it "may crash the server".
+# (An earlier note here blamed Sable's physics channel for 9155; that was wrong.
+# See docs/DECISIONS.md 2026-08-02.) Voice now runs on its own allocation, UDP
+# 9156. The SERVER's live copy is authoritative -- shipping this file would
+# overwrite the port on every update and kill the server again.
 /config/voicechat/voicechat-server.properties
 *.bak
 

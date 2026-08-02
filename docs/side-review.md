@@ -11,6 +11,14 @@ client overrides listed in `scripts/apply_sides.py` and `scripts/sides.json`).
 > `Attempted to load class ... for invalid dist DEDICATED_SERVER`) and are now
 > `client`. `both` remains safe for the CLIENT; reviewing this list also
 > protects the server, not just the download size.
+>
+> **A clean boot does not clear a mod.** Mob Amputation booted fine, idled 5
+> minutes, then killed the server the second a player joined:
+> `IllegalStateException: Cannot get config value before config is loaded` from
+> `GibEntity.tick()`, reading a spec that only exists on the client. With no
+> players online nothing entity-ticks, so the fault stayed dormant. Boot-time
+> `invalid dist` errors are the *loud* version of this bug; the quiet version
+> waits for a join. See `docs/DECISIONS.md` 2026-08-02.
 
 **Do not relabel a mod to `client` or `server` on a guess.** If it turns out to
 be needed on the side you removed it from, players get a crash or a

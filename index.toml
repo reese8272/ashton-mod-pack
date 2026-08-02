@@ -2623,7 +2623,7 @@ metafile = true
 
 [[files]]
 file = "mods/mob-amputation-reborn.pw.toml"
-hash = "3b785413738a47ad1053d7deee579e3fa294836fea3063ebcfae36a5b766ef09"
+hash = "64a01511f4b1afe892bfbdc81dd4d32d48fd89984f591b53ccc5397b9cd48373"
 metafile = true
 
 [[files]]

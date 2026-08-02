@@ -1,0 +1,589 @@
+[14:09:35.561] [main/WARN] [mixin/]: Reference map '${refmap_target}refmap.json' for ferritecore.blockstatecache.mixin.json could not be read. If this is a development environment you can ignore this message 
+[14:09:35.561] [main/WARN] [mixin/]: Reference map '${refmap_target}refmap.json' for ferritecore.dedupbakedquad.mixin.json could not be read. If this is a development environment you can ignore this message 
+[14:09:35.562] [main/WARN] [mixin/]: Reference map '${refmap_target}refmap.json' for ferritecore.threaddetec.mixin.json could not be read. If this is a development environment you can ignore this message 
+[14:09:35.562] [main/WARN] [mixin/]: Reference map '${refmap_target}refmap.json' for ferritecore.modelsides.mixin.json could not be read. If this is a development environment you can ignore this message 
+[14:09:35.562] [main/WARN] [mixin/]: Reference map '${refmap_target}refmap.json' for ferritecore.datacomponents.mixin.json could not be read. If this is a development environment you can ignore this message 
+[14:09:35.562] [main/WARN] [mixin/]: Reference map '${refmap_target}refmap.json' for ferritecore.accessors.mixin.json could not be read. If this is a development environment you can ignore this message 
+[14:09:35.562] [main/WARN] [mixin/]: Reference map 'yet_another_config_lib_v3.refmap.json' for yacl.mixins.json could not be read. If this is a development environment you can ignore this message 
+[14:09:35.569] [main/WARN] [mixin/]: Reference map '' for adapter.init.mixins.json could not be read. If this is a development environment you can ignore this message 
+[14:09:36.025] [main/WARN] [mixin/]: Error loading class: xfacthd/framedblocks/common/blockentity/doubled/slab/FramedAdjustableDoubleBlockEntity (java.lang.ClassNotFoundException: xfacthd.framedblocks.common.blockentity.doubled.slab.FramedAdjustableDoubleBlockEntity) 
+[14:09:36.025] [main/WARN] [mixin/]: @Mixin target xfacthd.framedblocks.common.blockentity.doubled.slab.FramedAdjustableDoubleBlockEntity was not found createbigcannons.mixins.json:compat.framedblocks.FramedAdjustableDoubleBlockEntityAccessor from mod createbigcannons 
+[14:09:36.242] [main/ERROR] [common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER 
+[14:09:36.243] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER) 
+[14:09:36.249] [main/ERROR] [common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER 
+[14:09:36.250] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER) 
+[14:09:36.253] [main/ERROR] [common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER 
+[14:09:36.253] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER) 
+[14:09:36.286] [main/INFO] [STDOUT/]: [com.sshakusora.waystonessable.mixin.WaystonesSableMixinPlugin:log:234]: [WaystonesSable/MixinPlugin] Skipping com.sshakusora.waystonessable.mixin.SubLevelAssemblyHelperMixin (Create attached-check API compatible=true, Sable assembleBlocks compatible=true) 
+[14:09:36.319] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/gui/screens/CreateBuffetWorldScreen$BiomeList (java.lang.ClassNotFoundException: net.minecraft.client.gui.screens.CreateBuffetWorldScreen$BiomeList) 
+[14:09:36.319] [main/WARN] [mixin/]: @Mixin target net.minecraft.client.gui.screens.CreateBuffetWorldScreen$BiomeList was not found regions_unexplored.mixins.json:removals.BiomeListMixin from mod regions_unexplored 
+[14:09:36.436] [main/WARN] [mixin/]: Error loading class: org/jetbrains/annotations/ApiStatus$ScheduledForRemoval (java.lang.ClassNotFoundException: org.jetbrains.annotations.ApiStatus$ScheduledForRemoval) 
+[14:09:36.441] [main/ERROR] [common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER 
+[14:09:36.442] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER) 
+[14:09:36.443] [main/ERROR] [common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER 
+[14:09:36.444] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER) 
+[14:09:36.447] [main/ERROR] [common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER 
+[14:09:36.448] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER) 
+[14:09:36.449] [main/ERROR] [common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER 
+[14:09:36.449] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER) 
+[14:09:36.454] [main/ERROR] [common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER 
+[14:09:36.455] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER) 
+[14:09:36.456] [main/ERROR] [common.asm.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER 
+[14:09:36.456] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER) 
+[14:09:36] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[14:09:36] [main/INFO] [minecraft/Bootstrap]: ModernFix reached bootstrap stage (5.933 s after launch)
+[14:09:37] [main/WARN] [mixin/]: @Inject(@At("INVOKE")) Shift.BY=1 on crittersandcompanions.mixins.json:LivingEntityMixin from mod crittersandcompanions::handler$cgj000$crittersandcompanions$onDie exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[14:09:37] [main/ERROR] [ne.ne.fm.co.as.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER
+[14:09:37] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER)
+[14:09:37] [main/ERROR] [ne.ne.fm.co.as.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER
+[14:09:37] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER)
+[14:09:37] [main/ERROR] [ne.ne.fm.co.as.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER
+[14:09:37] [main/WARN] [mixin/]: Error loading class: net/minecraft/client/multiplayer/ClientLevel (java.lang.RuntimeException: Attempted to load class net/minecraft/client/multiplayer/ClientLevel for invalid dist DEDICATED_SERVER)
+[14:09:38] [main/WARN] [mixin/]: Static binding violation: PRIVATE @Overwrite method getTemperature in modernfix-modernfix.mixins.json:perf.remove_biome_temperature_cache.BiomeMixin from mod modernfix cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded.
+[14:09:38] [main/WARN] [mixin/]: Method overwrite conflict for isValidRepairItem in bettertridents.common.mixins.json:TridentItemMixin from mod bettertridents, previously written by com.teamabnormals.upgrade_aquatic.core.mixin.TridentItemMixin. Skipping method.
+[14:09:40] [main/INFO] [minecraft/Bootstrap]: Vanilla bootstrap took 3652 milliseconds
+[14:09:40] [main/INFO] [or.gr.gm.in.ModExtensionLoader/]: Skipping extension class org.groovymc.cgl.api.extension.client.MinecraftExtensions: it requires dist CLIENT, but we're running on DEDICATED_SERVER
+[14:09:40] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.248, for MC 1.21.1
+[14:09:40] [modloading-worker-0/INFO] [Veil/]: Veil is initializing.
+[14:09:40] [modloading-worker-0/INFO] [biolith/]: Biolith for NeoForge is initializing...
+[14:09:40] [modloading-worker-0/INFO] [biolith/]: Enabling Biolith's TerraBlender compatibility layer.
+[14:09:40] [modloading-worker-0/INFO] [ig.ro.RoseGoldEquipment/]: Super Sharpener 0
+[14:09:40] [modloading-worker-0/INFO] [ig.ro.RoseGoldEquipment/]: sharp as Netherite false
+[14:09:40] [modloading-worker-0/INFO] [ig.ro.RoseGoldEquipment/]: tough as Diamond false
+[14:09:40] [modloading-worker-0/INFO] [ig.ro.RoseGoldEquipment/]: pink Diamonds false
+[14:09:40] [modloading-worker-0/INFO] [ig.ro.RoseGoldEquipment/]: sharp as value N false
+[14:09:40] [modloading-worker-0/INFO] [gml/]: Initialised GML mod. Version: 6.0.2
+[14:09:40] [modloading-worker-0/INFO] [skin_weathering/]: Adaptive Skin Weathering initializing for NeoForge 1.21.1
+[14:09:40] [modloading-worker-0/INFO] [Advanced Wall Climber API/]: Advanced Wall Climber API initialized!
+[14:09:40] [modloading-worker-0/INFO] [Moonlight/]: Sending changed configs to client
+[14:09:41] [modloading-worker-0/INFO] [commongroovylibrary/]: CGL NeoForge initialised
+[14:09:41] [modloading-worker-0/INFO] [noisium/]: Loading Noisium.
+[14:09:41] [modloading-worker-0/INFO] [fr.sa.mc.McwRegionsUnexplored/]: Macaw's Regions Unexplored Loading...
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for shroomcraft:common
+[14:09:41] [modloading-worker-0/INFO] [Kambrik/]: Creating Kambrik Shared API...
+[14:09:41] [modloading-worker-0/INFO] [Kambrik/]: Eh?
+[14:09:41] [modloading-worker-0/INFO] [fr.sa.mc.McwRegionsUnexplored/]: Macaw's Regions Unexplored Is Charged !
+[14:09:41] [modloading-worker-0/INFO] [fr.sa.ad.AddonsLib/]: AddonsLib NeoForge !
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for mutantmonsters:common
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Dispatching loading event for config mutantmonsters-common.toml
+[14:09:41] [modloading-worker-0/INFO] [co.ev.co.CommonClass/]: Initialized entity types.
+[14:09:41] [modloading-worker-0/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/home/container/libraries/net/minecraft/server/1.21.1-20240808.144430/server-1.21.1-20240808.144430-srg.jar%23307!/assets/.mcassetsroot' uses unexpected schema
+[14:09:41] [modloading-worker-0/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/home/container/libraries/net/minecraft/server/1.21.1-20240808.144430/server-1.21.1-20240808.144430-srg.jar%23307!/data/.mcassetsroot' uses unexpected schema
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for visualworkbench:common
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Dispatching loading event for config visualworkbench-common.toml
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for universalbonemeal:common
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for stoneworks:common
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Dispatching loading event for config stoneworks-common.toml
+[14:09:41] [modloading-worker-0/WARN] [Supplementaries/]: Dye color white produced diffuse color -1 (white), this should never happen
+[14:09:41] [modloading-worker-0/INFO] [th.ko.ne.te.KotlinForForge/]: Kotlin For Forge Enabled!
+[14:09:41] [modloading-worker-0/INFO] [co.si.cr.Create/]: Create 6.0.10 initializing! Commit hash: ac0c444d9828da3453ae8cc65338e8de063286fb
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for puzzleslib:common
+[14:09:41] [modloading-worker-0/INFO] [Hybrid Aquatic/]: Hybrid Aquatic loaded.
+[14:09:41] [modloading-worker-0/INFO] [ne.vy.wh.WhistleMod/]: WhistleMod initializing...
+[14:09:41] [modloading-worker-0/INFO] [ew.mu.MusketMod/]: Configuration has been loaded
+[14:09:41] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-common.mixins.json:copycat.step.CopycatStepBlockMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatStepBlock
+[14:09:41] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-common.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatBlockEntity
+[14:09:41] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-common.mixins.json:copycat.panel.CopycatPanelBlockMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatPanelBlock
+[14:09:41] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-common.mixins.json:copycat.panel.CopycatPanelBlockMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatPanelBlock
+[14:09:41] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-common.mixins.json:copycat.panel.CopycatPanelBlockMixin from mod copycats because it already exists in com.simibubi.create.content.decoration.copycat.CopycatPanelBlock
+[14:09:41] [modloading-worker-0/WARN] [de.ke.me.Melody/]: [MELODY] Disabling Melody since it's loaded server-side.
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: [KONKRETE] Loading v1.9.9 in server-side mode on NEOFORGE!
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: ---------------------------
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: KONKRETE SHIPS AND USES THE FOLLOWING LIBRARIES:
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]:  
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: Open Imaging Copyright © 2014 Dhyan Blum.
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: Open Imaging is licensed under Apache-2.0.
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]:  
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: JsonPath Copyright © 2017 Jayway.
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: JsonPath is licensed under Apache-2.0.
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]:  
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: Json-smart Copyright © netplex.
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: Json-smart is licensed under Apache-2.0.
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]:  
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: Exp4j Copyright © Frank Asseg.
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: Exp4j is licensed under Apache-2.0. https://github.com/fasseg/exp4j
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: ---------------------------
+[14:09:41] [modloading-worker-0/INFO] [de.ke.ko.Konkrete/]: [KONKRETE] Server-side modules initialized and ready to use!
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for diagonalwalls:common
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for airhop:common
+[14:09:41] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for diagonalblocks:common
+[14:09:42] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for diagonalwindows:common
+[14:09:42] [modloading-worker-0/INFO] [Collective/]: Loading Collective version 8.39.
+[14:09:42] [modloading-worker-0/INFO] [co.cu.Cupboard/]: Loaded config for: cupboard.json
+[14:09:42] [modloading-worker-0/INFO] [bountiful/]: Registering Network Messages..
+[14:09:42] [modloading-worker-0/INFO] [owo/]: This custom packet isn't supported by Gadget - Add support via DrawPacketHandler.EVENT
+[14:09:42] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for easymagic:common
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.door.CopycatDoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.door.CopycatDoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.door.CopycatDoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.door.CopycatDoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatGlassFluidPipeBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatGlassFluidPipeBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatGlassFluidPipeBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatGlassFluidPipeBlock
+[14:09:42] [modloading-worker-0/INFO] [Puzzles Lib/]: Dispatching loading event for config easymagic-common.toml
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.button.CopycatButtonBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.button.CopycatButtonBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.button.CopycatButtonBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.button.CopycatButtonBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence.CopycatFenceBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence.CopycatFenceBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence.CopycatFenceBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence.CopycatFenceBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence_gate.CopycatFenceGateBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence_gate.CopycatFenceGateBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence_gate.CopycatFenceGateBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fence_gate.CopycatFenceGateBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.ladder.CopycatLadderBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.ladder.CopycatLadderBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.ladder.CopycatLadderBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.ladder.CopycatLadderBlock
+[14:09:42] [modloading-worker-0/INFO] [YetAnotherConfigLib/]: Deserializing CACCommonConfig from '/home/container/config/crittersandcompanions-common.json5'
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatPressurePlateBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatPressurePlateBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatPressurePlateBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatPressurePlateBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatWeightedPressurePlate
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatWeightedPressurePlate
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatWeightedPressurePlate
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pressure_plate.CopycatWeightedPressurePlate
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.stairs.CopycatStairsBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.stairs.CopycatStairsBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.stairs.CopycatStairsBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.stairs.CopycatStairsBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.trapdoor.CopycatTrapdoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.trapdoor.CopycatTrapdoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.trapdoor.CopycatTrapdoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.trapdoor.CopycatTrapdoorBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.wall.CopycatWallBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.wall.CopycatWallBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.wall.CopycatWallBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.wall.CopycatWallBlock
+[14:09:42] [modloading-worker-0/INFO] [ne.bl.mo.ba.ne.co.NeoForgeBalmConfig/]: Registering config for waystones:common (COMMON) with 34 properties.
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method rotate in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pane.CopycatPaneBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method mirror in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pane.CopycatPaneBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useItemOn in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pane.CopycatPaneBlock
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method useWithoutItem in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.pane.CopycatPaneBlock
+[14:09:42] [modloading-worker-0/INFO] [Moonlight/]: Sending changed configs to client
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.CCCopycatBlockEntity
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlockEntity
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.shaft.CopycatShaftBlockEntity
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.multistate.MultiStateCopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.cogwheel.CopycatCogWheelBlockEntity
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatFluidPipeBlockEntity
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.fluid_pipe.CopycatStraightPipeBlockEntity
+[14:09:42] [modloading-worker-0/WARN] [mixin/]: Discarding @Unique public method onLoad in copycats-neoforge.mixins.json:foundation.copycat.CopycatBlockEntityMixin from mod copycats because it already exists in com.copycatsplus.copycats.content.copycat.sliding_door.CopycatSlidingDoorBlockEntity
+[14:09:42] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for diagonalfences:common
+[14:09:42] [modloading-worker-0/INFO] [Immersive Thunder/]: ImmersiveThunder loaded
+[14:09:42] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for universalenchants:common
+[14:09:42] [modloading-worker-0/ERROR] [mts/]: MTSERROR: Welcome to MTS VERSION: 24.0.0
+[14:09:42] [modloading-worker-0/INFO] [coroutil/]: neo forge loader environment detected
+[14:09:42] [modloading-worker-0/INFO] [Puzzles Lib/]: Constructing components for bettertridents:common
+[14:09:42] [modloading-worker-0/INFO] [Puzzles Lib/]: Dispatching loading event for config bettertridents-common.toml
+[14:09:42] [modloading-worker-0/INFO] [YetAnotherConfigLib/]: Deserializing YACLConfig from '/home/container/config/yacl.json5'
+[14:09:42] [modloading-worker-0/INFO] [me.co.ae.CreateAeronauticsDiscovery/]: Loading task scheduler...
+[14:09:42] [modloading-worker-0/INFO] [de.ry.sa.Sable/]: Sable loaded!
+[14:09:42] [modloading-worker-0/INFO] [co.ss.wa.WaystonesSable/]: Registered Create attached-block check for Waystone upper/lower halves; Create Aeronautics block discovery can now keep both halves in one Sable SubLevel.
+[14:09:42] [modloading-worker-0/INFO] [co.ma.Ab.CreateAbyss/]: Create Abyss is in development, content disabled in production
+[14:09:42] [modloading-worker-0/ERROR] [mts/]: MTSERROR: Could not do model-based legacy compats on mtsofficialpack:engineamci4.  Lights and treads will likely not be present on this model.
+[14:09:42] [modloading-worker-0/ERROR] [mts/]: MTSERROR: For input string: "roller2"
+[14:09:43] [modloading-worker-0/ERROR] [mts/]: MTSERROR: Was told to parse part oamp:exterior_luggage with part type luggage_rack, but that's not a valid type for creating a part.
+[14:09:43] [modloading-worker-0/ERROR] [mts/]: MTSERROR: Could not do model-based legacy compats on oamp:enginevwbus.  Lights and treads will likely not be present on this model.
+[14:09:43] [modloading-worker-0/ERROR] [mts/]: MTSERROR: For input string: "roller2"
+[14:09:43] [modloading-worker-0/ERROR] [mts/]: MTSERROR: Could not do model-based legacy compats on oamp:engineecoline.  Lights and treads will likely not be present on this model.
+[14:09:43] [modloading-worker-0/ERROR] [mts/]: MTSERROR: For input string: "roller2"
+[14:09:43] [modloading-worker-0/ERROR] [mts/]: MTSERROR: Could not do model-based legacy compats on oamp:engineikarus.  Lights and treads will likely not be present on this model.
+[14:09:43] [modloading-worker-0/ERROR] [mts/]: MTSERROR: Attempted to parse the OBJ model at: /assets/oamp/objmodels/parts/engineikarus.obj but could not find it.  Check the path and try again.
+[14:09:43] [modloading-worker-0/ERROR] [mts/]: MTSERROR: Object body_selection found with no faces defined at line: 9505 in: /assets/oamp/objmodels/vehicles/escargot.obj
+[14:09:43] [modloading-sync-worker/ERROR] [ne.ne.fm.co.as.RuntimeDistCleaner/DISTXFORM]: Attempted to load class net/minecraft/client/gui/screens/Screen for invalid dist DEDICATED_SERVER
+[14:09:43] [modloading-sync-worker/INFO] [Diagonal Blocks/]: Constructing shapes for DiagonalGlassPaneBlock[NodeWidth=1.0,ExtensionWidth=1.0,NodeTop=16.0,ExtensionBottom=0.0,ExtensionTop=16.0] took 67ms
+[14:09:43] [modloading-sync-worker/INFO] [Diagonal Blocks/]: Constructing shapes for DiagonalWallBlock[NodeWidth=0.0,ExtensionWidth=3.0,NodeTop=24.0,ExtensionBottom=0.0,ExtensionTop=24.0] took 21ms
+[14:09:43] [modloading-sync-worker/INFO] [Diagonal Blocks/]: Constructing shapes for DiagonalWallBlock[NodeWidth=0.0,ExtensionWidth=3.0,NodeTop=0.0,ExtensionBottom=0.0,ExtensionTop=14.0] took 41ms
+[14:09:43] [modloading-sync-worker/INFO] [Diagonal Blocks/]: Constructing shapes for DiagonalWallBlock[NodeWidth=4.0,ExtensionWidth=3.0,NodeTop=16.0,ExtensionBottom=0.0,ExtensionTop=14.0] took 32ms
+[14:09:43] [modloading-sync-worker/INFO] [Diagonal Blocks/]: Constructing shapes for DiagonalWallBlock[NodeWidth=4.0,ExtensionWidth=3.0,NodeTop=24.0,ExtensionBottom=0.0,ExtensionTop=24.0] took 9ms
+[14:09:43] [modloading-sync-worker/INFO] [Diagonal Blocks/]: Constructing shapes for DiagonalFenceBlock[NodeWidth=2.0,ExtensionWidth=2.0,NodeTop=24.0,ExtensionBottom=0.0,ExtensionTop=24.0] took 8ms
+[14:09:43] [modloading-sync-worker/INFO] [Diagonal Blocks/]: Constructing shapes for DiagonalFenceBlock[NodeWidth=2.0,ExtensionWidth=2.0,NodeTop=16.0,ExtensionBottom=0.0,ExtensionTop=16.0] took 11ms
+[14:09:43] [modloading-sync-worker/INFO] [Diagonal Blocks/]: Constructing shapes for DiagonalFenceBlock[NodeWidth=2.0,ExtensionWidth=1.0,NodeTop=16.0,ExtensionBottom=6.0,ExtensionTop=15.0] took 28ms
+[14:09:46] [modloading-sync-worker/INFO] [ig.ro.RoseGoldEquipment/]: Pink Diamonds N  false
+[14:09:46] [modloading-sync-worker/WARN] [Moonlight/]: Failed to find child for WoodType: luminous_nether:mushroom - stick. Ignored! ERROR: No value present
+[14:09:46] [modloading-sync-worker/INFO] [Moonlight/]: Initialized block sets in 27ms
+[14:09:47] [modloading-sync-worker/INFO] [Moonlight/]: Sending changed configs to client
+[14:09:47] [modloading-sync-worker/INFO] [Moonlight/]: Sending changed configs to client
+[14:09:47] [modloading-worker-0/INFO] [ig.ro.RoseGoldEquipment/]: Rose Gilding Your Game
+[14:09:47] [NeoForge Version Check/INFO] [ne.ne.fm.VersionChecker/]: Global NeoForge version check system disabled, no further processing.
+[14:09:47] [modloading-worker-0/INFO] [voicechat/]: [voicechat] Compatibility version 20
+[14:09:47] [modloading-worker-0/INFO] [ne.vy.wh.WhistleMod/]: WhistleMod common setup complete
+[14:09:47] [modloading-worker-0/INFO] [co.be.BetterChunkLoading/]: betterchunkloading mod initialized
+[14:09:47] [modloading-worker-0/INFO] [Hybrid Aquatic/]: Loading Hybrid Aquatic config file
+[14:09:47] [modloading-worker-0/INFO] [voicechat/]: [voicechat] Loading plugins
+[14:09:47] [modloading-worker-0/INFO] [voicechat/]: [voicechat] Loaded 1 plugin(s)
+[14:09:47] [modloading-worker-0/INFO] [voicechat/]: [voicechat] Initializing plugins
+[14:09:47] [modloading-worker-0/INFO] [voicechat/]: [voicechat] Initialized 1 plugin(s)
+[14:09:47] [modloading-worker-0/INFO] [voicechat/]: [voicechat] Registering events for 'voicechatrecording'
+[14:09:47] [modloading-worker-0/INFO] [fzzy_config/]: Loaded config immersive_paintings:common_config in 100ms
+[14:09:47] [modloading-worker-0/INFO] [fzzy_config/]: Loaded config immersive_paintings:client_config in 12ms
+[14:09:47] [modloading-sync-worker/INFO] [ribbits/]: Registering Ribbit umbrella types...
+[14:09:47] [modloading-sync-worker/INFO] [ribbits/]: Registering Ribbit professions...
+[14:09:47] [modloading-sync-worker/INFO] [ribbits/]: Registering Ribbit instruments...
+[14:09:47] [modloading-sync-worker/INFO] [terrablender/]: Registered region minecraft:overworld to index 0 for type OVERWORLD
+[14:09:47] [modloading-sync-worker/INFO] [terrablender/]: Registered region minecraft:nether to index 0 for type NETHER
+[14:09:47] [modloading-sync-worker/INFO] [terrablender/]: Registered region infernalexp:nether to index 1 for type NETHER
+[14:09:47] [modloading-sync-worker/INFO] [Supplementaries/]: Finished mod setup in: [7, 0, 3, 0, 0, 0] ms
+[14:09:47] [modloading-sync-worker/WARN] [co.mk.vs.VsFluidLinkMod/]: Create BlockStressValues class not found
+[14:09:47] [modloading-sync-worker/INFO] [Framework/SYNCED_ENTITY_DATA]: Registered synced data key scguns:aiming for minecraft:player
+[14:09:47] [modloading-sync-worker/INFO] [Framework/SYNCED_ENTITY_DATA]: Registered synced data key scguns:reloading for minecraft:player
+[14:09:47] [modloading-sync-worker/INFO] [Framework/SYNCED_ENTITY_DATA]: Registered synced data key scguns:shooting for minecraft:player
+[14:09:47] [modloading-sync-worker/INFO] [Framework/SYNCED_ENTITY_DATA]: Registered synced data key scguns:burstcount for minecraft:player
+[14:09:47] [modloading-sync-worker/INFO] [Framework/SYNCED_ENTITY_DATA]: Registered synced data key scguns:onburstcooldown for minecraft:player
+[14:09:47] [modloading-sync-worker/INFO] [Framework/SYNCED_ENTITY_DATA]: Registered synced data key scguns:melee for minecraft:player
+[14:09:47] [modloading-sync-worker/INFO] [Moonlight/]: Initialized color sets in 53ms
+[14:09:47] [modloading-sync-worker/ERROR] [Moonlight/]: Fabric API detected! This is not a Fabric mod, so please don't report related issues to MoonlightLib or its dependent(s). This can usually happen when using Connector, or when using a mod that does NOT have a native Neoforge implementation. This can easily lead to poor compatibility and other bizarre issues. Proceed at your own risk. 
+ Mods that bundle Fabric API: [forgified-fabric-api-0.116.14+2.3.0+1.21.1.jar]
+[14:09:47] [modloading-worker-0/INFO] [Hybrid Aquatic/]: Server starting...
+[14:09:47] [modloading-worker-0/INFO] [co.mr.cr.CreateAddition/]: Create Crafts & Additions Initialized!
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from net.blay09.mods.balm.neoforge.compat.hudinfo.NeoForgeJadeModCompat
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from net.mehvahdjukaar.supplementaries.integration.JadeCompat
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from de.maxhenkel.gravestone.integration.waila.PluginGraveStone
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from noobanidus.mods.lootr.common.integration.jade.LootrWailaPlugin
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from com.aetherteam.aether.integration.jade.AetherJadePlugin
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from Jade.CatMoodServer
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from Jade.CatMoodClient
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from net.blay09.mods.waystones.compat.JadeIntegration
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from mcinterface1211.InterfaceJade
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.vanilla.VanillaPlugin
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.universal.UniversalPlugin
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.debug.DebugPlugin
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.core.CorePlugin
+[14:09:47] [modloading-worker-0/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.access.AccessibilityPlugin
+[14:09:47] [modloading-sync-worker/INFO] [Kambrik/]: Registering network payloads..
+[14:09:47] [modloading-sync-worker/INFO] [Kambrik/]: Registering ServerMsg: bountiful:select_bounty
+[14:09:47] [modloading-sync-worker/INFO] [Kambrik/]: Registering ServerMsg: bountiful:server_player_status
+[14:09:47] [modloading-sync-worker/INFO] [Kambrik/]: Registering ClientMsg: kambrik:test_msg
+[14:09:47] [modloading-sync-worker/INFO] [Kambrik/]: Registering ClientMsg: bountiful:clipboard_copy
+[14:09:47] [modloading-sync-worker/INFO] [Kambrik/]: Registering ClientMsg: bountiful:bounty_complete
+[14:09:47] [modloading-sync-worker/INFO] [Kambrik/]: Registering ClientMsg: bountiful:update_bounty_criteria
+[14:09:47] [modloading-sync-worker/INFO] [Kambrik/]: Registering ClientMsg: bountiful:client_player_status
+[14:09:47] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[14:09:47] [main/INFO] [rechiseled/]: 1 chiseling plugins were registered: [rechiseled:datapacks]
+[14:09:48] [main/ERROR] [minecraft/AbstractPackResources]: Couldn't load fabric:overlays metadata
+com.google.gson.JsonParseException: Unknown resource condition key: tectonic:config; Unknown resource condition key: tectonic:config; Unknown resource condition key: tectonic:config
+        at MC-BOOTSTRAP/datafixerupper@8.0.16/com.mojang.serialization.DataResult$Error.getOrThrow(DataResult.java:287) ~[datafixerupper-8.0.16.jar%23100!/:?] {re:mixin}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.metadata.MetadataSectionType$1.fromJson(MetadataSectionType.java:20) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:classloading,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.AbstractPackResources.getMetadataFromStream(AbstractPackResources.java:54) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:connector_pre_launch:A,re:computing_frames,pl:connector_pre_launch:A,re:classloading,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.AbstractPackResources.getMetadataSection(AbstractPackResources.java:33) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:connector_pre_launch:A,re:computing_frames,pl:connector_pre_launch:A,re:classloading,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.repository.Pack.localvar$bhh000$fabric_resource_conditions_api_v1$applyOverlayConditions(Pack.java:536) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.repository.Pack.readPackMetadata(Pack.java:95) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.repository.Pack.readMetaAndCreate(Pack.java:40) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/tectonic@3.0.26/dev.worldgen.tectonic.platform.neoforge.TectonicNeoforge.registerEnabledPacks(TectonicNeoforge.java:37) ~[tectonic-3.0.26-neoforge-21.1.jar%23469!/:?] {re:classloading}
+        at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar%2362!/:?] {}
+        at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar%2362!/:?] {}
+        at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:342) ~[bus-8.0.5.jar%2362!/:?] {}
+        at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:177) ~[loader-4.0.43.jar%2359!/:4.0] {}
+        at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.ModLoader.lambda$postEvent$13(ModLoader.java:358) ~[loader-4.0.43.jar%2359!/:4.0] {}
+        at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {re:mixin}
+        at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.ModList.forEachModInOrder(ModList.java:174) ~[loader-4.0.43.jar%2359!/:4.0] {}
+        at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.ModLoader.postEvent(ModLoader.java:358) ~[loader-4.0.43.jar%2359!/:4.0] {}
+        at TRANSFORMER/neoforge@21.1.248/net.neoforged.neoforge.resource.ResourcePackLoader.populatePackRepository(ResourcePackLoader.java:74) ~[neoforge-21.1.248-universal.jar%23308!/:?] {re:classloading}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.repository.ServerPacksSource.createPackRepository(ServerPacksSource.java:76) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:classloading,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.repository.ServerPacksSource.createPackRepository(ServerPacksSource.java:87) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:classloading,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.Main.main(Main.java:190) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:connector_pre_launch:A,re:classloading,pl:mixin:A,pl:connector_pre_launch:A}
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+        at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {re:mixin}
+        at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.43.jar%2359!/:4.0] {}
+        at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:128) ~[loader-4.0.43.jar%2359!/:4.0] {}
+        at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonServerLaunchHandler.runService(CommonServerLaunchHandler.java:32) ~[loader-4.0.43.jar%2359!/:4.0] {}
+        at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.43.jar%2359!/:4.0] {}
+        at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2364!/:?] {}
+        at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2364!/:?] {}
+        at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2364!/:?] {}
+        at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2364!/:?] {}
+        at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2364!/:?] {}
+        at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2364!/:?] {}
+        at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2364!/:?] {}
+        at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}
+        at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}
+[14:09:48] [main/INFO] [co.si.cr.Create/]: Created 646 recipes which will be injected into the game
+[14:09:48] [main/INFO] [co.si.cr.Create/]: Created 7 tags which will be injected into the game
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack fabric, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack supplementaries:generated_pack, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack mutantmonsters:biome_modifications, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack tectonic, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack builtin/aether_accessories, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack mod/starcatcher:built_in_datapacks/create_compat, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack mod/starcatcher:built_in_datapacks/tide_compat, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack mod/starcatcher:built_in_datapacks/selling_bin_starcatcher_emeralds, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack mod/starcatcher:built_in_datapacks/selling_bin_fishes, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack create:dynamic_data, loading it automatically
+[14:09:48] [main/INFO] [minecraft/MinecraftServer]: Found new data pack bettertridents:boosted_impaling, loading it automatically
+[14:09:48] [main/INFO] [Puzzles Lib/]: Data generation for dynamic pack resources provided by 'mutantmonsters' took 199ms
+[14:09:48] [main/INFO] [Puzzles Lib/]: Data generation for dynamic pack resources provided by 'bettertridents' took 55ms
+[14:09:48] [main/INFO] [co.te.bl.co.Blueprint/]: Successfully loaded 6 data remolders!
+[14:09:48] [main/INFO] [Moonlight/]: Resource cache state for SERVER_DATA: needs regeneration
+[14:09:48] [main/INFO] [Moonlight/]: Deleting directory: /home/container/dynamic-data-pack-cache/supplementaries-generated_pack
+[14:09:48] [main/INFO] [Moonlight/]: Cleared cache pack resources at /home/container/dynamic-data-pack-cache/supplementaries-generated_pack in 1.925 ms
+[14:09:48] [main/INFO] [Moonlight/]: Starting runtime resource generation for pack type SERVER_DATA with generators [supplementaries:generated_pack]
+[14:09:48] [main/INFO] [Moonlight/]: Regenerating Dynamic SERVER_DATA Resources Provider [supplementaries:generated_pack], requested by strategy CACHED_FOLDER
+[14:09:48] [pool-10-thread-1/WARN] [Supplementaries/]: Could not find Sign for wood regions_unexplored:alpha. Does this block even exist? It should! Skipping way sign recipe generation
+[14:09:48] [pool-10-thread-1/WARN] [Supplementaries/]: Could not find Sign for wood hybrid_aquatic:driftwood. Does this block even exist? It should! Skipping way sign recipe generation
+[14:09:48] [pool-10-thread-1/WARN] [Supplementaries/]: Could not find Sign for wood luminous_nether:mushroom. Does this block even exist? It should! Skipping way sign recipe generation
+[14:09:48] [pool-10-thread-1/WARN] [Supplementaries/]: Could not find Sign for wood luminous_nether:withered. Does this block even exist? It should! Skipping way sign recipe generation
+[14:09:48] [pool-10-thread-1/INFO] [Supplementaries/]: Generated 46 sign post recipes
+[14:09:48] [main/INFO] [Moonlight/]: Generated runtime SERVER_DATA for pack supplementaries:generated_pack in 25.09 ms
+[14:09:48] [main/INFO] [Moonlight/]: Populated search tree for pack at /home/container/dynamic-data-pack-cache/supplementaries-generated_pack in 1.533 ms
+[14:09:48] [main/INFO] [Moonlight/]: Finished runtime resources generation for 1 packs in a total of 35.40 ms 
+[14:09:49] [main/INFO] [minecraft/Main]: No existing world data, creating new world
+[14:09:49] [Worker-Main-6/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: minecraft:loot_table/entities/magma_cube.json
+[14:09:49] [Worker-Main-6/ERROR] [minecraft/LootDataType]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:unusualfishmod:entities/blizzardfin - Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"function":"minecraft:looting_enchant","count":{"min":1,"max":2}}
+[14:09:49] [Worker-Main-6/ERROR] [minecraft/LootDataType]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:scguns:entities/blunderer - Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"count":{"type":"minecraft:uniform","max":1,"min":0},"function":"minecraft:looting_enchant"}
+[14:09:49] [Worker-Main-6/ERROR] [minecraft/LootDataType]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:unusualfishmod:entities/trumpet_squid - Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"function":"minecraft:looting_enchant","count":{"min":0,"max":2}}
+[14:09:49] [Worker-Main-6/INFO] [netherite_horse_armor/]: Successfully modified loot table: 'minecraft:chests/bastion_treasure'
+[14:09:49] [Worker-Main-6/ERROR] [minecraft/LootDataType]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:unusualfishmod:entities/crimsonshell - Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"function":"minecraft:looting_enchant","count":{"min":0,"max":2}}
+[14:09:49] [Worker-Main-6/ERROR] [minecraft/LootDataType]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:unusualfishmod:entities/shockcat - Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"function":"minecraft:looting_enchant","count":{"min":0,"max":1}}; Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"function":"minecraft:looting_enchant","count":{"min":1,"max":2}}
+[14:09:49] [Worker-Main-6/ERROR] [minecraft/LootDataType]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:revervox_mod:entities/thingy - Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"count":{"type":"minecraft:uniform","max":1,"min":0},"function":"minecraft:looting_enchant"}; Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"count":{"type":"minecraft:uniform","max":1,"min":0},"function":"minecraft:looting_enchant"}
+[14:09:49] [Worker-Main-6/ERROR] [minecraft/LootDataType]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:unusualfishmod:entities/porcupine_lobsta - Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"function":"minecraft:looting_enchant","count":{"min":0,"max":1}}
+[14:09:49] [Worker-Main-6/ERROR] [minecraft/LootDataType]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:unusualfishmod:entities/prawn - Failed to parse either. First: Unknown registry key in ResourceKey[minecraft:root / minecraft:loot_function_type]: minecraft:looting_enchant; Second: Not a json array: {"function":"minecraft:looting_enchant","count":1,"conditions":[{"condition":"minecraft:random_chance","chance":0.5}]}
+[14:09:50] [Worker-Main-6/INFO] [bountiful/]: Adding serverside commands..
+[14:09:50] [Worker-Main-6/INFO] [co.gi.al.al.AlexsMobs/]: Adding datapack listener capsid_recipes
+[14:09:50] [main/INFO] [bountiful/]: Merging _all_objs with _all_objs
+[14:09:50] [main/INFO] [bountiful/]: Merging _all_rews with _all_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging _metal_objs with _metal_objs
+[14:09:50] [Worker-Main-3/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/dimstone.json
+[14:09:50] [main/INFO] [bountiful/]: Merging cleric_objs with cleric_objs
+[14:09:50] [Worker-Main-3/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/dullstone.json
+[14:09:50] [Worker-Main-3/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/shimmer_stone.json
+[14:09:50] [Worker-Main-3/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/shimmer_sand.json
+[14:09:50] [Worker-Main-3/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/basalt_iron_ore.json
+[14:09:50] [main/INFO] [bountiful/]: Merging cleric_rews with cleric_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging farmer_objs with farmer_objs
+[14:09:50] [main/INFO] [bountiful/]: Merging farmer_objs with farmer_objs
+[14:09:50] [main/INFO] [bountiful/]: Merging farmer_rews with farmer_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging farmer_rews with farmer_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging fisherman_objs with fisherman_objs
+[14:09:50] [main/INFO] [bountiful/]: Merging fletcher_rews with fletcher_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging inventor_objs with inventor_objs
+[14:09:50] [main/INFO] [bountiful/]: Merging inventor_rews with inventor_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging librarian_rews with librarian_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging toolsmith_objs with toolsmith_objs
+[14:09:50] [main/INFO] [bountiful/]: Merging toolsmith_rews with toolsmith_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging toolsmith_rews with toolsmith_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging toolsmith_rews with toolsmith_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging chef_rews with chef_rews
+[14:09:50] [main/INFO] [bountiful/]: Merging chef_objs with chef_objs
+[14:09:50] [main/INFO] [bountiful/]: Trying to load unloaded files from: config/bountiful/bounty_pools
+[14:09:50] [main/INFO] [bountiful/]: Trying to load unloaded files from: config/bountiful/bounty_decrees
+[14:09:50] [main/WARN] [bountiful/]: Pool 'chef_rews' has been loaded, but is not attached to any existing data! This is probably a configuration error.
+* If you intended to add this data to an existing Pool, please use an existing Pool name instead of 'chef_rews'.
+* Did you mean to use the pool name 'fletcher_rews' instead of 'chef_rews'?
+* Otherwise, please add 'chef_rews' to a Decree.
+* NOTE: This data will not show up in game until one of the above fixes is made.
+[14:09:50] [main/WARN] [bountiful/]: Pool 'carpenter_objs' has been loaded, but is not attached to any existing data! This is probably a configuration error.
+* If you intended to add this data to an existing Pool, please use an existing Pool name instead of 'carpenter_objs'.
+* Did you mean to use the pool name 'starcatcher_objs' instead of 'carpenter_objs'?
+* Otherwise, please add 'carpenter_objs' to a Decree.
+* NOTE: This data will not show up in game until one of the above fixes is made.
+[14:09:50] [main/WARN] [bountiful/]: Pool 'carpenter_rews' has been loaded, but is not attached to any existing data! This is probably a configuration error.
+* If you intended to add this data to an existing Pool, please use an existing Pool name instead of 'carpenter_rews'.
+* Otherwise, please add 'carpenter_rews' to a Decree.
+* NOTE: This data will not show up in game until one of the above fixes is made.
+[14:09:50] [main/WARN] [bountiful/]: Pool 'chef_objs' has been loaded, but is not attached to any existing data! This is probably a configuration error.
+* If you intended to add this data to an existing Pool, please use an existing Pool name instead of 'chef_objs'.
+* Did you mean to use the pool name 'fletcher_objs' instead of 'chef_objs'?
+* Otherwise, please add 'chef_objs' to a Decree.
+* NOTE: This data will not show up in game until one of the above fixes is made.
+[14:09:50] [main/WARN] [bountiful/]: Decree 'starcatcher' top value rewards cannot be matched with equivalent objectives. This will result in uneven bounties. Consider adding more high value objectives or lowering the value of your rewards.
+* Top Rewards: _all_rews.prismarine_crystals (12000.0), _all_rews.supp_safe (12000.0) total up to: 24000.0
+* Top Objs: starcatcher_objs.legendary_fish (10000.0) total up to: 10000.0
+[14:09:50] [Worker-Main-1/INFO] [scguns/]: Successfully loaded shock coil config
+[14:09:50] [Worker-Main-4/ERROR] [co.wd.se.pr.AbstractProcessor/]: Selling Bin Processor selling_bin:quality_foods_processor is not registered! Make sure it's not dependent on another mod, and that you spelt the name correctly. Using empty processor instead.
+[14:09:50] [Worker-Main-4/ERROR] [co.wd.se.pr.AbstractProcessor/]: Selling Bin Processor selling_bin:quality_foods_processor is not registered! Make sure it's not dependent on another mod, and that you spelt the name correctly. Using empty processor instead.
+[14:09:50] [Worker-Main-4/ERROR] [co.wd.se.pr.AbstractProcessor/]: Selling Bin Processor selling_bin:quality_foods_processor is not registered! Make sure it's not dependent on another mod, and that you spelt the name correctly. Using empty processor instead.
+[14:09:50] [Worker-Main-4/ERROR] [co.wd.se.pr.AbstractProcessor/]: Selling Bin Processor selling_bin:quality_foods_processor is not registered! Make sure it's not dependent on another mod, and that you spelt the name correctly. Using empty processor instead.
+[14:09:50] [Worker-Main-4/ERROR] [co.wd.se.pr.AbstractProcessor/]: Selling Bin Processor selling_bin:quality_foods_processor is not registered! Make sure it's not dependent on another mod, and that you spelt the name correctly. Using empty processor instead.
+[14:09:50] [Worker-Main-7/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/dimstone.json
+[14:09:50] [Worker-Main-7/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/dullstone.json
+[14:09:50] [Worker-Main-7/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/shimmer_stone.json
+[14:09:50] [Worker-Main-7/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/shimmer_sand.json
+[14:09:50] [Worker-Main-7/INFO] [Infernal Expansion/]: [InfernalExpansion] Applying configured data: infernalexp:recipe/crushing/basalt_iron_ore.json
+[14:09:50] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe scguns:create/mechanical_crafting/jr_wristbreaker: com.google.gson.JsonParseException: Key defines symbols that aren't used in pattern: {C}
+[14:09:50] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe scguns:create/charging/depleted_energy_core: com.google.gson.JsonParseException: No key max_charge_rate in MapLike[{"type":"createaddition:charging","input":{"item":"scguns:depleted_energy_core","count":1},"result":{"id":"scguns:energy_core","count":1},"energy":4800,"maxChargeRate":400}]; No key results in MapLike[{"type":"createaddition:charging","input":{"item":"scguns:depleted_energy_core","count":1},"result":{"id":"scguns:energy_core","count":1},"energy":4800,"maxChargeRate":400}]; No key ingredients in MapLike[{"type":"createaddition:charging","input":{"item":"scguns:depleted_energy_core","count":1},"result":{"id":"scguns:energy_core","count":1},"energy":4800,"maxChargeRate":400}]
+[14:09:50] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe scguns:create/charging/charged_amethyst_shard: com.google.gson.JsonParseException: No key max_charge_rate in MapLike[{"type":"createaddition:charging","input":{"item":"minecraft:amethyst_shard","count":1},"result":{"id":"scguns:charged_amethyst_shard","count":1},"energy":3200,"maxChargeRate":400}]; No key results in MapLike[{"type":"createaddition:charging","input":{"item":"minecraft:amethyst_shard","count":1},"result":{"id":"scguns:charged_amethyst_shard","count":1},"energy":3200,"maxChargeRate":400}]; No key ingredients in MapLike[{"type":"createaddition:charging","input":{"item":"minecraft:amethyst_shard","count":1},"result":{"id":"scguns:charged_amethyst_shard","count":1},"energy":3200,"maxChargeRate":400}]
+[14:09:50] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe piglinproliferation:end_stone_fire_ring: com.google.gson.JsonParseException: Input does not contain a key [type]: MapLike[{}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe piglinproliferation:netherrack_soul_fire_ring: com.google.gson.JsonParseException: Input does not contain a key [type]: MapLike[{}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe piglinproliferation:end_stone_soul_fire_ring: com.google.gson.JsonParseException: Input does not contain a key [type]: MapLike[{}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe piglinproliferation:blackstone_fire_ring: com.google.gson.JsonParseException: Input does not contain a key [type]: MapLike[{}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe piglinproliferation:netherrack_fire_ring: com.google.gson.JsonParseException: Input does not contain a key [type]: MapLike[{}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe scguns:create/charging/plasma_core: com.google.gson.JsonParseException: No key max_charge_rate in MapLike[{"type":"createaddition:charging","input":{"item":"scguns:energy_core","count":1},"result":{"id":"scguns:plasma_core","count":1},"energy":16000,"maxChargeRate":400}]; No key results in MapLike[{"type":"createaddition:charging","input":{"item":"scguns:energy_core","count":1},"result":{"id":"scguns:plasma_core","count":1},"energy":16000,"maxChargeRate":400}]; No key ingredients in MapLike[{"type":"createaddition:charging","input":{"item":"scguns:energy_core","count":1},"result":{"id":"scguns:plasma_core","count":1},"energy":16000,"maxChargeRate":400}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe piglinproliferation:deepslate_soul_fire_ring: com.google.gson.JsonParseException: Input does not contain a key [type]: MapLike[{}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe scguns:create/charging/plasma: com.google.gson.JsonParseException: No key max_charge_rate in MapLike[{"type":"createaddition:charging","input":{"item":"minecraft:redstone","count":1},"result":{"id":"scguns:plasma","count":1},"energy":3200,"maxChargeRate":400}]; No key results in MapLike[{"type":"createaddition:charging","input":{"item":"minecraft:redstone","count":1},"result":{"id":"scguns:plasma","count":1},"energy":3200,"maxChargeRate":400}]; No key ingredients in MapLike[{"type":"createaddition:charging","input":{"item":"minecraft:redstone","count":1},"result":{"id":"scguns:plasma","count":1},"energy":3200,"maxChargeRate":400}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe scguns:create/charging/plasma_block: com.google.gson.JsonParseException: No key max_charge_rate in MapLike[{"type":"createaddition:charging","input":{"item":"minecraft:redstone_block","count":1},"result":{"id":"scguns:plasma_block","count":1},"energy":26000,"maxChargeRate":2400}]; No key results in MapLike[{"type":"createaddition:charging","input":{"item":"minecraft:redstone_block","count":1},"result":{"id":"scguns:plasma_block","count":1},"energy":26000,"maxChargeRate":2400}]; No key ingredients in MapLike[{"type":"createaddition:charging","input":{"item":"minecraft:redstone_block","count":1},"result":{"id":"scguns:plasma_block","count":1},"energy":26000,"maxChargeRate":2400}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe piglinproliferation:deepslate_fire_ring: com.google.gson.JsonParseException: Input does not contain a key [type]: MapLike[{}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe scguns:create/charging/shock_cell: com.google.gson.JsonParseException: No key max_charge_rate in MapLike[{"type":"createaddition:charging","input":{"item":"scguns:empty_cell","count":1},"result":{"id":"scguns:shock_cell","count":1},"energy":1600,"maxChargeRate":200}]; No key results in MapLike[{"type":"createaddition:charging","input":{"item":"scguns:empty_cell","count":1},"result":{"id":"scguns:shock_cell","count":1},"energy":1600,"maxChargeRate":200}]; No key ingredients in MapLike[{"type":"createaddition:charging","input":{"item":"scguns:empty_cell","count":1},"result":{"id":"scguns:shock_cell","count":1},"energy":1600,"maxChargeRate":200}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe piglinproliferation:stone_soul_fire_ring: com.google.gson.JsonParseException: Input does not contain a key [type]: MapLike[{}]
+[14:09:51] [main/ERROR] [minecraft/RecipeManager]: Parsing error loading recipe piglinproliferation:blackstone_soul_fire_ring: com.google.gson.JsonParseException: Input does not contain a key [type]: MapLike[{}]
+[14:09:51] [main/INFO] [minecraft/RecipeManager]: Loaded 16121 recipes
+[14:09:51] [main/INFO] [co.te.bl.co.Blueprint/]: Advancement Modification Manager has loaded 8 modifier groups
+[14:09:51] [main/INFO] [minecraft/AdvancementTree]: Loaded 11110 advancements
+[14:09:51] [main/INFO] [io.re.si.IronsSimpleBloodMod/]: Loaded 7 blood type(s)
+[14:09:51] [main/INFO] [ko.fi.FishingManager/]: Loaded 81 fish conversions
+[14:09:51] [main/INFO] [Curios API/]: Loaded 12 curio slots
+[14:09:51] [main/ERROR] [Curios API/]: cape is not a registered slot type!
+[14:09:51] [main/INFO] [Curios API/]: Loaded 1 curio entities
+[14:09:51] [main/INFO] [Supplementaries/]: Loaded 29 flute songs
+[14:09:51] [main/INFO] [co.te.bl.co.Blueprint/]: Chunk Generator Modification Manager has loaded 0 modifier groups
+[14:09:51] [main/INFO] [ew.mu.MusketMod/]: Configuration has been loaded
+[14:09:51] [main/INFO] [Moonlight/]: Applied 17 data villager trades
+[14:09:51] [main/INFO] [Moonlight/]: Failed to load custom color set definition {"id":"quark:rune","colors":{"default":"quark:blank_rune"},"replace":false}. Ignoring
+[14:09:51] [main/INFO] [Moonlight/]: Failed to load custom color set definition {"id":"quark:shard","colors":{"default":"quark:clear_shard"},"replace":false}. Ignoring
+[14:09:51] [main/INFO] [friendsandfoes/]: Loaded 1 moobloom variants
+[14:09:51] [main/INFO] [friendsandfoes/]: Loaded 32 entity animations
+[14:09:51] [main/INFO] [me.co.ae.CreateAeronauticsDiscovery/]: [PHYSICS] Loaded 2 prefab physics config(s)
+[14:09:51] [main/INFO] [me.co.ae.CreateAeronauticsDiscovery/]: [FLYOVER] Loaded 1 flyover event config(s)
+[14:09:51] [main/INFO] [to.ri.sc.co.MerchantTradeConfig/]: Loaded merchant trade config: 3 sections with 10 max offers
+[14:09:51] [main/INFO] [to.ri.sc.co.MerchantTradeConfig/]: Section 'blueprints': 9 trades (limit: 4)
+[14:09:51] [main/INFO] [to.ri.sc.co.MerchantTradeConfig/]: Section 'ammo': 7 trades (limit: 3)
+[14:09:51] [main/INFO] [to.ri.sc.co.MerchantTradeConfig/]: Section 'weapons': 11 trades (limit: 3)
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: antique
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: blood_moon
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: copper
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: diamond_steel
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: frontier
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: iron
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: ocean
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: piglin
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: sculk
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: treated_brass
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: wrecker
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded 11 Scorched Guns raids (10 progression, 1 custom)
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: antique -> antique
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: copper -> copper
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: diamond_steel -> diamond_steel
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: frontier -> frontier
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: gold -> piglin
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: iron -> iron
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: ocean -> ocean
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: sculk -> sculk
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: treated_brass -> treated_brass
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: wrecker -> wrecker
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded 10 raid flare configurations
+[14:09:51] [main/INFO] [scguns/]: Shock coil configuration loaded successfully
+[14:09:51] [main/INFO] [to.ri.sc.co.BrassBoltConfig/]: Loaded brass bolt damage config: {scguns:blunderer=7.0, scguns:redcoat=8.0, scguns:scamp_tank=3.0, scguns:sky_carrier=2.0, scguns:zombified_hornlin=2.5, scguns:hornlin=2.5}
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:auto_turret
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:basic_turret
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:shock_coil
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:shotgun_turret
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:sniper_turret
+[14:09:51] [main/INFO] [scguns/]: Loaded 5 turret configurations
+[14:09:51] [main/INFO] [placebo/]: Registered 0 gear_sets.
+[14:09:51] [main/INFO] [placebo/]: Registered 0 wanderer_trades.
+[14:09:51] [main/INFO] [placebo/]: Registered 0 brewing_mixes.
+[14:09:51] [main/INFO] [rechiseled/]: Loaded 66 chiseling recipes
+[14:09:51] [main/WARN] [minecraft/MappedRegistry]: Not all defined tags for registry ResourceKey[minecraft:root / minecraft:block] are present in data pack: forge:air_tag
+[14:09:51] [main/WARN] [minecraft/MappedRegistry]: Not all defined tags for registry ResourceKey[minecraft:root / minecraft:worldgen/biome] are present in data pack: twilightforest:in_twilight_forest
+[14:09:51] [main/ERROR] [ne.ne.ne.re.DataMapLoader/]: Object with ID modid:example specified in data map for registry minecraft:dimension doesn't exist
+[14:09:51] [main/ERROR] [ne.ne.ne.re.DataMapLoader/]: Object with ID artifacts:anglers_hat specified in data map for registry minecraft:item doesn't exist
+[14:09:52] [main/INFO] [Supplementaries/]: Registering custom dispenser behaviors
+[14:09:52] [main/WARN] [ModernFix/]: Initial datapack load took 3.812 s
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 1.21.1
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[14:09:52] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on 169.155.120.28:9155
+[14:09:52] [Server thread/INFO] [de.ry.sa.Sable/]: Adding UDP server channel future
+[14:09:52] [Netty Epoll Server IO #0/WARN] [io.ne.ch.AbstractChannel/]: A non-root user can't receive a broadcast packet if the socket is not bound to a wildcard address; binding to a non-wildcard address (/169.155.120.28:9155) anyway as requested.
+[14:09:52] [Netty Epoll Server IO #0/INFO] [de.ry.sa.Sable/]: Server UDP channel active
+[14:09:52] [Server thread/INFO] [minecraft/ServerConnectionListener]: Using epoll channel type
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config mutantmonsters-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config universalbonemeal-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config airhop-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config easymagic-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config universalenchants-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config bettertridents-server.toml
+[14:09:52] [Server thread/WARN] [ne.ne.ne.se.ServerLifecycleHooks/]: Detected minecraft:ocelot that was registered with CREATURE mob category but was added under MONSTER mob category for regions_unexplored:eucalyptus_forest biome! Mobs should be added to biomes under the same mob category that the mob was registered as to prevent mob cap spawning issues.
+[14:09:52] [Server thread/WARN] [ne.ne.ne.se.ServerLifecycleHooks/]: Detected minecraft:ocelot that was registered with CREATURE mob category but was added under MONSTER mob category for regions_unexplored:rainforest biome! Mobs should be added to biomes under the same mob category that the mob was registered as to prevent mob cap spawning issues.
+[14:09:52] [Server thread/WARN] [ne.ne.ne.se.ServerLifecycleHooks/]: Detected minecraft:ocelot that was registered with CREATURE mob category but was added under MONSTER mob category for regions_unexplored:sparse_rainforest biome! Mobs should be added to biomes under the same mob category that the mob was registered as to prevent mob cap spawning issues.
+[14:09:52] [Server thread/WARN] [ne.ne.ne.se.ServerLifecycleHooks/]: Detected minecraft:ocelot that was registered with CREATURE mob category but was added under MONSTER mob category for regions_unexplored:tropics biome! Mobs should be added to biomes under the same mob category that the mob was registered as to prevent mob cap spawning issues.
+[14:09:52] [Server thread/INFO] [spark/]: Starting background profiler...
+[14:09:52] [Server thread/INFO] [ne.be.lo.WeaponRegistry/]: Encoded Weapon Attribute registry size (with package overhead): 4287 bytes (in 1 string chunks with the size of 10000)
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: plains
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: savanna
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: snowy
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: taiga
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: desert
+[14:09:52] [Server thread/INFO] [Framework/]: Loading server configs...
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/plains/houses: spawn chance 15%, weight per building 4, 98 -> 114 entries
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/desert/houses: spawn chance 15%, weight per building 3, 79 -> 91 entries
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/taiga/houses: spawn chance 15%, weight per building 3, 86 -> 98 entries
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/snowy/houses: spawn chance 15%, weight per building 3, 74 -> 86 entries
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/savanna/houses: spawn chance 15%, weight per building 4, 91 -> 107 entries
+[14:09:52] [Server thread/INFO] [terrablender/]: Initialized TerraBlender biomes for level stem minecraft:overworld
+[14:09:52] [Server thread/INFO] [terrablender/]: Initialized TerraBlender biomes for level stem minecraft:the_nether
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] SurfaceRuleInitializer: Starting initialization...
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] OVERWORLD rules registered: false
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] Processing dimension: minecraft:overworld
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] Processing dimension: minecraft:the_end
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] Processing dimension: aether:the_aether
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] Processing dimension: minecraft:the_nether
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] SurfaceRuleInitializer: Initialization complete.
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[14:09:52] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:overworld] using RapierPhysicsPipelineProvider
+[2026-08-02T18:09:53.072194144Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:09:53] [Server thread/INFO] [co.cu.Cupboard/]: Loaded config for: betterchunkloading.json
+[14:10:01] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_end] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:01.049901291Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:01] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / aether:the_aether] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:01.136534068Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:01] [Server thread/INFO] [biolith/]: Ignoring world 'aether:the_aether'; unknown dimension type: aether:the_aether
+[14:10:01] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_nether] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:01.197893090Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:01] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[14:10:01] [Worker-Main-5/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 2%
+[14:10:01] [Worker-Main-5/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 2%
+[14:10:02] [Worker-Main-7/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 2%
+[14:10:02] [Worker-Main-3/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 2%
+[14:10:03] [Worker-Main-4/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 18%
+[14:10:03] [Worker-Main-4/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 18%
+[14:10:04] [Worker-Main-6/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 18%
+[14:10:04] [Worker-Main-7/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 51%
+[14:10:05] [Worker-Main-4/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 51%
+[14:10:05] [Worker-Main-3/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 51%
+[14:10:06] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 4761 ms
+[Info]: Startup completed in 35s. Rolling average (8/10): 22s.
+[14:10:06] [Server thread/INFO] [minecraft/DedicatedServer]: Done (13.759s)! For help, type "help"
+[Panel]: Server marked as running...
+[14:10:06] [Server thread/WARN] [minecraft/PathPackResources]: Non [a-z0-9_.-] character in namespace LICENSE in pack , ignoring
+[14:10:06] [Server thread/WARN] [minecraft/PathPackResources]: Non [a-z0-9_.-] character in namespace LICENSE in pack , ignoring
+[14:10:06] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[14:10:06] [Server thread/INFO] [co.mi.ho.HorseBreedingFix/]: Initialized horse-breeding-fix!
+[14:10:06] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:server_faucet_test_level] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:06.138639272Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:06] [Server thread/WARN] [biolith/]: More than one Overworld dimension world created; cowardly ignoring 'minecraft:server_faucet_test_level' in favor of 'minecraft:overworld'
+[14:10:06] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:server_projectile_test_level] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:06.342934522Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:06] [Server thread/WARN] [biolith/]: More than one Overworld dimension world created; cowardly ignoring 'minecraft:server_projectile_test_level' in favor of 'minecraft:overworld'
+[14:10:06] [VoiceChatServerThread/INFO] [voicechat/]: [voicechat] Voice chat server started at 169.155.120.28:9156
+[14:10:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:10:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:10:06] [Server thread/WARN] [ModernFix/]: Dedicated server took 35.674 seconds to load

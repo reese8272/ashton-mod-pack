@@ -1,0 +1,240 @@
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: piglin
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: sculk
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: treated_brass
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded Scorched Guns raid: wrecker
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidConfig/]: Loaded 11 Scorched Guns raids (10 progression, 1 custom)
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: antique -> antique
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: copper -> copper
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: diamond_steel -> diamond_steel
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: frontier -> frontier
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: gold -> piglin
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: iron -> iron
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: ocean -> ocean
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: sculk -> sculk
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: treated_brass -> treated_brass
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded raid flare config: wrecker -> wrecker
+[14:09:51] [main/INFO] [to.ri.sc.co.RaidFlareConfig/]: Loaded 10 raid flare configurations
+[14:09:51] [main/INFO] [scguns/]: Shock coil configuration loaded successfully
+[14:09:51] [main/INFO] [to.ri.sc.co.BrassBoltConfig/]: Loaded brass bolt damage config: {scguns:blunderer=7.0, scguns:redcoat=8.0, scguns:scamp_tank=3.0, scguns:sky_carrier=2.0, scguns:zombified_hornlin=2.5, scguns:hornlin=2.5}
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:auto_turret
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:basic_turret
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:shock_coil
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:shotgun_turret
+[14:09:51] [main/INFO] [scguns/]: Loaded turret config scguns:sniper_turret
+[14:09:51] [main/INFO] [scguns/]: Loaded 5 turret configurations
+[14:09:51] [main/INFO] [placebo/]: Registered 0 gear_sets.
+[14:09:51] [main/INFO] [placebo/]: Registered 0 wanderer_trades.
+[14:09:51] [main/INFO] [placebo/]: Registered 0 brewing_mixes.
+[14:09:51] [main/INFO] [rechiseled/]: Loaded 66 chiseling recipes
+[14:09:51] [main/WARN] [minecraft/MappedRegistry]: Not all defined tags for registry ResourceKey[minecraft:root / minecraft:block] are present in data pack: forge:air_tag
+[14:09:51] [main/WARN] [minecraft/MappedRegistry]: Not all defined tags for registry ResourceKey[minecraft:root / minecraft:worldgen/biome] are present in data pack: twilightforest:in_twilight_forest
+[14:09:51] [main/ERROR] [ne.ne.ne.re.DataMapLoader/]: Object with ID modid:example specified in data map for registry minecraft:dimension doesn't exist
+[14:09:51] [main/ERROR] [ne.ne.ne.re.DataMapLoader/]: Object with ID artifacts:anglers_hat specified in data map for registry minecraft:item doesn't exist
+[14:09:52] [main/INFO] [Supplementaries/]: Registering custom dispenser behaviors
+[14:09:52] [main/WARN] [ModernFix/]: Initial datapack load took 3.812 s
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 1.21.1
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[14:09:52] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on 169.155.120.28:9155
+[14:09:52] [Server thread/INFO] [de.ry.sa.Sable/]: Adding UDP server channel future
+[14:09:52] [Netty Epoll Server IO #0/WARN] [io.ne.ch.AbstractChannel/]: A non-root user can't receive a broadcast packet if the socket is not bound to a wildcard address; binding to a non-wildcard address (/169.155.120.28:9155) anyway as requested.
+[14:09:52] [Netty Epoll Server IO #0/INFO] [de.ry.sa.Sable/]: Server UDP channel active
+[14:09:52] [Server thread/INFO] [minecraft/ServerConnectionListener]: Using epoll channel type
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config mutantmonsters-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config universalbonemeal-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config airhop-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config easymagic-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config universalenchants-server.toml
+[14:09:52] [Server thread/INFO] [Puzzles Lib/]: Dispatching loading event for config bettertridents-server.toml
+[14:09:52] [Server thread/WARN] [ne.ne.ne.se.ServerLifecycleHooks/]: Detected minecraft:ocelot that was registered with CREATURE mob category but was added under MONSTER mob category for regions_unexplored:eucalyptus_forest biome! Mobs should be added to biomes under the same mob category that the mob was registered as to prevent mob cap spawning issues.
+[14:09:52] [Server thread/WARN] [ne.ne.ne.se.ServerLifecycleHooks/]: Detected minecraft:ocelot that was registered with CREATURE mob category but was added under MONSTER mob category for regions_unexplored:rainforest biome! Mobs should be added to biomes under the same mob category that the mob was registered as to prevent mob cap spawning issues.
+[14:09:52] [Server thread/WARN] [ne.ne.ne.se.ServerLifecycleHooks/]: Detected minecraft:ocelot that was registered with CREATURE mob category but was added under MONSTER mob category for regions_unexplored:sparse_rainforest biome! Mobs should be added to biomes under the same mob category that the mob was registered as to prevent mob cap spawning issues.
+[14:09:52] [Server thread/WARN] [ne.ne.ne.se.ServerLifecycleHooks/]: Detected minecraft:ocelot that was registered with CREATURE mob category but was added under MONSTER mob category for regions_unexplored:tropics biome! Mobs should be added to biomes under the same mob category that the mob was registered as to prevent mob cap spawning issues.
+[14:09:52] [Server thread/INFO] [spark/]: Starting background profiler...
+[14:09:52] [Server thread/INFO] [ne.be.lo.WeaponRegistry/]: Encoded Weapon Attribute registry size (with package overhead): 4287 bytes (in 1 string chunks with the size of 10000)
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: plains
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: savanna
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: snowy
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: taiga
+[14:09:52] [Server thread/INFO] [bountiful/]: Registering Bounty Board Jigsaw Piece for Village Type: desert
+[14:09:52] [Server thread/INFO] [Framework/]: Loading server configs...
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/plains/houses: spawn chance 15%, weight per building 4, 98 -> 114 entries
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/desert/houses: spawn chance 15%, weight per building 3, 79 -> 91 entries
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/taiga/houses: spawn chance 15%, weight per building 3, 86 -> 98 entries
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/snowy/houses: spawn chance 15%, weight per building 3, 74 -> 86 entries
+[14:09:52] [Server thread/INFO] [co.su.dy.vi.VillageAddition/]: [DynamicVillage] Pool minecraft:village/savanna/houses: spawn chance 15%, weight per building 4, 91 -> 107 entries
+[14:09:52] [Server thread/INFO] [terrablender/]: Initialized TerraBlender biomes for level stem minecraft:overworld
+[14:09:52] [Server thread/INFO] [terrablender/]: Initialized TerraBlender biomes for level stem minecraft:the_nether
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] SurfaceRuleInitializer: Starting initialization...
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] OVERWORLD rules registered: false
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] Processing dimension: minecraft:overworld
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] Processing dimension: minecraft:the_end
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] Processing dimension: aether:the_aether
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] Processing dimension: minecraft:the_nether
+[14:09:52] [Server thread/INFO] [citadel/]: [Citadel] SurfaceRuleInitializer: Initialization complete.
+[14:09:52] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[14:09:52] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:overworld] using RapierPhysicsPipelineProvider
+[2026-08-02T18:09:53.072194144Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:09:53] [Server thread/INFO] [co.cu.Cupboard/]: Loaded config for: betterchunkloading.json
+[14:10:01] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_end] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:01.049901291Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:01] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / aether:the_aether] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:01.136534068Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:01] [Server thread/INFO] [biolith/]: Ignoring world 'aether:the_aether'; unknown dimension type: aether:the_aether
+[14:10:01] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_nether] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:01.197893090Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:01] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[14:10:01] [Worker-Main-5/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 2%
+[14:10:01] [Worker-Main-5/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 2%
+[14:10:02] [Worker-Main-7/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 2%
+[14:10:02] [Worker-Main-3/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 2%
+[14:10:03] [Worker-Main-4/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 18%
+[14:10:03] [Worker-Main-4/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 18%
+[14:10:04] [Worker-Main-6/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 18%
+[14:10:04] [Worker-Main-7/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 51%
+[14:10:05] [Worker-Main-4/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 51%
+[14:10:05] [Worker-Main-3/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 51%
+[14:10:06] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 4761 ms
+[Info]: Startup completed in 35s. Rolling average (8/10): 22s.
+[14:10:06] [Server thread/INFO] [minecraft/DedicatedServer]: Done (13.759s)! For help, type "help"
+[14:10:06] [Server thread/WARN] [minecraft/PathPackResources]: Non [a-z0-9_.-] character in namespace LICENSE in pack , ignoring
+[14:10:06] [Server thread/WARN] [minecraft/PathPackResources]: Non [a-z0-9_.-] character in namespace LICENSE in pack , ignoring
+[14:10:06] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[14:10:06] [Server thread/INFO] [co.mi.ho.HorseBreedingFix/]: Initialized horse-breeding-fix!
+[14:10:06] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:server_faucet_test_level] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:06.138639272Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:06] [Server thread/WARN] [biolith/]: More than one Overworld dimension world created; cowardly ignoring 'minecraft:server_faucet_test_level' in favor of 'minecraft:overworld'
+[14:10:06] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:server_projectile_test_level] using RapierPhysicsPipelineProvider
+[2026-08-02T18:10:06.342934522Z] [INFO] (sable_rapier) Rapier scene initialized
+[14:10:06] [Server thread/WARN] [biolith/]: More than one Overworld dimension world created; cowardly ignoring 'minecraft:server_projectile_test_level' in favor of 'minecraft:overworld'
+[14:10:06] [VoiceChatServerThread/INFO] [voicechat/]: [voicechat] Voice chat server started at 169.155.120.28:9156
+[14:10:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:10:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:10:06] [Server thread/WARN] [ModernFix/]: Dedicated server took 35.674 seconds to load
+[14:11:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:11:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:12:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:12:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:13:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:13:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+whitelist add Reese8272
+[14:13:08] [Server thread/INFO] [minecraft/MinecraftServer]: Added Reese8272 to the whitelist
+[14:14:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:14:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:15:06] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:overworld
+[14:15:06] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:the_end
+[14:15:06] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/aether:the_aether
+[14:15:06] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:the_nether
+[14:15:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:15:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:16:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:16:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:17:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:17:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:17:22] [User Authenticator #1/INFO] [minecraft/ServerLoginPacketListenerImpl]: UUID of player Reese8272 is 5c2672eb-5825-413a-9141-5026c0ce976a
+[14:17:24] [Server thread/INFO] [minecraft/PlayerList]: Reese8272[/73.129.141.3:65368] logged in with entity id 32 at (-5.5, 119.0, 6.5)
+[14:17:24] [Server thread/INFO] [de.ry.sa.Sable/]: Beginning attempted authentication with player Reese8272
+[14:17:24] [Server thread/INFO] [minecraft/MinecraftServer]: Reese8272 joined the game
+[14:17:24] [Server thread/INFO] [voicechat/]: [voicechat] Initializing Opus
+[14:17:24] [Server thread/INFO] [voicechat/]: [voicechat] Successfully initialized Opus
+[14:17:25] [Server thread/INFO] [voicechat/]: [voicechat] Received secret request of Reese8272 (20)
+[14:17:25] [Server thread/INFO] [voicechat/]: [voicechat] Sent secret to Reese8272
+[14:17:25] [Server thread/INFO] [de.om.vo.VoiceChatRecording/]: Setting literal{Reese8272}'s privacy mode to false
+[14:17:25] [Netty Epoll Server IO #0/INFO] [de.ry.sa.Sable/]: UDP authentication complete with /73.129.141.3:65368, UDP routing to /73.129.141.3:55588
+[14:17:32] [Server thread/INFO] [do_a_barrel_roll/]: Client of Reese8272 accepted server config.
+[14:17:32] [VoiceChatPacketProcessingThread/INFO] [voicechat/]: [voicechat] Successfully authenticated player 5c2672eb-5825-413a-9141-5026c0ce976a
+[14:17:33] [VoiceChatPacketProcessingThread/INFO] [voicechat/]: [voicechat] Successfully validated connection of player 5c2672eb-5825-413a-9141-5026c0ce976a
+[14:17:33] [VoiceChatPacketProcessingThread/INFO] [voicechat/]: [voicechat] Player Reese8272 (5c2672eb-5825-413a-9141-5026c0ce976a) successfully connected to voice chat
+[14:18:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:18:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+whitelist add AshtonHylton
+[14:18:38] [Server thread/INFO] [minecraft/MinecraftServer]: Added AshtonHylton to the whitelist
+[14:18:52] [Worker-Main-14/INFO] [me.co.ae.CreateAeronauticsDiscovery/]: [GEN] Placed Prefab Template 'aeronauticsdiscovery:balloon_loot' at BlockPos{x=8, y=150, z=216} in chunk [0, 13]. Rotation: NONE
+[14:18:53] [Server thread/INFO] [me.co.ae.CreateAeronauticsDiscovery/]: [LoadChunkStep] All chunks are ticking for 'aeronauticsdiscovery:balloon_loot'
+[14:18:54] [Server thread/INFO] [minecraft/MinecraftServer]: Reese8272 has reached the goal [Jacuzzi]
+[14:19:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:19:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:20:06] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:overworld
+[14:20:06] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:the_end
+[14:20:06] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/aether:the_aether
+[14:20:06] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:the_nether
+[14:20:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:20:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:21:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:21:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:22:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Removing old audios from cache
+[14:22:06] [Thread-15/INFO] [de.om.vo.VoiceChatRecording/]: Finished removing old audios from cache
+[14:22:40] [Server thread/ERROR] [minecraft/MinecraftServer]: Encountered an unexpected exception
+net.minecraft.ReportedException: Ticking entity
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1041) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.fix_loop_spin_waiting.MinecraftServerMixin from mod modernfix,pl:mixin:APP:infernalexp.mixins.json:MinecraftServerMixin from mod infernalexp,pl:mixin:APP:modernfix-modernfix.mixins.json:core.MinecraftServerMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftServerMixin from mod modernfix,pl:mixin:APP:veil.network.mixins.json:NetworkMinecraftServerMixin from mod veil,pl:mixin:APP:veil.scheduler.mixins.json:MinecraftServerMixin from mod veil,pl:mixin:APP:biolith.mixins.json:MixinMinecraftServer from mod biolith,pl:mixin:APP:balm.neoforge.mixins.json:MinecraftServerMixin from mod balm,pl:mixin:APP:rechiseled.mixins.json:MinecraftServerMixin from mod rechiseled,pl:mixin:APP:ponder-common.mixins.json:accessor.MinecraftServerAccessor from mod ponder,pl:mixin:APP:lootr-common.mixins.json:accessor.AccessorMixinMinecraftServer from mod lootr,pl:mixin:APP:fabric-message-api-v1.mixins.json:MinecraftServerMixin from mod fabric_message_api_v1,pl:mixin:APP:aether.mixins.json:common.accessor.MinecraftServerAccessor from mod aether,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:MinecraftServerMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:fabric-resource-loader-v0.mixins.json:MinecraftServerMixin from mod fabric_resource_loader_v0,pl:mixin:APP:sable.mixins.json:udp.MinecraftServerMixin from mod sable,pl:mixin:APP:blueprint.mixins.json:MinecraftServerMixin from mod blueprint,pl:mixin:APP:moonlight.mixins.json:MinecraftServerMixin from mod moonlight,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.dedicated.DedicatedServer.tickChildren(DedicatedServer.java:317) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:connector_pre_launch:A,re:classloading,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:917) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.fix_loop_spin_waiting.MinecraftServerMixin from mod modernfix,pl:mixin:APP:infernalexp.mixins.json:MinecraftServerMixin from mod infernalexp,pl:mixin:APP:modernfix-modernfix.mixins.json:core.MinecraftServerMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftServerMixin from mod modernfix,pl:mixin:APP:veil.network.mixins.json:NetworkMinecraftServerMixin from mod veil,pl:mixin:APP:veil.scheduler.mixins.json:MinecraftServerMixin from mod veil,pl:mixin:APP:biolith.mixins.json:MixinMinecraftServer from mod biolith,pl:mixin:APP:balm.neoforge.mixins.json:MinecraftServerMixin from mod balm,pl:mixin:APP:rechiseled.mixins.json:MinecraftServerMixin from mod rechiseled,pl:mixin:APP:ponder-common.mixins.json:accessor.MinecraftServerAccessor from mod ponder,pl:mixin:APP:lootr-common.mixins.json:accessor.AccessorMixinMinecraftServer from mod lootr,pl:mixin:APP:fabric-message-api-v1.mixins.json:MinecraftServerMixin from mod fabric_message_api_v1,pl:mixin:APP:aether.mixins.json:common.accessor.MinecraftServerAccessor from mod aether,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:MinecraftServerMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:fabric-resource-loader-v0.mixins.json:MinecraftServerMixin from mod fabric_resource_loader_v0,pl:mixin:APP:sable.mixins.json:udp.MinecraftServerMixin from mod sable,pl:mixin:APP:blueprint.mixins.json:MinecraftServerMixin from mod blueprint,pl:mixin:APP:moonlight.mixins.json:MinecraftServerMixin from mod moonlight,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:707) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.fix_loop_spin_waiting.MinecraftServerMixin from mod modernfix,pl:mixin:APP:infernalexp.mixins.json:MinecraftServerMixin from mod infernalexp,pl:mixin:APP:modernfix-modernfix.mixins.json:core.MinecraftServerMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftServerMixin from mod modernfix,pl:mixin:APP:veil.network.mixins.json:NetworkMinecraftServerMixin from mod veil,pl:mixin:APP:veil.scheduler.mixins.json:MinecraftServerMixin from mod veil,pl:mixin:APP:biolith.mixins.json:MixinMinecraftServer from mod biolith,pl:mixin:APP:balm.neoforge.mixins.json:MinecraftServerMixin from mod balm,pl:mixin:APP:rechiseled.mixins.json:MinecraftServerMixin from mod rechiseled,pl:mixin:APP:ponder-common.mixins.json:accessor.MinecraftServerAccessor from mod ponder,pl:mixin:APP:lootr-common.mixins.json:accessor.AccessorMixinMinecraftServer from mod lootr,pl:mixin:APP:fabric-message-api-v1.mixins.json:MinecraftServerMixin from mod fabric_message_api_v1,pl:mixin:APP:aether.mixins.json:common.accessor.MinecraftServerAccessor from mod aether,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:MinecraftServerMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:fabric-resource-loader-v0.mixins.json:MinecraftServerMixin from mod fabric_resource_loader_v0,pl:mixin:APP:sable.mixins.json:udp.MinecraftServerMixin from mod sable,pl:mixin:APP:blueprint.mixins.json:MinecraftServerMixin from mod blueprint,pl:mixin:APP:moonlight.mixins.json:MinecraftServerMixin from mod moonlight,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:267) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.fix_loop_spin_waiting.MinecraftServerMixin from mod modernfix,pl:mixin:APP:infernalexp.mixins.json:MinecraftServerMixin from mod infernalexp,pl:mixin:APP:modernfix-modernfix.mixins.json:core.MinecraftServerMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftServerMixin from mod modernfix,pl:mixin:APP:veil.network.mixins.json:NetworkMinecraftServerMixin from mod veil,pl:mixin:APP:veil.scheduler.mixins.json:MinecraftServerMixin from mod veil,pl:mixin:APP:biolith.mixins.json:MixinMinecraftServer from mod biolith,pl:mixin:APP:balm.neoforge.mixins.json:MinecraftServerMixin from mod balm,pl:mixin:APP:rechiseled.mixins.json:MinecraftServerMixin from mod rechiseled,pl:mixin:APP:ponder-common.mixins.json:accessor.MinecraftServerAccessor from mod ponder,pl:mixin:APP:lootr-common.mixins.json:accessor.AccessorMixinMinecraftServer from mod lootr,pl:mixin:APP:fabric-message-api-v1.mixins.json:MinecraftServerMixin from mod fabric_message_api_v1,pl:mixin:APP:aether.mixins.json:common.accessor.MinecraftServerAccessor from mod aether,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:MinecraftServerMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:fabric-resource-loader-v0.mixins.json:MinecraftServerMixin from mod fabric_resource_loader_v0,pl:mixin:APP:sable.mixins.json:udp.MinecraftServerMixin from mod sable,pl:mixin:APP:blueprint.mixins.json:MinecraftServerMixin from mod blueprint,pl:mixin:APP:moonlight.mixins.json:MinecraftServerMixin from mod moonlight,pl:mixin:A,pl:connector_pre_launch:A}
+        at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {re:mixin}
+Caused by: java.lang.IllegalStateException: Cannot get config value before config is loaded.
+        at MC-BOOTSTRAP/com.google.common@32.1.2-jre/com.google.common.base.Preconditions.checkState(Preconditions.java:512) ~[guava-32.1.2-jre.jar%2387!/:?] {re:mixin}
+        at TRANSFORMER/neoforge@21.1.248/net.neoforged.neoforge.common.ModConfigSpec$ConfigValue.getRaw(ModConfigSpec.java:1235) ~[neoforge-21.1.248-universal.jar%23308!/:?] {re:mixin,re:classloading}
+        at TRANSFORMER/neoforge@21.1.248/net.neoforged.neoforge.common.ModConfigSpec$ConfigValue.get(ModConfigSpec.java:1222) ~[neoforge-21.1.248-universal.jar%23308!/:?] {re:mixin,re:classloading}
+        at TRANSFORMER/mobamputation@1.21.1-1.0.0/com.astryxion.mobamputation.common.entity.GibEntity.tick(GibEntity.java:131) ~[mobamputationforge-1.21.1-1.0.0.jar%23415!/:?] {re:classloading}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:774) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:cupboard.mixins.json:ServerAddEntityMixin from mod cupboard,pl:mixin:APP:immersive_melodies.mixins.json:ServerWorldMixin from mod immersive_melodies,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.cache_strongholds.ServerLevelMixin from mod modernfix,pl:mixin:APP:veil.network.mixins.json:NetworkServerLevelMixin from mod veil,pl:mixin:APP:biolith.mixins.json:MixinServerWorld from mod biolith,pl:mixin:APP:supplementaries-common.mixins.json:ServerLevelMixin from mod supplementaries,pl:mixin:APP:createbigcannons.mixins.json:ServerLevelMixin from mod createbigcannons,pl:mixin:APP:polymorph.mixins.json:MixinServerLevel from mod polymorph,pl:mixin:APP:aether.mixins.json:common.accessor.ServerLevelAccessor from mod aether,pl:mixin:APP:fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric_api_lookup_api_v1,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:create.mixins.json:accessor.ServerLevelAccessor from mod create,pl:mixin:APP:sable.mixins.json:block_decal_render.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.entity_aabb_lookup.LevelsMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.entity_kicking.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.server_entities_tick.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:explosion.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:particle.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:physics.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.LevelsMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:water_occlusion.LevelsMixin from mod sable,pl:mixin:APP:aeronauticsdiscovery.mixins.json:accessor.LevelAccessor from mod aeronauticsdiscovery,pl:mixin:APP:comforts.mixins.json:MixinServerSleepStatus from mod comforts,pl:mixin:APP:blueprint.mixins.json:ServerLevelMixin from mod blueprint,pl:mixin:APP:friendsandfoes-common.mixins.json:ServerWorldAccessor from mod friendsandfoes,pl:mixin:APP:friendsandfoes-common.mixins.json:ServerWorldMixin from mod friendsandfoes,pl:mixin:APP:moonlight-common.mixins.json:ServerLevelMixin from mod moonlight,pl:mixin:APP:collective_neoforge.mixins.json:ServerLevelMixin from mod collective,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.Level.guardEntityTick(Level.java:576) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:computing_frames,pl:accesstransformer:B,pl:connector_pre_launch:A,re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:aether.mixins.json:common.accessor.LevelAccessor from mod aether,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:WorldMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:sable.mixins.json:entity.entity_sublevel_collision.LevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:world_border.LevelMixin from mod sable,pl:mixin:APP:sable-neoforge.mixins.json:compatibility.create.super_glue.LevelAccessor from mod sable,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:420) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:cupboard.mixins.json:ServerAddEntityMixin from mod cupboard,pl:mixin:APP:immersive_melodies.mixins.json:ServerWorldMixin from mod immersive_melodies,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.cache_strongholds.ServerLevelMixin from mod modernfix,pl:mixin:APP:veil.network.mixins.json:NetworkServerLevelMixin from mod veil,pl:mixin:APP:biolith.mixins.json:MixinServerWorld from mod biolith,pl:mixin:APP:supplementaries-common.mixins.json:ServerLevelMixin from mod supplementaries,pl:mixin:APP:createbigcannons.mixins.json:ServerLevelMixin from mod createbigcannons,pl:mixin:APP:polymorph.mixins.json:MixinServerLevel from mod polymorph,pl:mixin:APP:aether.mixins.json:common.accessor.ServerLevelAccessor from mod aether,pl:mixin:APP:fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric_api_lookup_api_v1,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:create.mixins.json:accessor.ServerLevelAccessor from mod create,pl:mixin:APP:sable.mixins.json:block_decal_render.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.entity_aabb_lookup.LevelsMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.entity_kicking.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.server_entities_tick.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:explosion.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:particle.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:physics.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.LevelsMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:water_occlusion.LevelsMixin from mod sable,pl:mixin:APP:aeronauticsdiscovery.mixins.json:accessor.LevelAccessor from mod aeronauticsdiscovery,pl:mixin:APP:comforts.mixins.json:MixinServerSleepStatus from mod comforts,pl:mixin:APP:blueprint.mixins.json:ServerLevelMixin from mod blueprint,pl:mixin:APP:friendsandfoes-common.mixins.json:ServerWorldAccessor from mod friendsandfoes,pl:mixin:APP:friendsandfoes-common.mixins.json:ServerWorldMixin from mod friendsandfoes,pl:mixin:APP:moonlight-common.mixins.json:ServerLevelMixin from mod moonlight,pl:mixin:APP:collective_neoforge.mixins.json:ServerLevelMixin from mod collective,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:54) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:classloading,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:400) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:cupboard.mixins.json:ServerAddEntityMixin from mod cupboard,pl:mixin:APP:immersive_melodies.mixins.json:ServerWorldMixin from mod immersive_melodies,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.cache_strongholds.ServerLevelMixin from mod modernfix,pl:mixin:APP:veil.network.mixins.json:NetworkServerLevelMixin from mod veil,pl:mixin:APP:biolith.mixins.json:MixinServerWorld from mod biolith,pl:mixin:APP:supplementaries-common.mixins.json:ServerLevelMixin from mod supplementaries,pl:mixin:APP:createbigcannons.mixins.json:ServerLevelMixin from mod createbigcannons,pl:mixin:APP:polymorph.mixins.json:MixinServerLevel from mod polymorph,pl:mixin:APP:aether.mixins.json:common.accessor.ServerLevelAccessor from mod aether,pl:mixin:APP:fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric_api_lookup_api_v1,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:create.mixins.json:accessor.ServerLevelAccessor from mod create,pl:mixin:APP:sable.mixins.json:block_decal_render.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.entity_aabb_lookup.LevelsMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.entity_kicking.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.server_entities_tick.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:explosion.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:particle.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:physics.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.LevelsMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.ServerLevelMixin from mod sable,pl:mixin:APP:sable.mixins.json:water_occlusion.LevelsMixin from mod sable,pl:mixin:APP:aeronauticsdiscovery.mixins.json:accessor.LevelAccessor from mod aeronauticsdiscovery,pl:mixin:APP:comforts.mixins.json:MixinServerSleepStatus from mod comforts,pl:mixin:APP:blueprint.mixins.json:ServerLevelMixin from mod blueprint,pl:mixin:APP:friendsandfoes-common.mixins.json:ServerWorldAccessor from mod friendsandfoes,pl:mixin:APP:friendsandfoes-common.mixins.json:ServerWorldMixin from mod friendsandfoes,pl:mixin:APP:moonlight-common.mixins.json:ServerLevelMixin from mod moonlight,pl:mixin:APP:collective_neoforge.mixins.json:ServerLevelMixin from mod collective,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1037) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.fix_loop_spin_waiting.MinecraftServerMixin from mod modernfix,pl:mixin:APP:infernalexp.mixins.json:MinecraftServerMixin from mod infernalexp,pl:mixin:APP:modernfix-modernfix.mixins.json:core.MinecraftServerMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftServerMixin from mod modernfix,pl:mixin:APP:veil.network.mixins.json:NetworkMinecraftServerMixin from mod veil,pl:mixin:APP:veil.scheduler.mixins.json:MinecraftServerMixin from mod veil,pl:mixin:APP:biolith.mixins.json:MixinMinecraftServer from mod biolith,pl:mixin:APP:balm.neoforge.mixins.json:MinecraftServerMixin from mod balm,pl:mixin:APP:rechiseled.mixins.json:MinecraftServerMixin from mod rechiseled,pl:mixin:APP:ponder-common.mixins.json:accessor.MinecraftServerAccessor from mod ponder,pl:mixin:APP:lootr-common.mixins.json:accessor.AccessorMixinMinecraftServer from mod lootr,pl:mixin:APP:fabric-message-api-v1.mixins.json:MinecraftServerMixin from mod fabric_message_api_v1,pl:mixin:APP:aether.mixins.json:common.accessor.MinecraftServerAccessor from mod aether,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:MinecraftServerMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:fabric-resource-loader-v0.mixins.json:MinecraftServerMixin from mod fabric_resource_loader_v0,pl:mixin:APP:sable.mixins.json:udp.MinecraftServerMixin from mod sable,pl:mixin:APP:blueprint.mixins.json:MinecraftServerMixin from mod blueprint,pl:mixin:APP:moonlight.mixins.json:MinecraftServerMixin from mod moonlight,pl:mixin:A,pl:connector_pre_launch:A}
+        ... 5 more
+[14:22:40] [Server thread/FATAL] [ne.ne.ne.co.NeoForgeMod/]: Preparing crash report with UUID 815fe9b9-fe32-44d2-b070-57c6299c4245
+[14:22:40] [Server thread/ERROR] [minecraft/MinecraftServer]: This crash report has been saved to: /home/container/crash-reports/crash-2026-08-02_14.22.40-server.txt
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[14:22:40] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: Reese8272 lost connection: Server closed
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: Reese8272 left the game
+[14:22:40] [Server thread/INFO] [voicechat/]: [voicechat] Disconnecting client Reese8272
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[14:22:40] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:overworld
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[14:22:40] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:the_end
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/aether:the_aether
+[14:22:40] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/aether:the_aether
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[14:22:40] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:the_nether
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (the_aether): All chunks are saved
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[14:22:40] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[14:22:40] [Server thread/INFO] [Framework/]: Unloading server configs...
+[14:22:40] [Server thread/INFO] [Framework/]: Sending config unload event for goblintraders-entities.toml
+[14:22:40] [Server thread/INFO] [Framework/]: Finished unloading server configs
+[14:22:40] [Server thread/INFO] [de.om.vo.VoiceChatRecording/]: Shutting down audio saving...
+[14:22:40] [Server thread/INFO] [de.om.vo.VoiceChatRecording/]: Running audio saving thread before shutdown...
+[14:22:40] [Audio Saving Thread/INFO] [de.om.vo.VoiceChatRecording/]: Finished saving audios in 0.053901ms
+[14:22:40] [Thread-15/WARN] [de.om.vo.VoiceChatRecording/]: Interrupted cache removal thread, finishing
+[14:22:40] [Server thread/INFO] [Puzzles Lib/]: Dispatching unloading event for config mutantmonsters-server.toml
+[14:22:40] [Server thread/INFO] [Puzzles Lib/]: Dispatching unloading event for config universalbonemeal-server.toml
+[14:22:40] [Server thread/INFO] [Puzzles Lib/]: Dispatching unloading event for config airhop-server.toml
+[14:22:40] [Server thread/INFO] [Puzzles Lib/]: Dispatching unloading event for config easymagic-server.toml
+[14:22:40] [Server thread/INFO] [Puzzles Lib/]: Dispatching unloading event for config universalenchants-server.toml
+[14:22:40] [Server thread/INFO] [Puzzles Lib/]: Dispatching unloading event for config bettertridents-server.toml
+[14:22:52] [spark-async-sampler-worker-thread/WARN] [spark/]: Exception occurred while getting world info
+java.util.concurrent.RejectedExecutionException: Server already shutting down
+        at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.executeIfPossible(MinecraftServer.java:1438) ~[server-1.21.1-20240808.144430-srg.jar%23307!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.fix_loop_spin_waiting.MinecraftServerMixin from mod modernfix,pl:mixin:APP:infernalexp.mixins.json:MinecraftServerMixin from mod infernalexp,pl:mixin:APP:modernfix-modernfix.mixins.json:core.MinecraftServerMixin from mod modernfix,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.dedicated_reload_executor.MinecraftServerMixin from mod modernfix,pl:mixin:APP:veil.network.mixins.json:NetworkMinecraftServerMixin from mod veil,pl:mixin:APP:veil.scheduler.mixins.json:MinecraftServerMixin from mod veil,pl:mixin:APP:biolith.mixins.json:MixinMinecraftServer from mod biolith,pl:mixin:APP:balm.neoforge.mixins.json:MinecraftServerMixin from mod balm,pl:mixin:APP:rechiseled.mixins.json:MinecraftServerMixin from mod rechiseled,pl:mixin:APP:ponder-common.mixins.json:accessor.MinecraftServerAccessor from mod ponder,pl:mixin:APP:lootr-common.mixins.json:accessor.AccessorMixinMinecraftServer from mod lootr,pl:mixin:APP:fabric-message-api-v1.mixins.json:MinecraftServerMixin from mod fabric_message_api_v1,pl:mixin:APP:aether.mixins.json:common.accessor.MinecraftServerAccessor from mod aether,pl:mixin:APP:fabric-lifecycle-events-v1.mixins.json:MinecraftServerMixin from mod fabric_lifecycle_events_v1,pl:mixin:APP:fabric-resource-loader-v0.mixins.json:MinecraftServerMixin from mod fabric_resource_loader_v0,pl:mixin:APP:sable.mixins.json:udp.MinecraftServerMixin from mod sable,pl:mixin:APP:blueprint.mixins.json:MinecraftServerMixin from mod blueprint,pl:mixin:APP:moonlight.mixins.json:MinecraftServerMixin from mod moonlight,pl:mixin:A,pl:connector_pre_launch:A}
+        at TRANSFORMER/spark@1.10.124/me.lucko.spark.neoforge.plugin.NeoForgeServerSparkPlugin.executeSync(NeoForgeServerSparkPlugin.java:214) ~[spark-1.10.124-neoforge.jar%23463!/:?] {re:classloading}
+        at java.base/java.util.concurrent.CompletableFuture.asyncSupplyStage(CompletableFuture.java:1782) ~[?:?] {re:mixin}
+        at java.base/java.util.concurrent.CompletableFuture.supplyAsync(CompletableFuture.java:2005) ~[?:?] {re:mixin}
+        at TRANSFORMER/spark@1.10.124/me.lucko.spark.common.platform.world.AsyncWorldInfoProvider.async(AsyncWorldInfoProvider.java:55) ~[spark-1.10.124-neoforge.jar%23463!/:?] {re:classloading}
+        at TRANSFORMER/spark@1.10.124/me.lucko.spark.common.platform.world.AsyncWorldInfoProvider.pollCounts(AsyncWorldInfoProvider.java:77) ~[spark-1.10.124-neoforge.jar%23463!/:?] {re:classloading}
+        at TRANSFORMER/spark@1.10.124/me.lucko.spark.common.platform.world.AsyncWorldInfoProvider.getCounts(AsyncWorldInfoProvider.java:93) ~[spark-1.10.124-neoforge.jar%23463!/:?] {re:classloading}
+        at TRANSFORMER/spark@1.10.124/me.lucko.spark.common.sampler.window.WindowStatisticsCollector.measure(WindowStatisticsCollector.java:186) ~[spark-1.10.124-neoforge.jar%23463!/:?] {re:classloading}
+        at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[?:?] {re:mixin}
+        at TRANSFORMER/spark@1.10.124/me.lucko.spark.common.sampler.window.WindowStatisticsCollector.measureNow(WindowStatisticsCollector.java:124) ~[spark-1.10.124-neoforge.jar%23463!/:?] {re:classloading}
+        at TRANSFORMER/spark@1.10.124/me.lucko.spark.common.sampler.async.AsyncSampler.rotateProfilerJob(AsyncSampler.java:141) ~[spark-1.10.124-neoforge.jar%23463!/:?] {re:classloading}
+        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?] {}
+        at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358) ~[?:?] {}
+        at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[?:?] {}
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?] {}
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?] {}
+        at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {re:mixin}
