@@ -13,36 +13,47 @@
 update does not reset keybinds.** That last part is the whole reason this project
 exists.
 
-**Status:** A full production assessment ran 2026-08-02 (`docs/assessment/REPORT.md`,
-verdict NO with 2 blockers) and **every top-10 finding is fixed, pushed in
-`e1db2be`, CI green**. Separately, the distribution chain was verified end-to-end
-from a clean environment: the exact player pre-launch command pulled 741/741
-files, hash-clean, Lithostitched present. So the pack and its delivery are sound;
-what remains is runtime confirmation on real machines. Reese's own pre-launch
-command is reported working; **Ashton's was probably mistyped** (Reese is fixing
-it with him — the "error loading on Prism" report was never accompanied by a log).
-Ashton is now a **BisectHosting panel sub-user with all permissions**.
+**Status: FIRST LAUNCH CONFIRMED 2026-08-02** on Reese's gaming PC
+(`docs/logs/2026-08-02-first-run.log`): the pre-launch updater synced 722/722
+files (including the 8 relabelled mods and both scrubbed configs), all 257 mods
+loaded, title screen reached, singleplayer world ran. Two issues found, neither
+a pack-content bug:
+
+1. **Server join failed:** `You are trying to connect to a server that is not
+   running NeoForge` (log line 13909). Something answered the ping on
+   `169.155.120.28:9155` but WITHOUT the NeoForge handshake — the listening
+   process is presenting as vanilla. This is a **BisectHosting panel problem**
+   (server type/JAR not NeoForge, or a fallback boot), not a client or pack
+   problem. The panel console on boot must show NeoForge/FML loading ~191 mods,
+   not "Starting minecraft server version 1.21.1".
+2. **Client crashed after ~10 min** (exit `-805306369`) right after Distant
+   Horizons warned "Insufficient memory": the instance ran `-Xmx4096m` — the
+   8 GB-system allocation. Fix in Prism per `docs/PLAYER-INSTALL.md` memory
+   table (6–8 GB on a 16 GB machine, 10–12 GB on 32 GB).
+
+Ashton's side: his pre-launch command was probably mistyped (Reese is fixing it
+with him). Ashton is a **panel sub-user with all permissions**.
 
 ### → NEXT ACTION
 
-1. **Reese launches on the gaming PC.** Expect the pre-launch window to pull
-   ~27 changes (19 runtime-state deletions — one-time, regenerable — plus 8 newly
-   client-side mods). Reaching the title screen = first confirmed launch.
-2. **Before anyone joins: enable the whitelist on the panel** (`white-list=true`,
-   `enforce-whitelist=true` per `docs/SERVER-SETUP.md` §4) and `whitelist add`
-   **both** usernames — including your own, or the join test bounces you and
-   looks like a pack bug.
-3. **Join `169.155.120.28:9155`.** A "mod mismatch" kick now most likely implicates
-   one of only 6 remaining `server`-labelled mods (`docs/side-review.md`) — send
-   the full kick message.
-4. **Fix Ashton's pre-launch command** (the standing triage: does
+1. **Fix the server on the BisectHosting panel:** confirm the server type/JAR
+   is **NeoForge 21.1.234** and watch the boot console — it must load ~191
+   mods. If it shows vanilla, reinstall NeoForge via the panel and re-check
+   `mods/` survived. Then enable the whitelist (`docs/SERVER-SETUP.md` §4) and
+   `whitelist add` **both** usernames — including your own.
+2. **Raise the client allocation** on the gaming PC per the PLAYER-INSTALL
+   table, and consider lowering the Distant Horizons CPU/quality preset.
+3. **Rejoin `169.155.120.28:9155`.** If a *mod mismatch* kick appears now, only
+   6 `server`-labelled mods are candidates (`docs/side-review.md`) — send the
+   full kick message.
+4. **Fix Ashton's pre-launch command** (standing triage: does
    `minecraft/mods/lithostitched-*.jar` exist in his instance? Absent ⇒ his
-   updater never ran ⇒ `docs/PLAYER-INSTALL.md` §Troubleshooting — jar goes in
-   `minecraft/`, command uses `$INST_MC_DIR`).
+   updater never ran ⇒ `docs/PLAYER-INSTALL.md` §Troubleshooting).
 5. **The real test:** he rebinds one key → push any trivial change to `main` →
    he relaunches → **the keybind must survive**. That is the acceptance criterion.
-6. **Any crash:** get `minecraft/logs/latest.log` **as text**. If the visible
-   error names Drippy, the real error is ~100 lines above it — always.
+6. **Any crash:** `minecraft/logs/latest.log` as text (or drop it in
+   `docs/logs/` — NEVER at the repo root, it breaks CI's stale-index gate).
+   If the visible error names Drippy, the real error is ~100 lines above it.
 
 ---
 
@@ -50,9 +61,18 @@ Ashton is now a **BisectHosting panel sub-user with all permissions**.
 
 Verified, don't re-investigate:
 
+- **The client launches (2026-08-02, Reese's gaming PC).** Updater synced
+  722/722 from `main`, all 257 mods loaded, title screen + singleplayer world
+  ran. The Drippy placeholder-paths open item is **cleared** — early loading
+  survived a real boot. Non-fatal log noise triaged in
+  `docs/logs/2026-08-02-first-run.log`: missing accesstransformer warnings
+  (sodium_extra/wdutils/pride — upstream jar quirks), NeoForge version-checker
+  JSON errors (mods' update URLs, network noise), mtsofficialpack invalid
+  texture paths (upstream content pack), one sable/betterf3 mixin overwrite
+  (logged skip).
 - **Distribution chain proven end-to-end (2026-08-02).** Headless run of the exact
-  player pre-launch command from a clean Linux env: 741/741 files, exit 0,
-  243 client mods installed. A player failure is therefore local to their
+  player pre-launch command from a clean Linux env: 741/741 files (pre-purge),
+  exit 0, hash-clean. A player failure is therefore local to their
   instance setup until a log proves otherwise.
 - **All top-10 assessment findings fixed** (`docs/assessment/REPORT.md` register;
   rationale in `docs/DECISIONS.md` 2026-08-02 entries): sync script's two
@@ -121,6 +141,11 @@ Verified, don't re-investigate:
 **Pushing to `main` deploys.** Auto-update players sync to `main` on next launch;
 CI is advisory on that path. Never push a known-broken state.
 
+**Never commit files to the repo root.** Any un-ignored root file (a log, a
+note) gets indexed by the next `packwiz refresh` and breaks CI's stale-index
+gate — this happened with the first-run log on 2026-08-02. Logs go in
+`docs/logs/`, which packwiz ignores.
+
 **packwiz reads `.packwizignore`, NOT `.gitignore`.** Has bitten twice, nearly a
 third time (`.claude/`). Anything that must not reach players goes in
 `.packwizignore`; new top-level dirs must be added there BEFORE `packwiz refresh`.
@@ -167,9 +192,9 @@ real change.
 
 - **Whitelist not yet confirmed enabled on the panel** (docs updated; panel is
   the source of truth). Do it before the join test — and whitelist yourself.
-- **Drippy's factory-default placeholder paths** (`config/drippyloadingscreen/options.txt`
-  → `some_*.png`): believed harmless, cleared implicitly by any successful clean
-  launch. Do NOT edit the file on a guess (see `docs/assessment/modules/config.md`).
+- **EuphoriaPatcher wants ComplementaryShaders r5.8.1 in `shaderpacks/`** and
+  logs an ERROR without it (non-fatal, cosmetic). Either ship that shader zip
+  in the pack or `packwiz remove euphoria-patcher`. Low priority.
 - **`servers.dat` not shipped yet** — once a join is confirmed, capture via
   `/defaultoptions saveAll` and commit so the server auto-appears
   (`docs/SERVER-SETUP.md` §8).
