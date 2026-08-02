@@ -19,30 +19,45 @@ files (including the 8 relabelled mods and both scrubbed configs), all 257 mods
 loaded, title screen reached, singleplayer world ran. Two issues found, neither
 a pack-content bug:
 
-1. **Server join failed:** `You are trying to connect to a server that is not
-   running NeoForge` (log line 13909). Something answered the ping on
-   `169.155.120.28:9155` but WITHOUT the NeoForge handshake — the listening
-   process is presenting as vanilla. This is a **BisectHosting panel problem**
-   (server type/JAR not NeoForge, or a fallback boot), not a client or pack
-   problem. The panel console on boot must show NeoForge/FML loading ~191 mods,
-   not "Starting minecraft server version 1.21.1".
+1. **Server join failed — ROOT CAUSE CONFIRMED from the panel console
+   (2026-08-02):** BisectHosting is booting `minecraft_server_1.21.1.jar` —
+   **vanilla**, not NeoForge (`Starting net.minecraft.server.Main`, 1290
+   recipes, 7 s startup). The 191 uploaded mods sit unused; the vanilla boot
+   also **created a fresh vanilla world** (`No existing world data, creating
+   new world`), which must be deleted before the first modded boot or spawn
+   terrain stays vanilla forever. Fix is entirely on the panel — see NEXT
+   ACTION 1.
 2. **Client crashed after ~10 min** (exit `-805306369`) right after Distant
-   Horizons warned "Insufficient memory": the instance ran `-Xmx4096m` — the
-   8 GB-system allocation. Fix in Prism per `docs/PLAYER-INSTALL.md` memory
-   table (6–8 GB on a 16 GB machine, 10–12 GB on 32 GB).
+   Horizons warned "Insufficient memory". The gaming desktop has **8 GB total
+   RAM**, so its `-Xmx4096m` matches the PLAYER-INSTALL table — the machine is
+   at the pack's floor, not misconfigured. Mitigate, don't reallocate: add the
+   table's 8 GB-row GC args (`-XX:+UseG1GC -XX:+UseStringDeduplication` — the
+   log showed no GC args at all), lower the Distant Horizons CPU/quality
+   preset (or disable DH on this machine), and keep background apps closed.
 
 Ashton's side: his pre-launch command was probably mistyped (Reese is fixing it
 with him). Ashton is a **panel sub-user with all permissions**.
 
 ### → NEXT ACTION
 
-1. **Fix the server on the BisectHosting panel:** confirm the server type/JAR
-   is **NeoForge 21.1.234** and watch the boot console — it must load ~191
-   mods. If it shows vanilla, reinstall NeoForge via the panel and re-check
-   `mods/` survived. Then enable the whitelist (`docs/SERVER-SETUP.md` §4) and
-   `whitelist add` **both** usernames — including your own.
-2. **Raise the client allocation** on the gaming PC per the PLAYER-INSTALL
-   table, and consider lowering the Distant Horizons CPU/quality preset.
+1. **Switch the server to NeoForge on the BisectHosting panel** (confirmed
+   vanilla today — panel boots `minecraft_server_1.21.1.jar`):
+   1. Panel → server type / game file: select **NeoForge 21.1.234** (MC
+      1.21.1). When the installer asks to wipe/delete server files, **say
+      no** — then verify `mods/` (191 jars) and `config/` survived.
+   2. **Delete the `world/` folder** the vanilla boot just generated (nobody
+      has played it). Otherwise spawn chunks stay vanilla — no Terralith/
+      Tectonic terrain — with visible chunk borders at the edge forever.
+   3. Check the startup memory: the panel launches with `-Xmx8192M`, the
+      documented OOM trap (heap must be ~6.5 GB, the container is 8). Lower
+      it in the panel's startup/memory setting if exposed.
+   4. Re-check `server.properties` (`allow-flight=true`, `white-list=true`,
+      `enforce-whitelist=true`) and `whitelist add` **both** usernames.
+   5. Restart and watch the console: a correct boot shows NeoForge/FML
+      loading ~191 mods and takes minutes, not 7 seconds.
+2. **Tune the 8 GB client:** add `-XX:+UseG1GC -XX:+UseStringDeduplication`
+   to Java arguments in Prism (keep 4 GB allocation), lower the Distant
+   Horizons preset or disable DH on this machine.
 3. **Rejoin `169.155.120.28:9155`.** If a *mod mismatch* kick appears now, only
    6 `server`-labelled mods are candidates (`docs/side-review.md`) — send the
    full kick message.
@@ -89,8 +104,10 @@ Verified, don't re-investigate:
 - **Pack builds and releases.** 257 mods, 465 config files. CI: refresh-stale
   gate + `verify_pack.py` + mrpack override check on every push; tags publish a
   `.mrpack`.
-- **Server is live.** BisectHosting, MC 1.21.1 + NeoForge 21.1.234, Java 21,
-  191 mods. Ashton has full panel sub-user access.
+- **Server container is live, but boots the WRONG jar** (confirmed 2026-08-02:
+  vanilla `minecraft_server_1.21.1.jar`; the 191 uploaded mods are ignored
+  until the panel's server type is switched to NeoForge 21.1.234 — NEXT
+  ACTION 1). Ashton has full panel sub-user access.
 - **Keybind safety is structural.** `options.txt` triple-banned
   (`.packwizignore`, verify_pack, CI export check); defaults ride in
   `config/defaultoptions/` and apply first-launch-only.
