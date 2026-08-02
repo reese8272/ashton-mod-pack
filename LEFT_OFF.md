@@ -28,12 +28,10 @@ a pack-content bug:
    terrain stays vanilla forever. Fix is entirely on the panel — see NEXT
    ACTION 1.
 2. **Client crashed after ~10 min** (exit `-805306369`) right after Distant
-   Horizons warned "Insufficient memory". The gaming desktop has **8 GB total
-   RAM**, so its `-Xmx4096m` matches the PLAYER-INSTALL table — the machine is
-   at the pack's floor, not misconfigured. Mitigate, don't reallocate: add the
-   table's 8 GB-row GC args (`-XX:+UseG1GC -XX:+UseStringDeduplication` — the
-   log showed no GC args at all), lower the Distant Horizons CPU/quality
-   preset (or disable DH on this machine), and keep background apps closed.
+   Horizons warned "Insufficient memory". The gaming desktop has **16 GB
+   RAM** but Prism was set to `-Xmx4096m` with no GC args — the 8 GB-row
+   allocation on a 16 GB machine. Fix in Prism per the PLAYER-INSTALL table:
+   allocate **6–8 GB** with the 16 GB-row ZGC args. DH can stay on.
 
 Ashton's side: his pre-launch command was probably mistyped (Reese is fixing it
 with him). Ashton is a **panel sub-user with all permissions**.
@@ -55,9 +53,12 @@ with him). Ashton is a **panel sub-user with all permissions**.
       `enforce-whitelist=true`) and `whitelist add` **both** usernames.
    5. Restart and watch the console: a correct boot shows NeoForge/FML
       loading ~191 mods and takes minutes, not 7 seconds.
-2. **Tune the 8 GB client:** add `-XX:+UseG1GC -XX:+UseStringDeduplication`
-   to Java arguments in Prism (keep 4 GB allocation), lower the Distant
-   Horizons preset or disable DH on this machine.
+2. **Fix the client allocation (16 GB machine):** Prism → instance → Settings
+   → Memory: **6–8 GB**, plus the 16 GB-row ZGC args from
+   `docs/PLAYER-INSTALL.md`. (It ran 4 GB with no GC args — the crash cause.)
+   Note: the server may run NeoForge **21.1.248** vs the pack's client
+   21.1.234 — the 21.1.x stable line is cross-compatible, so this is fine;
+   optionally bump the pack to .248 later so both sides match.
 3. **Rejoin `169.155.120.28:9155`.** If a *mod mismatch* kick appears now, only
    6 `server`-labelled mods are candidates (`docs/side-review.md`) — send the
    full kick message.
