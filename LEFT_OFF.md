@@ -1,10 +1,7 @@
 # LEFT OFF
 
-**Last updated:** 2026-08-02 · **Branch:** `main` · **Working tree:** clean, in sync with `origin/main`
-**Latest release:** `v1.5.2` (published 2026-07-31 20:40 UTC, `.mrpack` attached) · **CI:** green
-
-Everything below is merged to `main`. The post-v1.5.2 audit branch has been folded in;
-no pack content has changed since the `v1.5.2` tag, so `v1.5.2` remains the current release.
+**Last updated:** 2026-08-02 (evening) · **Branch:** `main` @ `e1db2be` · **Working tree:** clean, in sync with `origin/main`
+**Latest release:** `v1.5.2` (tag; `main` has moved past it — auto-update players track `main`) · **CI:** green
 
 > Entry point only. The canonical docs are in `docs/` — see POINTERS. Don't duplicate them here.
 
@@ -12,66 +9,40 @@ no pack content has changed since the `v1.5.2` tag, so `v1.5.2` remains the curr
 
 ## CURRENT FOCUS
 
-**Get Ashton's client launching and joined to the live server, then prove a pack update does not reset his keybinds.**
+**Produce the project's first confirmed launch and server join, then prove a pack
+update does not reset keybinds.** That last part is the whole reason this project
+exists.
 
-That last part is the whole reason this project exists. Everything else is built and working.
-
-**Status:** v1.5.2 is **merged to `main` and released** — both known crash causes are fixed and shipped. **No launch has been confirmed successful yet**, and a fresh "error loading on Prism" report came in after the release with no log attached. The pack itself was re-assessed and is clean (see AUDIT below), so the next move is identifying *which* failure he is seeing, not changing the pack.
-
-**2026-08-02 update:** a full production assessment ran (`docs/assessment/REPORT.md`)
-and its top findings are fixed on this branch: 15 runtime-state files purged from
-`config/` (incl. spark's file carrying Ashton's name/UUID) with the class now
-banned by `verify_pack.py`; the 8 content-registering `server` mods relabelled
-`both` (join-kick prevention; server set unchanged); `sync_from_instance.py`'s
-two silent-deletion bugs fixed with regression tests in `tests/`; CI release
-deps pinned; whitelist documented as mandatory. See `docs/DECISIONS.md`
-2026-08-02 entries. **Also verified today: a fresh headless client install from
-the live GitHub URL succeeded end-to-end (741/741 files)** — the distribution
-chain works; Ashton's failure is local to his instance setup until a log proves
-otherwise.
-
-**The v1.5.1 bug.** Lithostitched was labelled `side = "server"`, so it never reached the client — but Terralith and Regions Unexplored both require it, and NeoForge aborts mod loading when a mandatory dependency is missing. Mod loading aborting is *why* Drippy's overlay class was missing; the Drippy exception was a symptom both times, from two different causes. Full write-up in `docs/DECISIONS.md`.
+**Status:** A full production assessment ran 2026-08-02 (`docs/assessment/REPORT.md`,
+verdict NO with 2 blockers) and **every top-10 finding is fixed, pushed in
+`e1db2be`, CI green**. Separately, the distribution chain was verified end-to-end
+from a clean environment: the exact player pre-launch command pulled 741/741
+files, hash-clean, Lithostitched present. So the pack and its delivery are sound;
+what remains is runtime confirmation on real machines. Reese's own pre-launch
+command is reported working; **Ashton's was probably mistyped** (Reese is fixing
+it with him — the "error loading on Prism" report was never accompanied by a log).
+Ashton is now a **BisectHosting panel sub-user with all permissions**.
 
 ### → NEXT ACTION
 
-1. **Find out which of three failures he has.** They look similar from the outside and have different fixes. Ask for the error text, then match:
-
-   | What he sees | What it is | Fix |
-   |---|---|---|
-   | Prism error dialog *before* MC opens, e.g. `Unable to access jarfile` / pre-launch command failed | packwiz-installer never ran — so he has **never received any fix**, and every relaunch reproduces the same old crash | `docs/PLAYER-INSTALL.md` §Troubleshooting — jar goes in `minecraft/`, command uses `$INST_MC_DIR` |
-   | MC starts, dies at `[DRIPPY LOADING SCREEN] Custom loading overlay class missing!` | mod loading aborted for *some* reason — **Drippy is never the cause** | read ~100 lines above it for the first `ERROR` |
-   | Launches fine, kicked on join with "mod mismatch" | a bad `side` label | `docs/side-review.md` §14 server-labelled mods |
-
-   **Fastest single question:** does `minecraft/mods/lithostitched-1.7.13-neoforge-21.1.jar` exist in his instance? Present ⇒ he is on v1.5.2 and the pre-launch command works. Absent ⇒ row 1, and nothing else matters until that is fixed.
-2. **Ashton relaunches Prism.** No reinstall needed *if* his pre-launch command runs — it worked in the v1.5.1 log, pulling all 741 files. Note the v1.5.2 `.mrpack` has **0 downloads**, so he is on the `main` auto-update path, not the release.
-3. **If it still crashes** — get `minecraft/logs/latest.log` as **text** again, and read past the exception. Both crashes so far ended in the same Drippy error and neither was caused by Drippy. The real error was ~100 lines above it, in a `ModSorter/LOADING` or config-parse line.
-4. **Once it launches** — join `169.155.120.28:9155`. A "mod mismatch" kick means a bad `side` label; send the full kick message. `docs/side-review.md` now lists the 14 `server`-labelled mods and which are most likely to cause exactly that.
-5. **Then the real test:** have him change one keybind, then push any trivial change to `main`, then have him relaunch. **His keybind must survive.** That is the acceptance criterion for the whole project.
-6. **Then finish the loose ends** in OPEN ITEMS below.
-
----
-
-## AUDIT — 2026-07-31, post-v1.5.2
-
-Run against `main` after a fresh "error loading on Prism" report. **Everything
-checkable from the repo passed**, so the pack is not currently broken in any way
-that can be seen without a log.
-
-| Check | Result |
-|---|---|
-| `pack.toml` index hash vs `index.toml` | match |
-| All 741 indexed files vs their recorded hashes | 741/741 match, 0 missing |
-| `verify_pack.py` (all 5 checks) | pass — 257 mods, 14 CurseForge, 484 config |
-| CI on `main` and on tag `v1.5.2` | both green |
-| `v1.5.2` release + `.mrpack` asset | published 20:40 UTC, 22 MB, attached |
-| Shipped config referencing unshipped files | only Drippy's own placeholders (below) |
-
-**Not checkable here:** whether any of the 14 `server`-labelled mods is a
-mandatory dependency of a client mod — the same shape as the v1.5.1 bug. That
-needs the mods' `neoforge.mods.toml`, and Modrinth/CurseForge CDNs are blocked
-from the CI-style sandbox this ran in. The v1.5.1 log partially settles it:
-NeoForge enumerates *all* missing mandatory dependencies before aborting and
-named only Lithostitched. See `docs/side-review.md`.
+1. **Reese launches on the gaming PC.** Expect the pre-launch window to pull
+   ~27 changes (19 runtime-state deletions — one-time, regenerable — plus 8 newly
+   client-side mods). Reaching the title screen = first confirmed launch.
+2. **Before anyone joins: enable the whitelist on the panel** (`white-list=true`,
+   `enforce-whitelist=true` per `docs/SERVER-SETUP.md` §4) and `whitelist add`
+   **both** usernames — including your own, or the join test bounces you and
+   looks like a pack bug.
+3. **Join `169.155.120.28:9155`.** A "mod mismatch" kick now most likely implicates
+   one of only 6 remaining `server`-labelled mods (`docs/side-review.md`) — send
+   the full kick message.
+4. **Fix Ashton's pre-launch command** (the standing triage: does
+   `minecraft/mods/lithostitched-*.jar` exist in his instance? Absent ⇒ his
+   updater never ran ⇒ `docs/PLAYER-INSTALL.md` §Troubleshooting — jar goes in
+   `minecraft/`, command uses `$INST_MC_DIR`).
+5. **The real test:** he rebinds one key → push any trivial change to `main` →
+   he relaunches → **the keybind must survive**. That is the acceptance criterion.
+6. **Any crash:** get `minecraft/logs/latest.log` **as text**. If the visible
+   error names Drippy, the real error is ~100 lines above it — always.
 
 ---
 
@@ -79,23 +50,53 @@ named only Lithostitched. See `docs/side-review.md`.
 
 Verified, don't re-investigate:
 
-- **Pack builds and releases.** 257 mods, 465 config files (484 until the 2026-08-02 runtime-state purge). CI runs `verify_pack.py` + an mrpack override check on every push; tags publish a `.mrpack` to a GitHub Release. Green on v1.5.2.
-- **All 256 original mods resolved.** 241 via Modrinth SHA1, 15 via CurseForge (no API key needed). Zero unintended version drift — verified by diffing pack metadata against the source instance.
-- **Side split works** *for startup* — a client now loads with every mandatory dependency present. client=66, server=6, both=185 (the 8 content-registering server mods moved to `both` on 2026-08-02 to de-risk the first join; server set unchanged at 191). See `docs/side-review.md`.
-- **Server is live and running.** BisectHosting, MC 1.21.1 + NeoForge 21.1.234, Java 21, 191 mods uploaded and extracted, `server.properties` configured.
-- **`options.txt` is structurally impossible to ship.** Excluded in `.packwizignore`, and `verify_pack.py` fails the build if it appears. Defaults ride in `config/defaultoptions/` (233 keybinds) and apply first-launch-only.
-- **The source instance was never modified.** All work happened in this repo. `~/Terra Aeterna 1.5 Complete (7-22-2026)/` is untouched and remains a fallback.
+- **Distribution chain proven end-to-end (2026-08-02).** Headless run of the exact
+  player pre-launch command from a clean Linux env: 741/741 files, exit 0,
+  243 client mods installed. A player failure is therefore local to their
+  instance setup until a log proves otherwise.
+- **All top-10 assessment findings fixed** (`docs/assessment/REPORT.md` register;
+  rationale in `docs/DECISIONS.md` 2026-08-02 entries): sync script's two
+  silent-deletion bugs; 15 runtime-state files + 4 `.bak` purged from `config/`
+  (incl. spark's file carrying Ashton's name/UUID) with the class now banned by
+  `verify_pack.py`; server-pack builds prune stale jars; CI deps pinned;
+  whitelist documented.
+- **Tests exist and CI runs green.** `tests/` (10 tests: verify_pack guards
+  actually fail on a synthetic broken pack; sync removal regression; CurseForge
+  CDN URL derivation). Run: `pytest tests/ -q`.
+- **Side split: client=66, server=6, both=185.** The 8 content-registering
+  `server` mods moved to `both` on 2026-08-02 to de-risk the first join. Server
+  mod set unchanged at 191 — **no server update was needed for `e1db2be`**.
+- **Pack builds and releases.** 257 mods, 465 config files. CI: refresh-stale
+  gate + `verify_pack.py` + mrpack override check on every push; tags publish a
+  `.mrpack`.
+- **Server is live.** BisectHosting, MC 1.21.1 + NeoForge 21.1.234, Java 21,
+  191 mods. Ashton has full panel sub-user access.
+- **Keybind safety is structural.** `options.txt` triple-banned
+  (`.packwizignore`, verify_pack, CI export check); defaults ride in
+  `config/defaultoptions/` and apply first-launch-only.
+- **The source instance was never modified.** `~/Terra Aeterna 1.5 Complete
+  (7-22-2026)/` remains an untouched fallback.
 
 ---
 
 ## THE ARC THAT LED HERE
 
-1. Pack was a hand-copied 16 GB Prism folder. Updates clobbered everyone's keybinds; JVM args were hand-tuned per machine; only one person could edit it.
-2. Converted to a packwiz pack in Git — mods referenced by URL, so the repo is ~4 MB instead of 16 GB.
-3. Fixed the keybind bug at the packaging layer (never ship `options.txt`; use the Default Options mod), not with a database — the original instinct was to sync settings via Cloudflare, which would have been solving a file-overwrite bug with a sync service.
-4. Ruled out Oracle free tier for hosting. Not ARM incompatibility — that was tested and is false — but single-thread speed: Ampere A1 is 3.0 GHz against the ~3.8 GHz+ a modded tick loop wants.
-5. Bought BisectHosting 8 GB, provisioned it, uploaded the server half.
-6. Ashton's first client install crashed. Root-caused to shipped config referencing intro assets the pack deliberately excludes. Fixed in v1.5.1.
+1. Pack was a hand-copied 16 GB Prism folder; updates clobbered keybinds; only
+   one person could edit it.
+2. Converted to a packwiz pack in Git — the repo *is* the modpack (~9 MB).
+3. Fixed the keybind bug at the packaging layer (Default Options mod, never ship
+   `options.txt`), not with a sync service.
+4. Ruled out Oracle free tier (single-thread speed); bought BisectHosting 8 GB,
+   uploaded the server half.
+5. Ashton's first install crashed (v1.5.0: shipped config referenced unshipped
+   intro assets). Fixed in v1.5.1.
+6. v1.5.1 crashed every client (Lithostitched labelled `server` but required by
+   client mods). Fixed in v1.5.2.
+7. A fresh "error loading on Prism" report with no log → full production
+   assessment (2026-08-02) → verdict NO, 2 blockers → all top-10 findings fixed
+   and pushed (`e1db2be`); the delivery chain was independently proven good, so
+   the report is now believed to be a mistyped pre-launch command on Ashton's
+   machine.
 
 ---
 
@@ -107,69 +108,81 @@ Verified, don't re-investigate:
 | Pack URL (players' pre-launch cmd) | `https://raw.githubusercontent.com/reese8272/ashton-mod-pack/main/pack.toml` |
 | Minecraft / loader | `1.21.1` / NeoForge `21.1.234` / Java 21 Adoptium |
 | Server address | `169.155.120.28:9155` |
-| Host | BisectHosting BisectOne 8 GB, Starbase panel |
-| SFTP | host, user, and password all live in the BisectHosting panel — **none of them belong in this public repo** (host/user were redacted from here 2026-08-02) |
+| Host | BisectHosting BisectOne 8 GB, Starbase panel. SFTP host/user/password live in the panel — **never in this repo** |
 | Source instance | `~/Terra Aeterna 1.5 Complete (7-22-2026)/minecraft` |
-| Server pack artifact | `build/server-pack.zip` (~478 MB, gitignored — rebuild, don't commit) |
+| Server pack artifact | `build/server-pack.zip` (gitignored — rebuild via `scripts/build_server_pack.py`, don't commit) |
+| Assessment | `docs/assessment/REPORT.md` (2026-08-02, snapshot in `history/`); baselines in `docs/assessment/baselines.json` |
 | Issue log entry | `ISSUE-2026-07-31-01` in `~/.claude/ISSUES_LOG.md` |
 
 ---
 
 ## CONSTRAINTS & GOTCHAS
 
-**packwiz reads `.packwizignore`, NOT `.gitignore`.** This has bitten twice — `.sync-instance-path` and the 478 MB `build/` folder both nearly shipped to players. Anything that must not reach players goes in `.packwizignore`.
+**Pushing to `main` deploys.** Auto-update players sync to `main` on next launch;
+CI is advisory on that path. Never push a known-broken state.
 
-**Never delete `.gitattributes` (`* -text`).** Windows line-ending conversion silently changes packwiz index hashes, and the install then fails on *other people's* machines with "hash invalid".
+**packwiz reads `.packwizignore`, NOT `.gitignore`.** Has bitten twice, nearly a
+third time (`.claude/`). Anything that must not reach players goes in
+`.packwizignore`; new top-level dirs must be added there BEFORE `packwiz refresh`.
 
-**`packwiz curseforge add X` also adds X's dependencies from CurseForge**, silently re-pointing mods that already came from Modrinth. Filenames stay identical, so filename diffs miss it. `verify_pack.py` guards this with an explicit `CURSEFORGE_ALLOWED` list — don't add entries to silence a failure.
+**Never delete `.gitattributes` (`* -text`).** Windows line-ending conversion
+silently changes index hashes; installs then fail on *other people's* machines.
 
-**CurseForge matches by search and `-y` takes the first hit.** It has returned entirely wrong projects (an AmbientSounds resource pack for "immersive thunder"). Always check the resulting filename. Searching the mod's `modId` from its `neoforge.mods.toml` is far more reliable than guessing a slug.
+**Runtime state under `config/` is a banned class.** `verify_pack.py`
+(`BANNED_CONFIG_*`) fails CI on spark/JEI-world/FancyMenu-state/`.bak`/logs etc.
+Don't loosen the lists to silence a failure — read `docs/DECISIONS.md` 2026-08-02
+first.
 
-**A Drippy crash almost never means Drippy is broken.** `[DRIPPY LOADING SCREEN] Custom loading overlay class missing!` is what the JVM dies on whenever mod loading aborts for *any* reason — Drippy's overlay never gets registered, so the launcher reports Drippy. It has now been the visible error for two unrelated bugs. Always scroll up for the first `ERROR` line.
+**`packwiz curseforge add X` silently re-points X's Modrinth dependencies to
+CurseForge.** `CURSEFORGE_ALLOWED` in verify_pack.py guards it. CF search also
+returns wrong projects — always check the resulting filename.
 
-**A mod's Modrinth `client`/`server` fields say what that mod does, not who needs it.** A worldgen library can be correctly marked `client: unsupported` and still be a mandatory dependency of a client mod. `verify_pack.py` enforces `CLIENT_REQUIRED_DEPS` (in `apply_sides.py`) for the cases found so far.
+**A Drippy crash almost never means Drippy is broken.** It is the visible error
+whenever mod loading aborts for any reason. Scroll up ~100 lines for the first
+`ERROR`.
 
-**Never ship config that references `config/fancymenu/assets/reimaginedintro`.** Those assets are extracted at runtime by the mod; Drippy's early-loading module reads config before extraction and kills the JVM (exit code 2). `verify_pack.py` checks for this.
+**A mod's Modrinth `client`/`server` fields say what it does, not who needs it**
+(the v1.5.1 lesson). `CLIENT_REQUIRED_DEPS` in apply_sides.py enforces known
+cases; only add entries from real crash logs, never remove to silence.
 
-**Server heap is ~6.5 GB, not 8 GB.** The plan's 8 GB is the container limit; claiming all of it gets the JVM OOM-killed, which looks like random crashes.
+**Never ship config referencing `config/fancymenu/assets/reimaginedintro`** —
+early-loading reads it before the mod extracts assets and kills the JVM.
 
-**`allow-flight=true` is mandatory.** Create Aeronautics, gliders and elytra all trip vanilla anti-cheat otherwise.
+**Server heap is ~6.5 GB, not 8 GB** — the container limit is 8; claiming it all
+gets OOM-killed and looks like random crashes. **`allow-flight=true` is
+mandatory.** **Update the server before players.** **Extracting a server update
+never deletes removed mods** — `build_server_pack.py` now prunes its own build
+dir, but the live server's `mods/` still needs the manual diff.
 
-**Update the server before players.** Clients auto-update on launch; a lagging server causes join failures.
+**CI's packwiz is pinned to a commit** (release.yml) — bump deliberately, and
+re-verify the stale-index gate after bumping.
 
-**Extracting a server update never deletes removed mods.** Compare `mods/` against `build/server/mods/` and delete extras, or the server crashes.
+**First live `sync_from_instance.py` run should still use `--dry-run`.** Its
+deletion bugs are fixed and regression-tested, but it has never run against a
+real change.
 
 ---
 
 ## OPEN ITEMS
 
-- **`config/drippyloadingscreen/options.txt` points its early-loading textures at
-  `/config/fancymenu/assets/some_*.png`, which the pack does not ship.** These are
-  Drippy's own factory-default placeholder values, present in every Drippy install,
-  so they are almost certainly handled gracefully — *but* the same file class,
-  reading a missing path in the same early-loading module, is exactly what killed
-  the JVM in v1.5.0. Unverified either way; `verify_pack.py` only guards the
-  specific `reimaginedintro` path. **Do not remove the file on a guess** — check it
-  only if a Drippy early-loading crash recurs on v1.5.2 or later.
-- ~~`config/fancymenu/user_variables.db` and `video_element_controller_metas.json`~~
-  **DONE 2026-08-02** — both removed, along with 13 more files of the same
-  runtime-state class the assessment found; `verify_pack.py` now bans the class.
-- **`servers.dat` not shipped yet.** Once confirmed working, capture it via `/defaultoptions saveAll` and commit so the server auto-appears in players' multiplayer lists (`docs/SERVER-SETUP.md` §8).
-- ~~Ashton not yet added as a panel sub-user~~ **DONE 2026-08-02** — added with
-  all permissions; he can upload server updates and use the console himself.
-- **`sync_from_instance.py` commit-and-push path has never run live** (there was
-  never a real change to sync). Its two silent-deletion bugs (server-side mods
-  diffed against a client instance; version bumps unlinking the updated meta)
-  were fixed 2026-08-02 with regression tests in `tests/`. First live run should
-  still use `--dry-run`.
-- **3 mods deliberately taken at latest** — cupboard 3.9, sophisticatedbackpacks 3.25.73, sophisticatedcore 1.4.80. **Confirm existing backpack inventories load in-game.**
-- **55 mods in `docs/side-review.md`** are labelled `both` pending review. Safe as-is; relabelling only trims the server download. Explicitly deprioritised.
-- ~~The 14 `server`-labelled mods have only been checked one way.~~ **RESOLVED
-  2026-08-02** — the 8 content-registering candidates were relabelled `both`
-  (join-kick prevention; costs a few MB of client download, server set
-  unchanged). Only 6 pure-behaviour mods remain `server`; see
-  `docs/side-review.md`.
-- **~910 MB of regenerable intro cache still on Ashton's disk** (`config/fancymenu/assets`, `fancymenu_data/fancymenu_temp`). Safe to delete, his call — nothing has been deleted from his machine.
+- **Whitelist not yet confirmed enabled on the panel** (docs updated; panel is
+  the source of truth). Do it before the join test — and whitelist yourself.
+- **Drippy's factory-default placeholder paths** (`config/drippyloadingscreen/options.txt`
+  → `some_*.png`): believed harmless, cleared implicitly by any successful clean
+  launch. Do NOT edit the file on a guess (see `docs/assessment/modules/config.md`).
+- **`servers.dat` not shipped yet** — once a join is confirmed, capture via
+  `/defaultoptions saveAll` and commit so the server auto-appears
+  (`docs/SERVER-SETUP.md` §8).
+- **Backpack contents check:** cupboard 3.9 / sophisticatedbackpacks 3.25.73 /
+  sophisticatedcore 1.4.80 were taken at latest — confirm existing backpack
+  inventories load in-game.
+- **Consider tagging `v1.5.3`** (and bumping `pack.toml` version) so the
+  Release/.mrpack path matches `main` — low priority, the v1.5.2 asset has 0
+  downloads and auto-update players don't use it.
+- **55 mods in `docs/side-review.md` still labelled `both` pending review** —
+  safe as-is; relabelling only trims the server download. Deprioritised.
+- **~910 MB of regenerable intro cache on Ashton's disk** — safe to delete, his
+  call.
 
 ---
 
@@ -179,11 +192,13 @@ Verified, don't re-investigate:
 |---|---|
 | `README.md` | Repo layout, editing the pack, releasing |
 | `docs/ASHTON-GUIDE.md` | The everyday update loop, written for the pack author |
-| `docs/PLAYER-INSTALL.md` | What players do; JVM presets per RAM tier |
-| `docs/SERVER-SETUP.md` | Server install, `server.properties`, updating, troubleshooting |
+| `docs/PLAYER-INSTALL.md` | What players do; troubleshooting incl. the pre-launch command |
+| `docs/SERVER-SETUP.md` | Server install, `server.properties` (incl. whitelist), updating |
 | `docs/DECISIONS.md` | Every design decision with its evidence — **read before reversing anything** |
-| `docs/side-review.md` | Mods whose client/server label is unconfirmed |
-| `~/.claude/ISSUES_LOG.md` | `ISSUE-2026-07-31-01` — the CurseForge dependency trap |
+| `docs/side-review.md` | Side labels: the 6 still-`server` mods, the 8 relabelled 2026-08-02 |
+| `docs/assessment/` | Production assessment: REPORT.md, per-module findings, baselines, history |
+| `~/.claude/ISSUES_LOG.md` | Cross-project issue log (`ISSUE-2026-07-31-01`) |
 
-Scripts are documented in their own docstrings: `verify_pack.py`, `sync_from_instance.py`,
-`build_server_pack.py`, `import_configs.py`, `build_default_options.py`, `apply_sides.py`.
+Scripts are documented in their own docstrings: `verify_pack.py`,
+`sync_from_instance.py`, `build_server_pack.py`, `import_configs.py`,
+`build_default_options.py`, `apply_sides.py`. Tests: `pytest tests/ -q`.
