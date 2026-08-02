@@ -1273,18 +1273,6 @@ file = "config/midnightlib.json"
 hash = "b14c45c6447f9ee5474d70784a2ef96731abbeca1e92485b7599e76e9dce1444"
 
 [[files]]
-file = "config/mobamputation-client.toml"
-hash = "a7a7b427ab7619279e045e5b61aa336d3eb1b2e4f91ca6d8f28f4d1ba208867c"
-
-[[files]]
-file = "config/mobamputation-common.toml"
-hash = "f4c541d483d644af60273c7d4df6dc7335f9f94874fff665ba9f06455429ceec"
-
-[[files]]
-file = "config/mobamputation/amputation_rules.json"
-hash = "4095c597cea3405b76cb43858252321e606cb0a8c0a0eac7321176dcc48482a8"
-
-[[files]]
 file = "config/modelfix-client.toml"
 hash = "ae36e7199d4138e363e1565fbb8059984ca0b4f037a3cda7cfc4c15443862db0"
 
@@ -2619,11 +2607,6 @@ metafile = true
 [[files]]
 file = "mods/melody.pw.toml"
 hash = "b11773b4f64022130268c2e801d751e61f2698492a139bbeabb9fb0eda504e08"
-metafile = true
-
-[[files]]
-file = "mods/mob-amputation-reborn.pw.toml"
-hash = "64a01511f4b1afe892bfbdc81dd4d32d48fd89984f591b53ccc5397b9cd48373"
 metafile = true
 
 [[files]]

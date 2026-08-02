@@ -19,10 +19,37 @@ client overrides listed in `scripts/apply_sides.py` and `scripts/sides.json`).
 > players online nothing entity-ticks, so the fault stayed dormant. Boot-time
 > `invalid dist` errors are the *loud* version of this bug; the quiet version
 > waits for a join. See `docs/DECISIONS.md` 2026-08-02.
+>
+> **`client` is NOT free either — and this is the one that locks everybody out.**
+> A mod that registers a **required** NeoForge network payload advertises that
+> channel from the client. A server without the mod cannot support it, so the
+> server disconnects the client at the configuration phase with the generic
+> `Incompatible client! Please use NeoForge <version>`. Mob Amputation did
+> exactly this and rejected *both* whitelisted players; it is now removed from
+> the pack. **The NeoForge version in that message is boilerplate, not a
+> diagnosis** — do not go chasing a version mismatch.
 
 **Do not relabel a mod to `client` or `server` on a guess.** If it turns out to
 be needed on the side you removed it from, players get a crash or a
 mod-mismatch join failure, and the cause is not obvious from the error.
+
+## Before relabelling anything to `client`, run the payload scan
+
+Unzip the jar and check whether it registers a network payload and whether it
+opts out with `optional()`. Payloads are **required by default**
+(<https://neoforged.net/news/20.4networking-rework/>), so a mod that registers
+one without calling `optional()` can never be `client`-only on a modded server.
+
+```python
+# REQUIRED  -> cannot be `client`; leave it `both`
+# optional()-> safe to label `client`
+REG = b"RegisterPayloadHandlersEvent"
+OPT = b"()Lnet/neoforged/neoforge/network/registration/PayloadRegistrar;"  # no-arg == optional()
+```
+
+Full script: `docs/DECISIONS.md` 2026-08-02 (Mob Amputation entry). Last full
+sweep of all `client`-labelled mods found **0 required** — Distant Horizons and
+FancyMenu are the only two that register payloads, and both call `optional()`.
 
 Modrinth's `client`/`server` columns are the author's own declaration and were
 only recently re-verified, so `optional/optional` usually just means "nobody
@@ -63,7 +90,6 @@ See <https://modrinth.com/news/article/new-environments>.
 | `kotlinforforge-5.12.0-all.jar` | Kotlin for Forge | optional | optional |
 | `mapdistancefix-neoforge-1.1.1+mc1.21-1.21.11.jar` | Map Distance Fix | required | optional |
 | `melody_neoforge_1.0.10_MC_1.21.jar` | Melody | unknown | unknown |
-| `mobamputationforge-1.21.1-1.0.0.jar` | not on Modrinth | - | - |
 | `modernfix-neoforge-5.27.20+mc1.21.1.jar` | ModernFix | optional | optional |
 | `mru-1.0.19+LTS+1.21.1+neoforge.jar` | M.R.U | optional | optional |
 | `MultiMine-neoforge-1.2.0.jar` | Multi Mine | unknown | unknown |

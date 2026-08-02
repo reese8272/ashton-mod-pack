@@ -502,3 +502,86 @@ with `side = "both"` or `"server"`. That gave an exact 187-of-189 verdict naming
 the two absent jars. Match candidates with `grep -F`; a naive
 `[A-Za-z0-9._+-]*` character class falsely flags the five pack mods whose
 filenames contain spaces or brackets. Recorded as `ISSUE-2026-08-02-02`.
+
+---
+
+## 2026-08-02 — Mob Amputation is removed from the pack: it registers a *required* network payload
+
+**Decision.** `mobamputationforge-1.21.1-1.0.0.jar` is removed from the pack
+entirely (metadata, `sides.json`, `CURSEFORGE_ALLOWED`, and its three orphaned
+config files). It is not relabelled, not disabled-in-place, and not patched.
+
+**Why.** The mod cannot work on a dedicated server in *any* configuration, and
+both available side labels are broken:
+
+| Label | Result |
+|---|---|
+| `both` | Server ticks `GibEntity`, which reads a `Dist.CLIENT` config spec → `IllegalStateException` → server dies on the first join near a gib |
+| `client` | Client advertises a **required** payload the server cannot support → **every player rejected** at the configuration phase |
+
+The `client` label — committed earlier the same day as the fix for the tick
+crash — is what produced the `Incompatible client! Please use NeoForge 21.1.248`
+outage. **The NeoForge version in that message is boilerplate, not a diagnosis.**
+
+**Evidence — read from the jar's bytecode, not inferred.**
+
+1. `common/network/MobAmputationNetwork` calls
+   `event.registrar(PROTOCOL_VERSION).playToClient(PacketDetachLimb.TYPE, …)`
+   with **no `optional()` call** anywhere in the class. NeoForge payloads are
+   required by default; `optional()` is the opt-out that marks them "as not
+   requiring a receiving side"
+   (<https://neoforged.net/news/20.4networking-rework/>). A required payload the
+   other side lacks means "the connection can not be setup based on this
+   situation" (<https://hackmd.io/@neoforged/ByVWRilOp>).
+2. The mod is genuinely two-sided, not cosmetic. `common/core/EventHandlerServer`
+   (with `LimbHit`, `TraceSegment`) does hit detection **on the server** and
+   sends `PacketDetachLimb` to clients. CurseForge declares the environment
+   "Client & Server". The store blurb "purely visual effects" describes the
+   outcome, not the architecture — so `client` also silently breaks the feature.
+3. `GibEntity` references `Config$Client.gibTime` (`ModConfigSpec$IntValue`);
+   `gibTime`/`gibGroundTime` exist only in `Config$Client`. Confirms the
+   2026-08-02 tick-crash entry above.
+
+**The config workaround does not exist.** The earlier plan was to set
+`enableArmAmputation`/`enableHeadAmputation`/`enableLegAmputation`/
+`enableAnimalDecapitation` to `false` so no gib ever spawns. `Config$Common`
+shows `gibChance` is *"Fallback **detachment** chance…"* — it governs whether
+limbs come off at all. Disabling those flags does not mean "amputation works,
+gibs don't"; it means **the mod does nothing**. Jar-present-but-inert is
+strictly worse than removal: identical zero functionality, plus download size
+and a latent crash if any gib entity survives in the world.
+
+**Alternatives ruled out.** *Companion Mixin patch* — the only route where the
+feature actually works, but it turns this repo into one that builds a Java mod
+(no 1.21.1 NeoForge source is published upstream; only a `Forge-1.20.1` branch
+exists). Explicitly declined: the pack must stay a files-only artifact Ashton
+can update. *Swap to Mob Dismemberment* (same author, declares `Client`, current
+1.21.1 NeoForge build) — a real option, but it is death-gibs, not severing limbs
+off living mobs. Deferred, not rejected. *Repackage their jar* — LGPL-3.0-or-later
+permits it, but obligates source publication and breaks on every update.
+
+**Class fix, not a one-off.** All 69 `client`-labelled mods were unzipped and
+scanned for payload registration (`RegisterPayloadHandlersEvent`) and for the
+no-arg `()LPayloadRegistrar;` descriptor that marks an `optional()` call. Only
+three registered payloads at all; Distant Horizons and FancyMenu both call
+`optional()` correctly. **Mob Amputation was the only `REQUIRED` one** — so it
+was the sole cause of the outage, and no other client-labelled mod carries the
+same risk. Re-scan after removal: 0 required. This scan is the check to re-run
+before ever relabelling a mod to `client`.
+
+---
+
+## 2026-08-02 — `pack.toml` NeoForge bumped 21.1.234 → 21.1.248 to match the server
+
+**Decision.** The pack declares NeoForge `21.1.248`, the version the live server
+runs.
+
+**Why.** The gap was never the cause of anything — joins succeeded at 14:17 and
+14:29 with the pack on `21.1.234` — but it appears verbatim in the
+`Incompatible client! Please use NeoForge 21.1.248` rejection string and cost
+real diagnostic time as a false lead. Aligning removes the confound permanently.
+Patch-level move on the same 21.1 branch; players' launchers pull it on the next
+update.
+
+**Evidence.** Server NeoForge confirmed `21.1.248` from the 14:29 crash stack
+(`TRANSFORMER/neoforge@21.1.248/`).

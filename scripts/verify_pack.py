@@ -44,7 +44,6 @@ CURSEFORGE_ALLOWED = {
     "framework-neoforge-1.21.1-0.13.11.jar",
     "goblintraders-neoforge-1.21.1-1.11.2.jar",
     "immersivethunder-neoforge-1.21.1-1.3.0.jar",
-    "mobamputationforge-1.21.1-1.0.0.jar",
     "placeableitems-4.8.3.jar",
     "SC_Leather_Armors-4.4.2-neoforge-1.21.1.jar",
     "smoothscrolling-1.21.1-NeoForge-1.0.1.jar",
