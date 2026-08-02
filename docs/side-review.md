@@ -1,9 +1,16 @@
 # Side labels needing confirmation
 
-Every mod here is currently labelled **`both`** (except the five hand-checked
-client overrides listed in `scripts/apply_sides.py`). `both` is always safe --
-the mod is simply present on each side. Confirming a mod is client-only just
-trims the server download; it is an optimisation, not a fix.
+Every mod here is currently labelled **`both`** (except the hand-checked
+client overrides listed in `scripts/apply_sides.py` and `scripts/sides.json`).
+
+> **`both` is NOT always safe — corrected 2026-08-02.** A client-only mod
+> labelled `both` ships to the dedicated server, and if it touches client
+> classes during loading, the SERVER crashes at boot. Wakes Reforged and
+> MapDistanceFix did exactly this on the first NeoForge server boot
+> (`docs/logs/2026-08-02-server-first-neoforge-boot.log`,
+> `Attempted to load class ... for invalid dist DEDICATED_SERVER`) and are now
+> `client`. `both` remains safe for the CLIENT; reviewing this list also
+> protects the server, not just the download size.
 
 **Do not relabel a mod to `client` or `server` on a guess.** If it turns out to
 be needed on the side you removed it from, players get a crash or a

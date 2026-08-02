@@ -100,9 +100,13 @@ side = "server"   # server only (rarely correct)
 ```
 
 When unsure, use `both`. A wrong `client`/`server` label makes the mod absent
-where it was needed — a crash or a mod-mismatch join failure. A wrong `both` just
-wastes bandwidth. See [docs/side-review.md](docs/side-review.md) for the mods
-whose correct side is still unconfirmed.
+where it was needed — a crash or a mod-mismatch join failure. A wrong `both`
+usually just wastes bandwidth — **except** a client-only mod labelled `both`
+ships to the dedicated server and can crash it at boot (`invalid dist
+DEDICATED_SERVER` — this happened with Wakes Reforged and MapDistanceFix). If a
+new mod is purely visual/UI, label it `client`. See
+[docs/side-review.md](docs/side-review.md) for the mods whose correct side is
+still unconfirmed.
 
 ### Changing the default keybinds or settings
 

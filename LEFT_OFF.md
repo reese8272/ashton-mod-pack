@@ -19,14 +19,14 @@ files (including the 8 relabelled mods and both scrubbed configs), all 257 mods
 loaded, title screen reached, singleplayer world ran. Two issues found, neither
 a pack-content bug:
 
-1. **Server join failed — ROOT CAUSE CONFIRMED from the panel console
-   (2026-08-02):** BisectHosting is booting `minecraft_server_1.21.1.jar` —
-   **vanilla**, not NeoForge (`Starting net.minecraft.server.Main`, 1290
-   recipes, 7 s startup). The 191 uploaded mods sit unused; the vanilla boot
-   also **created a fresh vanilla world** (`No existing world data, creating
-   new world`), which must be deleted before the first modded boot or spawn
-   terrain stays vanilla forever. Fix is entirely on the panel — see NEXT
-   ACTION 1.
+1. **Server: NeoForge now boots** (panel switched off the vanilla jar
+   2026-08-02) **but the first modded boot crashed** on two client-only mods
+   that were labelled `both` and therefore shipped to the server: Wakes
+   Reforged and MapDistanceFix, both throwing `invalid dist DEDICATED_SERVER`
+   (`docs/logs/2026-08-02-server-first-neoforge-boot.log`). Both are
+   relabelled `client` in the repo; the server still has the two jars in its
+   `mods/` folder until someone deletes them — see NEXT ACTION 1. More mods
+   of this class may surface on later boots; iterate the same way.
 2. **Client crashed after ~10 min** (exit `-805306369`) right after Distant
    Horizons warned "Insufficient memory". The gaming desktop has **16 GB
    RAM** but Prism was set to `-Xmx4096m` with no GC args — the 8 GB-row
@@ -38,21 +38,21 @@ with him). Ashton is a **panel sub-user with all permissions**.
 
 ### → NEXT ACTION
 
-1. **Switch the server to NeoForge on the BisectHosting panel** (confirmed
-   vanilla today — panel boots `minecraft_server_1.21.1.jar`):
-   1. Panel → server type / game file: select **NeoForge 21.1.234** (MC
-      1.21.1). When the installer asks to wipe/delete server files, **say
-      no** — then verify `mods/` (191 jars) and `config/` survived.
-   2. **Delete the `world/` folder** the vanilla boot just generated (nobody
-      has played it). Otherwise spawn chunks stay vanilla — no Terralith/
-      Tectonic terrain — with visible chunk borders at the edge forever.
-   3. Check the startup memory: the panel launches with `-Xmx8192M`, the
-      documented OOM trap (heap must be ~6.5 GB, the container is 8). Lower
-      it in the panel's startup/memory setting if exposed.
-   4. Re-check `server.properties` (`allow-flight=true`, `white-list=true`,
-      `enforce-whitelist=true`) and `whitelist add` **both** usernames.
-   5. Restart and watch the console: a correct boot shows NeoForge/FML
-      loading ~191 mods and takes minutes, not 7 seconds.
+1. **Get the server through its first clean NeoForge boot:**
+   1. Panel file manager → `mods/`: **delete
+      `wakes-1.21.1-NeoForge-1.3.6.jar` and
+      `mapdistancefix-neoforge-1.1.1+mc1.21-1.21.11.jar`** (relabelled
+      `client` in the repo; the server copies must go manually).
+   2. Confirm the vanilla-generated `world/` folder was deleted before the
+      modded world generates (otherwise spawn terrain stays vanilla).
+   3. Start and watch the console. Success = several minutes of FML/mod
+      loading, then "Done". **If it crashes again with `invalid dist
+      DEDICATED_SERVER` naming a new mod**, capture the log to
+      `docs/logs/`, relabel that mod `client` in `scripts/sides.json`
+      (apply_sides → refresh → push), delete its jar on the server, repeat.
+   4. Once up: re-check `server.properties` (`allow-flight=true`,
+      `white-list=true`, `enforce-whitelist=true`) and `whitelist add`
+      **both** usernames from the Console tab.
 2. **Fix the client allocation (16 GB machine):** Prism → instance → Settings
    → Memory: **6–8 GB**, plus the 16 GB-row ZGC args from
    `docs/PLAYER-INSTALL.md`. (It ran 4 GB with no GC args — the crash cause.)
@@ -99,16 +99,19 @@ Verified, don't re-investigate:
 - **Tests exist and CI runs green.** `tests/` (10 tests: verify_pack guards
   actually fail on a synthetic broken pack; sync removal regression; CurseForge
   CDN URL derivation). Run: `pytest tests/ -q`.
-- **Side split: client=66, server=6, both=185.** The 8 content-registering
-  `server` mods moved to `both` on 2026-08-02 to de-risk the first join. Server
-  mod set unchanged at 191 — **no server update was needed for `e1db2be`**.
+- **Side split: client=68, server=6, both=183** (server set = 189). The 8
+  content-registering `server` mods moved to `both` to de-risk the first join;
+  wakes + mapdistancefix moved to `client` after crashing the dedicated server.
+  The old "wrong `both` only wastes bandwidth" claim is corrected in README and
+  `docs/side-review.md`: a client-only mod labelled `both` can crash the SERVER.
 - **Pack builds and releases.** 257 mods, 465 config files. CI: refresh-stale
   gate + `verify_pack.py` + mrpack override check on every push; tags publish a
   `.mrpack`.
-- **Server container is live, but boots the WRONG jar** (confirmed 2026-08-02:
-  vanilla `minecraft_server_1.21.1.jar`; the 191 uploaded mods are ignored
-  until the panel's server type is switched to NeoForge 21.1.234 — NEXT
-  ACTION 1). Ashton has full panel sub-user access.
+- **Server boots NeoForge** (panel type switched 2026-08-02 after a day of
+  silently running vanilla). First modded boot crashed on two mislabelled
+  client mods — fix in flight, NEXT ACTION 1. Ashton has full panel sub-user
+  access. Server may run NeoForge 21.1.248 vs the pack's 21.1.234 — the
+  21.1.x stable line is cross-compatible.
 - **Keybind safety is structural.** `options.txt` triple-banned
   (`.packwizignore`, verify_pack, CI export check); defaults ride in
   `config/defaultoptions/` and apply first-launch-only.

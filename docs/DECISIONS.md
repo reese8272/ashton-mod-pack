@@ -351,3 +351,28 @@ a full commit SHA.
 
 **Evidence.** `docs/assessment/modules/root-infra.md`;
 <https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions#using-third-party-actions>.
+
+---
+
+## 2026-08-02 — "A wrong `both` just wastes bandwidth" is FALSE; wakes and mapdistancefix are `client`
+
+**Decision.** Wakes Reforged (`wakes-1.21.1-NeoForge-1.3.6.jar`) and
+MapDistanceFix (`mapdistancefix-neoforge-1.1.1+mc1.21-1.21.11.jar`) relabelled
+`both` → `client`. README and side-review.md corrected: a client-only mod
+labelled `both` ships to the dedicated server and can CRASH it at boot — the
+"wastes bandwidth only" heuristic held for the client side but never for the
+server side.
+
+**Why.** The first-ever NeoForge server boot (2026-08-02) failed mod
+construction with exactly these two mods throwing
+`Attempted to load class net/minecraft/client/... for invalid dist
+DEDICATED_SERVER` (wakes touched `ClientLevel` via an event subscriber;
+mapdistancefix touched `Screen` in its mod constructor). This is the mirror
+image of the v1.5.1 Lithostitched bug: same label system, opposite direction.
+
+**Evidence.** `docs/logs/2026-08-02-server-first-neoforge-boot.log`
+(crash report names both mod files; "Mod loading has failed, 2 errors found").
+Same evidence bar as CLIENT_REQUIRED_DEPS: relabel only on a real crash log,
+never on a guess. More `both`-labelled client-only mods may surface on
+subsequent boots — handle each the same way (relabel in `scripts/sides.json`,
+delete the jar from the server's `mods/`, restart).

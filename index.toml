@@ -2612,7 +2612,7 @@ metafile = true
 
 [[files]]
 file = "mods/map-distance-fix.pw.toml"
-hash = "bda1027be61de1bbfe0ca60557ba461876761bff78a95be03b3f984869cd0825"
+hash = "36846682ceb7e7d1cda5bb4e0d523aa0070a1ee10f3440ed0873bf01d148e13c"
 metafile = true
 
 [[files]]
@@ -3067,7 +3067,7 @@ metafile = true
 
 [[files]]
 file = "mods/wakes-reforged.pw.toml"
-hash = "f53177205edff1e0d88b3ec38c3e2dff6405b00c71bea96b94fa397b089a500c"
+hash = "1d316dc173473bc5798191d7ff6a193877105eec4fc4bb66c5e0b9600c3c44ba"
 metafile = true
 
 [[files]]
